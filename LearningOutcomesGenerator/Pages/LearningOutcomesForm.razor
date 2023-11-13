@@ -1,0 +1,113 @@
+<h3>LearningOutcomes</h3>
+
+<MudSelect @bind-Value="_selectedTaxonomyLevel" Label="Taxonomy level" Placeholder="Taxonomy level">
+    @foreach(var taxonomyLevel in _taxonomyLevels)
+    {
+        <MudSelectItem Value="@taxonomyLevel.ToString()">@taxonomyLevel.ToString()</MudSelectItem>
+    }
+</MudSelect>
+
+<MudTextField @bind-Value="_currentLearningOutcome.What" DebounceInterval="1"> </MudTextField>
+
+<MudAutocomplete T="string" Placeholder="Select verb of visibility or type in a new one"
+                 @bind-Value="_currentLearningOutcome.VerbOfVisibility"
+                 CoerceText="true" 
+                 CoerceValue="true"
+                 SearchFunc="@SearchVerbOfVisibility"
+                 DebounceInterval="300" />
+
+<MudTextField @bind-Value="_currentLearningOutcome.Whereby" DebounceInterval="1"> </MudTextField>
+<MudTextField @bind-Value="_currentLearningOutcome.WhatFor" DebounceInterval="1"> </MudTextField>
+
+<MudButton OnClick="@AddOutcome">Add</MudButton>
+
+<h1> Current Outcome: </h1>
+<p>@_currentLearningOutcome.GetOutcome()</p>
+
+
+<h1> All Outcomes </h1>
+@if (_learningOutcomes.Count > 0)
+{
+    foreach (var learningOutcome in _learningOutcomes)
+    {
+        <p>@learningOutcome.GetOutcome()</p>
+    }
+}
+
+@code {
+    private List<LearningOutcome> _learningOutcomes = new();
+    private LearningOutcome _currentLearningOutcome = new();
+    private TaxonomyLevel[] _taxonomyLevels = (TaxonomyLevel[]) Enum.GetValues(typeof(TaxonomyLevel));
+    
+    private string _selectedTaxonomyLevel = "";
+
+    public class LearningOutcome
+    {
+        public string What { get; set; } = "";
+        public string Whereby { get; set; } = "";
+        public string WhatFor { get; set; } = "";
+        public string VerbOfVisibility { get; set; } = "";
+
+        public string GetOutcome()
+        {
+            return "Nach erfolgreicher Beendigung des Lernraums können Studierende " + What + " " + VerbOfVisibility + ", indem sie " + Whereby + ", um " + WhatFor;
+        }
+    }
+
+    private void AddOutcome()
+    {
+        _learningOutcomes.Add(_currentLearningOutcome);
+        _currentLearningOutcome = new LearningOutcome();
+    }
+
+    public enum TaxonomyLevel
+    {
+        Erinnern,
+        Verstehen,
+        Anwenden,
+        Analysieren,
+        Bewerten,
+        Erschaffen
+    }
+    
+    public enum VerbOfVisibility
+    {
+        abstimmen, angeben, anführen,
+        abgrenzen, ableiten, anordnen,
+        ändern, anfertigen, anpassen,
+        analysieren, aufdecken, 
+        abfassen, abschätzen,
+        argumentieren, ausdenken
+    }
+
+    private Dictionary<TaxonomyLevel, List<VerbOfVisibility>> _verbsByTaxonomyLevel = new()
+    {
+        { TaxonomyLevel.Erinnern, new List<VerbOfVisibility>() { VerbOfVisibility.abstimmen, VerbOfVisibility.angeben, VerbOfVisibility.anführen } },
+        { TaxonomyLevel.Verstehen, new List<VerbOfVisibility>() { VerbOfVisibility.abgrenzen, VerbOfVisibility.ableiten, VerbOfVisibility.anordnen } },
+        { TaxonomyLevel.Anwenden, new List<VerbOfVisibility>() { VerbOfVisibility.ändern, VerbOfVisibility.anfertigen, VerbOfVisibility.anpassen } },
+        { TaxonomyLevel.Analysieren, new List<VerbOfVisibility>() { VerbOfVisibility.ableiten, VerbOfVisibility.analysieren, VerbOfVisibility.aufdecken } },
+        { TaxonomyLevel.Bewerten, new List<VerbOfVisibility>() { VerbOfVisibility.abfassen, VerbOfVisibility.ableiten, VerbOfVisibility.abschätzen } },
+        { TaxonomyLevel.Erschaffen, new List<VerbOfVisibility>() { VerbOfVisibility.ableiten, VerbOfVisibility.argumentieren, VerbOfVisibility.ausdenken } }
+    };
+    
+    private async Task<IEnumerable<string>> SearchVerbOfVisibility(string value)
+    {
+        var results = new List<string>();
+
+        if (Enum.TryParse<TaxonomyLevel>(_selectedTaxonomyLevel, out var parsedValue))
+        {
+            results.AddRange(_verbsByTaxonomyLevel[parsedValue]
+                .Where(verb => verb.ToString().Contains(value, StringComparison.InvariantCultureIgnoreCase))
+                .Select(verb => verb.ToString()));
+        }
+
+        if (!string.IsNullOrEmpty(value) && !results.Contains(value))
+        {
+            results.Add(value);
+        }
+
+        return await Task.FromResult(results);
+    }
+
+
+}
