@@ -1,15 +1,15 @@
 <h3>LearningOutcomes</h3>
 
-<MudSelect @bind-Value="_selectedTaxonomyLevel" Label="Taxonomy level" Placeholder="Taxonomy level">
+<MudSelect @bind-Value="_selectedTaxonomyLevel" Label="Taxonomy-Stufe">
     @foreach(var taxonomyLevel in _taxonomyLevels)
     {
         <MudSelectItem Value="@taxonomyLevel.ToString()">@taxonomyLevel.ToString()</MudSelectItem>
     }
 </MudSelect>
 
-<MudTextField @bind-Value="_currentLearningOutcome.What" DebounceInterval="1"> </MudTextField>
+<MudTextField @bind-Value="_currentLearningOutcome.What" Label="Was?" DebounceInterval="1"> </MudTextField>
 
-<MudAutocomplete T="string" Placeholder="Select verb of visibility or type in a new one"
+<MudAutocomplete T="string" Label="Verb der Sichtbarkeit auswählen oder eingeben"
                  @bind-Value="_currentLearningOutcome.VerbOfVisibility"
                  @bind-Text="_currentText"
                  CoerceText="true" 
@@ -18,26 +18,15 @@
                  OnBlur="@OnBlurVerbOfVisibility"
                  DebounceInterval="300" />
 
-<MudTextField @bind-Value="_currentLearningOutcome.Whereby" DebounceInterval="1"> </MudTextField>
-<MudTextField @bind-Value="_currentLearningOutcome.WhatFor" DebounceInterval="1"> </MudTextField>
+<MudTextField @bind-Value="_currentLearningOutcome.Whereby" Label="Womit?" DebounceInterval="1"> </MudTextField>
+<MudTextField @bind-Value="_currentLearningOutcome.WhatFor" Label="Wozu?" DebounceInterval="1"> </MudTextField>
 
-<MudButton OnClick="@AddOutcome">Add</MudButton>
+<br/>
 
-<h1> Current Outcome: </h1>
 <MudMarkdown Value="@_currentLearningOutcome.GetOutcome()"></MudMarkdown>
 
 
-<h1> All Outcomes </h1>
-@if (_learningOutcomes.Count > 0)
-{
-    foreach (var learningOutcome in _learningOutcomes)
-    {
-        <p>@learningOutcome.GetOutcome()</p>
-    }
-}
-
 @code {
-    private List<LearningOutcome> _learningOutcomes = new();
     private LearningOutcome _currentLearningOutcome = new();
     private TaxonomyLevel[] _taxonomyLevels = (TaxonomyLevel[]) Enum.GetValues(typeof(TaxonomyLevel));
     
@@ -52,14 +41,8 @@
 
         public string GetOutcome()
         {
-            return $"Nach erfolgreicher Beendigung des Lernraums können Studierende {FormatWithPlaceholder(What)} {FormatWithPlaceholder(VerbOfVisibility)}, indem sie {FormatWithPlaceholder(Whereby)}\n um {FormatWithPlaceholder(WhatFor)}";
+            return $"Nach erfolgreicher Beendigung des Lernraums können Studierende {FormatWithPlaceholder(What)} {FormatWithPlaceholder(VerbOfVisibility)}, \n indem sie {FormatWithPlaceholder(Whereby)}\n um {FormatWithPlaceholder(WhatFor)}";
         }
-    }
-
-    private void AddOutcome()
-    {
-        _learningOutcomes.Add(_currentLearningOutcome);
-        _currentLearningOutcome = new LearningOutcome();
     }
 
     public enum TaxonomyLevel
