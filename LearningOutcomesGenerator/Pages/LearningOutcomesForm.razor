@@ -1,3 +1,6 @@
+@using System.Text
+@inject ClipBoardService ClipBoardService
+
 <h3>LearningOutcomes</h3>
 
 <MudSelect @bind-Value="_selectedTaxonomyLevel" Label="Taxonomy-Stufe">
@@ -23,7 +26,9 @@
 
 <br/>
 
-<MudMarkdown Value="@_currentLearningOutcome.GetOutcome()"></MudMarkdown>
+<MudMarkdown Value="@_currentLearningOutcome.GetMarkDownFormattedOutcome()"></MudMarkdown>
+
+<MudButton Disabled="!_currentLearningOutcome.IsCopyable()" StartIcon="@Icons.Material.Filled.ContentCopy" OnClick="@CopyToClickBoard">Copy to Clipboard</MudButton>
 
 
 @code {
@@ -39,9 +44,33 @@
         public string WhatFor { get; set; } = "";
         public string VerbOfVisibility { get; set; } = "";
 
-        public string GetOutcome()
+        public string GetMarkDownFormattedOutcome() =>
+            $"Nach erfolgreicher Beendigung des Lernraums können Studierende {FormatWithPlaceholder(What)} {FormatWithPlaceholder(VerbOfVisibility)}, \n indem sie {FormatWithPlaceholder(Whereby)},\n um {FormatWithPlaceholder(WhatFor)}.";
+
+        public bool IsCopyable() =>
+            !IsNullOrEmpty(What) && !IsNullOrEmpty(VerbOfVisibility);
+
+        private bool IsNullOrEmpty(string value) =>
+            string.IsNullOrWhiteSpace(value);
+
+        public string GetOutcomeToCopy()
         {
-            return $"Nach erfolgreicher Beendigung des Lernraums können Studierende {FormatWithPlaceholder(What)} {FormatWithPlaceholder(VerbOfVisibility)}, \n indem sie {FormatWithPlaceholder(Whereby)}\n um {FormatWithPlaceholder(WhatFor)}";
+            var sb = new StringBuilder("Nach erfolgreicher Beendigung des Lernraums können Studierende ");
+            sb.Append(What).Append(" ").Append(VerbOfVisibility);
+
+            if (!IsNullOrEmpty(Whereby))
+            {
+                sb.Append(", \n indem sie ").Append(Whereby);
+            }
+
+            if (!IsNullOrEmpty(WhatFor))
+            {
+                sb.Append(",\n um ").Append(WhatFor);
+            }
+
+            sb.Append(".");
+
+            return sb.ToString();
         }
     }
 
@@ -100,10 +129,21 @@
         _currentLearningOutcome.VerbOfVisibility = _currentText;
     }
     
-    private static string FormatWithPlaceholder(string value, string placeholder = "[ .. ]")
+    private static string FormatWithPlaceholder(string value, string placeholder = "[ ... ]")
     {
         return string.IsNullOrWhiteSpace(value) ? placeholder : $"**{value.Trim()}**";
     }
 
+    private async void CopyToClickBoard()
+    {
+        try
+        {
+            await ClipBoardService.SetTextAsync(_currentLearningOutcome.GetOutcomeToCopy());
+        }
+        catch
+        {
+            // ignored
+        }
+    }
 
 }

@@ -1,3 +1,5 @@
+using LearningOutcomesGenerator;
+using LearningOutcomesGenerator.Pages;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using MudBlazor;
@@ -10,6 +12,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddMudServices();
 builder.Services.AddMudMarkdownServices();
+builder.Services.AddScoped<ClipBoardService>();
 
 var app = builder.Build();
 
