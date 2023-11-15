@@ -11,9 +11,11 @@
 
 <MudAutocomplete T="string" Placeholder="Select verb of visibility or type in a new one"
                  @bind-Value="_currentLearningOutcome.VerbOfVisibility"
+                 @bind-Text="_currentText"
                  CoerceText="true" 
                  CoerceValue="true"
                  SearchFunc="@SearchVerbOfVisibility"
+                 OnBlur="@OnBlurVerbOfVisibility"
                  DebounceInterval="300" />
 
 <MudTextField @bind-Value="_currentLearningOutcome.Whereby" DebounceInterval="1"> </MudTextField>
@@ -22,7 +24,7 @@
 <MudButton OnClick="@AddOutcome">Add</MudButton>
 
 <h1> Current Outcome: </h1>
-<p>@_currentLearningOutcome.GetOutcome()</p>
+<MudMarkdown Value="@_currentLearningOutcome.GetOutcome()"></MudMarkdown>
 
 
 <h1> All Outcomes </h1>
@@ -50,7 +52,7 @@
 
         public string GetOutcome()
         {
-            return "Nach erfolgreicher Beendigung des Lernraums können Studierende " + What + " " + VerbOfVisibility + ", indem sie " + Whereby + ", um " + WhatFor;
+            return $"Nach erfolgreicher Beendigung des Lernraums können Studierende {FormatWithPlaceholder(What)} {FormatWithPlaceholder(VerbOfVisibility)}, indem sie {FormatWithPlaceholder(Whereby)}\n um {FormatWithPlaceholder(WhatFor)}";
         }
     }
 
@@ -103,10 +105,21 @@
 
         if (!string.IsNullOrEmpty(value) && !results.Contains(value))
         {
-            results.Add(value);
+            results.Insert(0, value);
         }
 
         return await Task.FromResult(results);
+    }
+
+    private string _currentText = "";
+    private void OnBlurVerbOfVisibility()
+    {
+        _currentLearningOutcome.VerbOfVisibility = _currentText;
+    }
+    
+    private static string FormatWithPlaceholder(string value, string placeholder = "[ .. ]")
+    {
+        return string.IsNullOrWhiteSpace(value) ? placeholder : $"**{value.Trim()}**";
     }
 
 
