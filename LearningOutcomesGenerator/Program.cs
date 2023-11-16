@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using MudBlazor;
 using MudBlazor.Services;
+using Tailwind;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +30,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.RunTailwind("tailwind");
 
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
