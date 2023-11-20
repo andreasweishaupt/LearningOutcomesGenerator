@@ -1,35 +1,100 @@
 @using System.Text
 @inject ClipBoardService ClipBoardService
 
-<h3 class="text-adlerbggradientto">LearningOutcomes</h3>
+<div class="border-3 border-adlerdarkblue rounded m-4">
+<div class="flex flex-col my-2 mx-4">
+    <MudText Class="flex justify-end text-xs text-adlerblue py-2">Beispiel für eine Learning-Outcome-Formulierung</MudText>
+    <MudText Class="cursor-default flex justify-center items-center text-lg 2xl:text-xl font-bold text-adlerdarkblue py-2">Learning-Outcomes</MudText>
+    <div class="flex flex-row">
+        <MudText Class="cursor-default text-sm text-adlergrey-800">Machen Sie sich zunächst Gedanken dazu, auf welcher Taxonomiestufe Sie Ihr Learning-Outcome formulieren möchten.</MudText>
+    </div>
+</div>
 
-<MudSelect @bind-Value="_selectedTaxonomyLevel" Label="Taxonomy-Stufe">
-    @foreach(var taxonomyLevel in _taxonomyLevels)
-    {
-        <MudSelectItem Value="@taxonomyLevel.ToString()">@taxonomyLevel.ToString()</MudSelectItem>
-    }
-</MudSelect>
+<div class="border-adlergrey-300 bg-adlerbgbright border-2 rounded my-2 mx-4">
+<div class="flex flex-row gap-4 m-2 pb-6">
+    <div class="w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
+        <MudText Class="cursor-default text-sm text-adlerdarkblue font-bold">Taxonomiestufe</MudText>
+        <MudTooltip Placement="Placement.Right" Class="w-80 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Die Formulierung eines Learning-Outcomes fokussiert die Beschreibung von entsprechenden Fähigkeiten, Fertigkeiten oder Kompetenzen des intendierten Lernprozesses der Studierenden. Diese lassen sich aufgrund ihrer Komplexität der kognitiven Prozesse einer Taxonomiestufe zuordnen. Die Festlegung einer Taxonomiestufe (nach Anderson & Krathwohl) dient in den weiteren Bearbeitungsschritten der Learning-Outcome-Formulierung zum Finden eines passenden Verbes der Sichtbarkeit.">
+            <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
+        </MudTooltip>
+    </div>
+    <MudSelect @bind-Value="_selectedTaxonomyLevel" Placeholder="Auswahl der Taxonomiestufe">
+        @foreach (var taxonomyLevel in _taxonomyLevels)
+        {
+            <MudSelectItem Value="@taxonomyLevel.ToString()">@taxonomyLevel.ToString()</MudSelectItem>
+        }
+    </MudSelect>
+</div>
+<MudDivider></MudDivider>
+<div class="flex flex-row gap-4 m-2">
+    <MudText Class="w-48 p-2"></MudText>
+    <MudText Class="cursor-default text-sm text-adlergrey-800">"Nach erfolgreicher Beendigung des Lernraums können Studierende...</MudText>
+</div>
 
-<MudTextField @bind-Value="_currentLearningOutcome.What" Label="Was?" DebounceInterval="1"> </MudTextField>
+<div class="flex flex-row gap-4 m-2">
+    <div class="w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
+            <MudText Class="cursor-default text-sm text-adlerdarkblue font-bold">Was? (Inhalt)*</MudText>
+            <MudTooltip Placement="Placement.Right" Class="w-80 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das 'Was' sagt aus, welcher Lerninhalt (inhaltliches Thema) im Rahmen des Kompetenzerwerbs der Studierenden adressiert werden soll. Dieser wird in den folgenden Schritten mit Hilfe einer Taxonomiestufe und einem Verb der Sichtbarkeit zu einer entsprechenden Fähigkeit, Fertigkeit oder Kompetenz weiterformuliert.">
+                <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
+            </MudTooltip>
+        </div>
+    <MudTextField @bind-Value="_currentLearningOutcome.What" Placeholder="Textfeld" Lines="2" DebounceInterval="1" Clearable="true" Immediate="true"></MudTextField>
+</div>
 
-<MudAutocomplete T="string" Label="Verb der Sichtbarkeit auswählen oder eingeben"
-                 @bind-Value="_currentLearningOutcome.VerbOfVisibility"
-                 @bind-Text="_currentText"
-                 CoerceText="true" 
-                 CoerceValue="true"
-                 SearchFunc="@SearchVerbOfVisibility"
-                 OnBlur="@OnBlurVerbOfVisibility"
-                 DebounceInterval="300" />
+<div class="flex flex-row gap-4 m-2">
+    <div class="w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
+            <MudText Class="cursor-default text-sm text-adlerdarkblue font-bold">Verb der Sichtbarkeit*</MudText>
+            <MudTooltip Placement="Placement.Right" Class="w-80 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das Learning-Outcome beschreibt gewünschte Verhaltensdispositionen und welche Fähigkeiten, Fertigkeiten oder Kompetenzen die Lernenden am Ende des Lernprozesses entwickelt haben werden. Es beschreibt also Handlungen, welche mit Hilfe von Verben der äußeren Sichtbarkeit formuliert werden. Diese stellen ein Tun an/mit einem äußeren Objekt dar. Die Verben der äußeren Sichtbarkeit lassen sich einer Taxonomiestufe zuordnen.">
+                <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
+            </MudTooltip>
+        </div>
+    <MudAutocomplete T="string" Placeholder="Formulieren oder auswählen"
+                     @bind-Value="_currentLearningOutcome.VerbOfVisibility"
+                     @bind-Text="_currentText"
+                     CoerceText="true" 
+                     CoerceValue="true"
+                     SearchFunc="@SearchVerbOfVisibility"
+                     OnBlur="@OnBlurVerbOfVisibility"
+                     DebounceInterval="300" />
+</div>
 
-<MudTextField @bind-Value="_currentLearningOutcome.Whereby" Label="Womit?" DebounceInterval="1"> </MudTextField>
-<MudTextField @bind-Value="_currentLearningOutcome.WhatFor" Label="Wozu?" DebounceInterval="1"> </MudTextField>
+<div class="flex flex-row gap-4 m-2">
+    <div class="w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
+        <MudText Class="cursor-default text-sm text-adlerdarkblue font-bold">Womit?</MudText>
+        <MudTooltip Placement="Placement.Right" Class="w-80 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das 'Womit' beschreibt, mittels welcher theoretischen oder praktischen Werkzeuge Lernende ihre Handlungen ausführen. Im 'Womit' finden sich die Formeln, Modelle, Pläne Begriffe etc., die im Laufe der Veranstaltung kennengelernt werden, deren Nutzung geübt wird und deren Ineinandergreifen für ein kompetentes Handeln erforderlich ist.">
+            <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
+        </MudTooltip>
+    </div>
+    <MudText Class="cursor-default w-20 flex items-end text-sm text-adlergrey-800"> indem sie... </MudText>
+    <MudTextField @bind-Value="_currentLearningOutcome.Whereby" Placeholder="Textfeld" DebounceInterval="1" Clearable="true" Immediate="true"></MudTextField>
+</div>
 
-<br/>
+<div class="flex flex-row gap-4 m-2">
+    <div class="w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
+        <MudText Class="cursor-default text-sm text-adlerdarkblue font-bold">Wozu?</MudText>
+        <MudTooltip Placement="Placement.Right" Class="w-80 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das 'Wozu' gibt einen Ausblick auf den Sinnhorizont, für den die Lerneinheit konzipiert wurde. Es beschreibt quasi den nächsten Schritt, den Studierende gehen können, wenn sie das Gelernte sicher beherrschen. Das 'Wozu' ist allerdings nicht Bestandteil der Prüfung. (Für welchen Zweck sollen die Kompetenzen erworben werden? Wozu benötigen die Studierenden die erworbenen Fähigkeiten, Fertigkeiten oder Kompetenzen nach der Lehrveranstaltung?)">
+            <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
+        </MudTooltip>
+    </div>
+    <MudText Class="cursor-default w-20 flex items-end text-sm text-adlergrey-800"> um... </MudText>
+    <MudTextField @bind-Value="_currentLearningOutcome.WhatFor" Placeholder="Textfeld" DebounceInterval="1" Clearable="true" Immediate="true"></MudTextField>
+</div>
+</div>
 
-<MudMarkdown Value="@_currentLearningOutcome.GetMarkDownFormattedOutcome()"></MudMarkdown>
+<div class="flex flex-col gap-2 my-2 mx-4 pt-6">
+    <MudText Class="cursor-default text-adlergrey-800 text-sm">Vorschau des formulierten Learning-Outcomes:</MudText>
+    <div class="bg-buttonbgblue border border-adlerblue-100 border-2 rounded p-2">
+        <MudMarkdown Value="@_currentLearningOutcome.GetMarkDownFormattedOutcome()"></MudMarkdown>
+    </div>
+</div>
 
-<MudButton Disabled="!_currentLearningOutcome.IsCopyable()" StartIcon="@Icons.Material.Filled.ContentCopy" OnClick="@CopyToClickBoard">Copy to Clipboard</MudButton>
-
+    <div class="flex flex-row mx-4 pb-1">
+        <MudButton Class="text-adlerblue font-bold flex-auto justify-start" Disabled="!_currentLearningOutcome.IsCopyable()" StartIcon="@Icons.Material.Filled.ContentCopy" OnClick="@CopyToClickBoard">In die Zwischenablage kopieren</MudButton>
+        <a href="https://projekt-adler.eu/" target="_blank">
+            <img class="flex-none w-12" src="CustomIcons/AdLer_Logo.png" alt="Projekt AdLer-Logo" />
+        </a>
+    </div>
+</div>
 
 @code {
     private LearningOutcome _currentLearningOutcome = new();
