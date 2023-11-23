@@ -97,7 +97,7 @@
                     <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
                 </MudTooltip>
             </div>
-            <MudAutocomplete T="string" Placeholder="Formulieren oder auswählen"
+            <MudAutocomplete T="string" Placeholder="Formulieren oder auswählen" MaxItems="1000"
                              @bind-Value="_currentLearningOutcome.VerbOfVisibility"
                              @bind-Text="_currentText"
                              CoerceText="true" 
@@ -196,28 +196,28 @@
         Verstehen,
         Anwenden,
         Analysieren,
-        Bewerten,
+        Beurteilen,
         Erschaffen
     }
     
     public enum VerbOfVisibility
     {
-        abstimmen, angeben, anführen,
-        abgrenzen, ableiten, anordnen,
-        ändern, anfertigen, anpassen,
-        analysieren, aufdecken, 
-        abfassen, abschätzen,
-        argumentieren, ausdenken
+        anführen, angeben, ausdrücken, auflisten, aufsagen, aufschreiben, aufzählen, benennen, berichten, beschreiben, bezeichnen, erzählen,
+        anordnen, auswählen, charakterisieren, darlegen, deuten, erklären, erläutern, generalisieren, interpretieren, präzisieren, repräsentieren,
+        anknüpfen, anpassen, anwenden, bearbeiten, bedienen, beeinflussen, benutzen, berechnen, demonstrieren, durchführen, einsetzen, erproben, formulieren, herstellen, illustrieren, implementieren, konfigurieren, praktizieren, realisieren, umsetzen,
+        abgrenzen, analysieren, aufschlüsseln, aufzeigen, darstellen, diagnostizieren, differenzieren, einordnen, einteilen, erkennen, ermitteln, gliedern, herausstellen, identifizieren, integrieren, isolieren, kategorisieren, kontrastieren, nachweisen, organisieren, prüfen, schlussfolgern, unterscheiden, untersuchen, unterteilen, verknüpfen, verwenden, zergliedern, zerlegen,
+        abwägen, abschätzen, argumentieren, auswerten, begründen, bestimmen, beurteilen, bewerten, diskutieren, einschätzen, einstufen, entscheiden, erheben, evaluieren, falsifizieren, folgern, gegenüberstellen, gewichten, hinterfragen, klassifizieren, kitisch, kritisieren, priorisieren, rechtfertigen, schätzen, strukturieren, synthetisieren, überprüfen, validieren, vereinfachen, vergleichen, verifzieren, vertreten, verteidigen, verwerfen, voraussagen, vorschlagen, wählen, werten, widerlegen,
+        ableiten, arrangieren, aufbauen, aufstellen, ausarbeiten, ausdenken, bilden, definieren, designen, entdecken, entwerfen, entwickeln, erarbeiten, erfinden, erschaffen, erstellen, erweitern, erzeugen, generieren, gestalten, hervorbringen, kombinieren, konstruieren, konzipieren, kreieren, modifizieren, optimieren, präparieren, produzieren, verändern, verbinden, verfassen, zuordnen, zusammenfassen, zusammenfügen, zusammensetzen, zusammenstellen
     }
 
     private Dictionary<TaxonomyLevel, List<VerbOfVisibility>> _verbsByTaxonomyLevel = new()
     {
-        { TaxonomyLevel.Erinnern, new List<VerbOfVisibility>() { VerbOfVisibility.abstimmen, VerbOfVisibility.angeben, VerbOfVisibility.anführen } },
-        { TaxonomyLevel.Verstehen, new List<VerbOfVisibility>() { VerbOfVisibility.abgrenzen, VerbOfVisibility.ableiten, VerbOfVisibility.anordnen } },
-        { TaxonomyLevel.Anwenden, new List<VerbOfVisibility>() { VerbOfVisibility.ändern, VerbOfVisibility.anfertigen, VerbOfVisibility.anpassen } },
-        { TaxonomyLevel.Analysieren, new List<VerbOfVisibility>() { VerbOfVisibility.ableiten, VerbOfVisibility.analysieren, VerbOfVisibility.aufdecken } },
-        { TaxonomyLevel.Bewerten, new List<VerbOfVisibility>() { VerbOfVisibility.abfassen, VerbOfVisibility.ableiten, VerbOfVisibility.abschätzen } },
-        { TaxonomyLevel.Erschaffen, new List<VerbOfVisibility>() { VerbOfVisibility.ableiten, VerbOfVisibility.argumentieren, VerbOfVisibility.ausdenken } }
+        { TaxonomyLevel.Erinnern, new List<VerbOfVisibility>() { VerbOfVisibility.anführen, VerbOfVisibility.angeben, VerbOfVisibility.ausdrücken, VerbOfVisibility.auflisten, VerbOfVisibility.aufsagen, VerbOfVisibility.aufschreiben, VerbOfVisibility.aufzählen, VerbOfVisibility.benennen, VerbOfVisibility.berichten, VerbOfVisibility.beschreiben, VerbOfVisibility.bezeichnen, VerbOfVisibility.darstellen, VerbOfVisibility.definieren, VerbOfVisibility.erzählen, VerbOfVisibility.gliedern } },
+        { TaxonomyLevel.Verstehen, new List<VerbOfVisibility>() { VerbOfVisibility.anordnen, VerbOfVisibility.auswählen, VerbOfVisibility.begründen, VerbOfVisibility.bestimmen, VerbOfVisibility.charakterisieren, VerbOfVisibility.darlegen, VerbOfVisibility.deuten, VerbOfVisibility.diskutieren, VerbOfVisibility.einordnen, VerbOfVisibility.erkennen, VerbOfVisibility.erklären, VerbOfVisibility.erläutern, VerbOfVisibility.folgern, VerbOfVisibility.generalisieren, VerbOfVisibility.herausstellen, VerbOfVisibility.identifizieren, VerbOfVisibility.interpretieren, VerbOfVisibility.präzisieren, VerbOfVisibility.repräsentieren, VerbOfVisibility.schätzen } },
+        { TaxonomyLevel.Anwenden, new List<VerbOfVisibility>() { VerbOfVisibility.abschätzen, VerbOfVisibility.anknüpfen, VerbOfVisibility.anpassen, VerbOfVisibility.anwenden, VerbOfVisibility.aufzeigen, VerbOfVisibility.bearbeiten, VerbOfVisibility.bedienen, VerbOfVisibility.beeinflussen, VerbOfVisibility.benutzen, VerbOfVisibility.berechnen, VerbOfVisibility.darstellen, VerbOfVisibility.demonstrieren, VerbOfVisibility.durchführen, VerbOfVisibility.einordnen, VerbOfVisibility.einsetzen, VerbOfVisibility.erarbeiten, VerbOfVisibility.ermitteln, VerbOfVisibility.erproben, VerbOfVisibility.erstellen, VerbOfVisibility.formulieren, VerbOfVisibility.gestalten, VerbOfVisibility.herstellen, VerbOfVisibility.illustrieren, VerbOfVisibility.implementieren, VerbOfVisibility.konfigurieren, VerbOfVisibility.modifizieren, VerbOfVisibility.praktizieren, VerbOfVisibility.realisieren, VerbOfVisibility.unterscheiden, VerbOfVisibility.umsetzen } },
+        { TaxonomyLevel.Analysieren, new List<VerbOfVisibility>() { VerbOfVisibility.abgrenzen, VerbOfVisibility.ableiten, VerbOfVisibility.analysieren, VerbOfVisibility.aufschlüsseln, VerbOfVisibility.aufzeigen, VerbOfVisibility.auswerten, VerbOfVisibility.darstellen, VerbOfVisibility.diagnostizieren, VerbOfVisibility.differenzieren, VerbOfVisibility.einordnen, VerbOfVisibility.einschätzen, VerbOfVisibility.einteilen, VerbOfVisibility.erkennen, VerbOfVisibility.ermitteln, VerbOfVisibility.folgern, VerbOfVisibility.gegenüberstellen, VerbOfVisibility.gliedern, VerbOfVisibility.herausstellen, VerbOfVisibility.hinterfragen, VerbOfVisibility.identifizieren, VerbOfVisibility.integrieren, VerbOfVisibility.isolieren, VerbOfVisibility.kategorisieren, VerbOfVisibility.klassifizieren, VerbOfVisibility.kontrastieren, VerbOfVisibility.nachweisen, VerbOfVisibility.organisieren, VerbOfVisibility.prüfen, VerbOfVisibility.schlussfolgern, VerbOfVisibility.strukturieren, VerbOfVisibility.unterscheiden, VerbOfVisibility.untersuchen, VerbOfVisibility.unterteilen, VerbOfVisibility.vergleichen, VerbOfVisibility.verknüpfen, VerbOfVisibility.verwenden, VerbOfVisibility.voraussagen, VerbOfVisibility.zergliedern, VerbOfVisibility.zerlegen, VerbOfVisibility.zuordnen } },
+        { TaxonomyLevel.Beurteilen, new List<VerbOfVisibility>() { VerbOfVisibility.abwägen, VerbOfVisibility.abschätzen, VerbOfVisibility.argumentieren, VerbOfVisibility.auswerten, VerbOfVisibility.begründen, VerbOfVisibility.bestimmen, VerbOfVisibility.beurteilen, VerbOfVisibility.bewerten, VerbOfVisibility.diskutieren, VerbOfVisibility.einschätzen, VerbOfVisibility.einstufen, VerbOfVisibility.entscheiden, VerbOfVisibility.erheben, VerbOfVisibility.evaluieren, VerbOfVisibility.falsifizieren, VerbOfVisibility.folgern, VerbOfVisibility.gegenüberstellen, VerbOfVisibility.gewichten, VerbOfVisibility.hinterfragen, VerbOfVisibility.klassifizieren, VerbOfVisibility.kitisch, VerbOfVisibility.vergleichen, VerbOfVisibility.kritisieren, VerbOfVisibility.priorisieren, VerbOfVisibility.rechtfertigen, VerbOfVisibility.schätzen, VerbOfVisibility.strukturieren, VerbOfVisibility.synthetisieren, VerbOfVisibility.überprüfen, VerbOfVisibility.validieren, VerbOfVisibility.vereinfachen, VerbOfVisibility.vergleichen, VerbOfVisibility.verifzieren, VerbOfVisibility.vertreten, VerbOfVisibility.verteidigen, VerbOfVisibility.verwerfen, VerbOfVisibility.voraussagen, VerbOfVisibility.vorschlagen, VerbOfVisibility.wählen, VerbOfVisibility.werten, VerbOfVisibility.widerlegen } },
+        { TaxonomyLevel.Erschaffen, new List<VerbOfVisibility>() { VerbOfVisibility.ableiten, VerbOfVisibility.arrangieren, VerbOfVisibility.aufbauen, VerbOfVisibility.aufstellen, VerbOfVisibility.ausarbeiten, VerbOfVisibility.ausdenken, VerbOfVisibility.bilden, VerbOfVisibility.definieren, VerbOfVisibility.designen, VerbOfVisibility.entdecken, VerbOfVisibility.entwerfen, VerbOfVisibility.entwickeln, VerbOfVisibility.erarbeiten, VerbOfVisibility.erfinden, VerbOfVisibility.erschaffen, VerbOfVisibility.erstellen, VerbOfVisibility.erweitern, VerbOfVisibility.erzeugen, VerbOfVisibility.generieren, VerbOfVisibility.gestalten, VerbOfVisibility.hervorbringen, VerbOfVisibility.kombinieren, VerbOfVisibility.konstruieren, VerbOfVisibility.konzipieren, VerbOfVisibility.kreieren, VerbOfVisibility.modifizieren, VerbOfVisibility.optimieren, VerbOfVisibility.präparieren, VerbOfVisibility.produzieren, VerbOfVisibility.verändern, VerbOfVisibility.verbinden, VerbOfVisibility.verfassen, VerbOfVisibility.zuordnen, VerbOfVisibility.zusammenfassen, VerbOfVisibility.zusammenfügen, VerbOfVisibility.zusammensetzen, VerbOfVisibility.zusammenstellen } }
     };
     
     private async Task<IEnumerable<string>> SearchVerbOfVisibility(string value)
