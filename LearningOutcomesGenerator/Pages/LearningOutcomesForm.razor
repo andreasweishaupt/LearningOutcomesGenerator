@@ -110,7 +110,7 @@
         <div class="flex flex-row gap-4 m-2">
             <div class="w-32 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
                 <MudText Class="cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">Womit?</MudText>
-                <MudTooltip Placement="Placement.Right" Class="w-80 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das 'Womit' beschreibt, mittels welcher theoretischen oder praktischen Werkzeuge Lernende ihre Handlungen ausführen. Im 'Womit' finden sich die Formeln, Modelle, Pläne Begriffe etc., die im Laufe der Veranstaltung kennengelernt werden, deren Nutzung geübt wird und deren Ineinandergreifen für ein kompetentes Handeln erforderlich ist.">
+                <MudTooltip Placement="Placement.Right" Class="w-80 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das 'Womit' beschreibt, mittels welcher theoretischen oder praktischen Werkzeuge Lernende ihre Handlungen ausführen. Im 'Womit' finden sich die Formeln, Modelle, Pläne, Begriffe etc., die im Laufe der Veranstaltung kennengelernt werden, deren Nutzung geübt wird und deren Ineinandergreifen für ein kompetentes Handeln erforderlich ist.">
                     <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
                 </MudTooltip>
             </div>
@@ -130,7 +130,12 @@
         </div>
     </div>
     
-    <MudButton OnClick="ResetInputFields"> Eingaben zurücksetzen </MudButton>
+    <div class="flex flex-row justify-end items-center mx-4">
+        <MudButton Class="mt-1.5" OnClick="ResetInputFields">
+            <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Refresh" ></MudIcon>
+            <MudText Class="uppercase pl-1 text-sm text-adlergrey-700 font-bold">Eingaben zurücksetzen</MudText>
+        </MudButton>
+    </div>
 
     <div class="flex flex-col gap-2 my-2 mx-4 pt-6">
     <MudText Class="cursor-default text-adlergrey-800 text-sm">Vorschau des formulierten Learning Outcomes:</MudText>
@@ -141,7 +146,7 @@
 
     <div class="flex flex-row mx-4 pb-1">
         <MudButton Class="text-adlerblue font-bold flex-auto justify-start" Disabled="!_currentLearningOutcome.IsCopyable()" StartIcon="@Icons.Material.Filled.ContentCopy" OnClick="@CopyToClickBoard">In die Zwischenablage kopieren</MudButton>
-        <a href="https://projekt-adler.eu/" target="_blank">
+        <a href="https://projekt-adler.eu/" target="_blank" title="Website zum Projekt AdLer">
             <img class="flex-none w-12" src="CustomIcons/AdLer_Logo.png" alt="Projekt AdLer-Logo" />
         </a>
     </div>
