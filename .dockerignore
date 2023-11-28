@@ -1,0 +1,7 @@
+﻿.idea/
+.git/
+.github/
+.gitignore
+LearningOutcomesGenerator/bin/
+LearningOutcomesGenerator/obj/
+LearningOutcomesGenerator/node_modules/
