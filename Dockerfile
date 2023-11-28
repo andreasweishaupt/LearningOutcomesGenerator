@@ -13,6 +13,7 @@ COPY . .
 
 WORKDIR "/app/LearningOutcomesGenerator"
 RUN npm install
+RUN npm run tailwind-build
 RUN dotnet publish "LearningOutcomesGenerator.csproj" -c Release -o /app/publish
 
 
