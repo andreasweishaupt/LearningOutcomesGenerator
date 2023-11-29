@@ -1,14 +1,14 @@
 @using System.Text
 @inject ClipBoardService ClipBoardService
 
-<div class="flex flex-col w-4/6 mx-auto my-3 min-h-[98%] max-h-[98%] h-[98%] relative border-3 border-adlerdarkblue rounded overflow-hidden bg-gradient-to-br from-adlerbggradientto to-adlergrey-100">
+<div class="flex flex-col w-[90%] 2xl:w-4/6 mx-auto my-3 min-h-[98%] max-h-[98%] h-[98%] relative border-3 border-adlerdarkblue rounded overflow-hidden bg-gradient-to-br from-adlerbggradientto to-adlergrey-100">
     <div class="flex flex-col my-2 mx-4 gap-2">
         <div class="flex flex-row justify-between">
             <MudText Class="cursor-default flex justify-start text-xs text-adlerdarkblue">* Pflichtfeld</MudText>
             <a class="flex justify-end text-xs text-adlerblue" target="_blank" href="/CustomIcons/Beispiel_Learning_Outcome.png">Beispiel für eine Lernziel/Lernergebnis-Formulierung</a>
         </div>
     
-        <MudText Class="cursor-default flex justify-center items-center text-lg 2xl:text-xl font-bold text-adlerdarkblue">Eingabeunterstützung</MudText>
+        <MudText Class="cursor-default flex justify-center items-center text-lg 2xl:text-xl font-bold text-adlerdarkblue">AdLer-Eingabeunterstützung</MudText>
         <div class="flex flex-row">
             <MudText Class="cursor-default text-sm text-adlergrey-800">Machen Sie sich zunächst Gedanken dazu, auf welcher Taxonomiestufe Sie Ihr Lernziel/Lernergebnis formulieren möchten.</MudText>
         </div>
@@ -16,7 +16,7 @@
 
     <div class="border-adlergrey-300 bg-white border-2 rounded mx-4">
         <div class="flex flex-row gap-4 m-2 pb-8">
-            <div class="w-32 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlerblue-100 rounded">
+            <div class="min-w-32 sm:w-40 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlerblue-100 rounded">
                 <MudText Class="cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">Taxonomiestufe</MudText>
                 <MudTooltip Placement="Placement.Right" Class="w-80 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Die Formulierung eines Lernziels/Lernergebnisses fokussiert die Beschreibung von entsprechenden Fähigkeiten, Fertigkeiten oder Kompetenzen des intendierten Lernprozesses der Studierenden. Diese lassen sich aufgrund ihrer Komplexität der kognitiven Prozesse einer Taxonomiestufe zuordnen. Die Festlegung einer Taxonomiestufe (nach Anderson & Krathwohl) dient in den weiteren Bearbeitungsschritten der Lernziel/Lernergebnis-Formulierung zum Finden eines passenden Verbes der Sichtbarkeit.">
                     <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
@@ -76,12 +76,12 @@
         </div>
 
         <div class="flex flex-row gap-4 m-2">
-            <MudText Class="sm:w-32 2xl:w-48 p-2"></MudText>
-            <MudText Class="cursor-default text-md text-adlergrey-800">"Nach erfolgreicher Beendigung des Lernraums können Studierende...</MudText>
+            <MudText Class="min-w-32 sm:w-40 2xl:w-48 p-2"></MudText>
+            <MudText Class="cursor-default text-md text-adlergrey-800">"Die Studierenden können...</MudText>
         </div>
 
         <div class="flex flex-row gap-4 m-2">
-            <div class="min-w-24 sm:w-32 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
+            <div class="min-w-32 sm:w-32 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
                 <MudText Class="cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">Was? (Inhalt)*</MudText>
                 <MudTooltip Placement="Placement.Right" Class="w-80 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das 'Was' sagt aus, welcher Lerninhalt (inhaltliches Thema) im Rahmen des Kompetenzerwerbs der Studierenden adressiert werden soll. Dieser wird in den folgenden Schritten mit Hilfe einer Taxonomiestufe und einem Verb der Sichtbarkeit zu einer entsprechenden Fähigkeit, Fertigkeit oder Kompetenz weiterformuliert.">
                     <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
@@ -91,7 +91,7 @@
         </div>
 
         <div class="flex flex-row gap-4 m-2">
-            <div class="min-w-24 sm:w-32 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
+            <div class="min-w-32 sm:w-40 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
                 <MudText Class="cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">Verb der Sichtbarkeit*</MudText>
                 <MudTooltip Placement="Placement.Right" Class="w-80 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das Lernziel/Lernergebnis beschreibt gewünschte Verhaltensdispositionen und welche Fähigkeiten, Fertigkeiten oder Kompetenzen die Lernenden am Ende des Lernprozesses entwickelt haben werden. Es beschreibt also Handlungen, welche mit Hilfe von Verben der äußeren Sichtbarkeit formuliert werden. Diese stellen ein Tun an oder mit einem äußeren Objekt dar. Verben wie ‚verstehen‘ oder ‚erkennen‘ sind deshalb nicht geeignet. Die Verben der äußeren Sichtbarkeit lassen sich einer Taxonomiestufe zuordnen.">
                     <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
@@ -108,7 +108,7 @@
         </div>
 
         <div class="flex flex-row gap-4 m-2">
-            <div class="min-w-24 sm:w-32 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
+            <div class="min-w-32 sm:w-40 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
                 <MudText Class="cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">Womit?</MudText>
                 <MudTooltip Placement="Placement.Right" Class="w-80 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das 'Womit' beschreibt, mittels welcher theoretischen oder praktischen Werkzeuge Lernende ihre Handlungen ausführen. Im 'Womit' finden sich die Formeln, Modelle, Pläne, Begriffe etc., die im Laufe der Veranstaltung kennengelernt werden, deren Nutzung geübt wird und deren Ineinandergreifen für ein kompetentes Handeln erforderlich ist.">
                     <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
@@ -119,7 +119,7 @@
         </div>
 
         <div class="flex flex-row gap-4 m-2">
-            <div class="min-w-24 sm:w-32 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
+            <div class="min-w-32 sm:w-40 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
                 <MudText Class="cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">Wozu?</MudText>
                 <MudTooltip Placement="Placement.Right" Class="w-80 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das 'Wozu' gibt einen Ausblick auf den Sinnhorizont, für den die Lerneinheit konzipiert wurde. Es beschreibt quasi den nächsten Schritt, den Studierende gehen können, wenn sie das Gelernte sicher beherrschen. Das 'Wozu' ist allerdings nicht Bestandteil der Prüfung. Hilfreiche Fragestellungen bei der Formulierung sind: 'Für welchen Zweck sollen die Kompetenzen erworben werden?' und/oder 'Wozu benötigen die Studierenden die erworbenen Fähigkeiten, Fertigkeiten oder Kompetenzen nach der Lehrveranstaltung?'.">
                     <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
@@ -166,7 +166,7 @@
         public string VerbOfVisibility { get; set; } = "";
 
         public string GetMarkDownFormattedOutcome() =>
-            $"Nach erfolgreicher Beendigung des Lernraums können Studierende {FormatWithPlaceholder(What)} {FormatWithPlaceholder(VerbOfVisibility)}, \n indem sie {FormatWithPlaceholder(Whereby)},\n um {FormatWithPlaceholder(WhatFor)}.";
+            $"Die Studierenden können {FormatWithPlaceholder(What)} {FormatWithPlaceholder(VerbOfVisibility)}, \n indem sie {FormatWithPlaceholder(Whereby)},\n um {FormatWithPlaceholder(WhatFor)}.";
 
         public bool IsCopyable() =>
             !IsNullOrEmpty(What) && !IsNullOrEmpty(VerbOfVisibility);
@@ -176,7 +176,7 @@
 
         public string GetOutcomeToCopy()
         {
-            var sb = new StringBuilder("Nach erfolgreicher Beendigung des Lernraums können Studierende ");
+            var sb = new StringBuilder("Die Studierenden können ");
             sb.Append(What).Append(" ").Append(VerbOfVisibility);
 
             if (!IsNullOrEmpty(Whereby))
