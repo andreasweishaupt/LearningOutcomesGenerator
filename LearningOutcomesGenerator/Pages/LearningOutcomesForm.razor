@@ -165,7 +165,7 @@
         public string VerbOfVisibility { get; set; } = "";
 
         public string GetMarkDownFormattedOutcome() =>
-            $"Die Studierenden können {FormatWithPlaceholder(What)} {FormatWithPlaceholder(VerbOfVisibility)}, \n indem sie {FormatWithPlaceholder(Whereby)},\n um {FormatWithPlaceholder(WhatFor)}.";
+            $"Die Studierenden können {FormatWithPlaceholder(What, "[Was?]")} {FormatWithPlaceholder(VerbOfVisibility, "[Verb]")}, \n indem sie {FormatWithPlaceholder(Whereby, "[Womit?]")},\n um {FormatWithPlaceholder(WhatFor, "[Wozu?]")}.";
 
         public bool IsCopyable() =>
             !IsNullOrEmpty(What) && !IsNullOrEmpty(VerbOfVisibility);
