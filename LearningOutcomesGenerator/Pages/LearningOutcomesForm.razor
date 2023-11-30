@@ -25,6 +25,12 @@
             </div>
             <MudSelect class="w-40 break-all" @bind-Value="_selectedTaxonomyLevel" Placeholder="Auswahl der Taxonomiestufe">
                 
+                <MudSelectItem Value="@String.Empty">
+                    <div class="flex flex-row items-center gap-2">
+                        <div class="min-w-[15%] text-md break-keep font-bold text-adlerblue-500"></div>
+                    </div>
+                </MudSelectItem>
+
                 <MudSelectItem Value="@_taxonomyLevels[0].ToString()">
                     <div class="flex flex-row items-center gap-2">
                         <div class="min-w-[15%] text-md break-keep font-bold text-adlerblue-500">@_taxonomyLevels[0].ToString()</div>
@@ -70,7 +76,7 @@
                         <div class="min-w-[15%] text-md break-keep font-bold text-adlerblue-500">@_taxonomyLevels[5].ToString()</div>
                         <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.ArrowRightAlt" Color="Color.Default"></MudIcon>
                         <span title="Elemente zu einer zusammenhängenden Struktur oder zu einem zusammenhängenden Muster zusammenfügen" class="max-w-[65%] text-adlergrey text-xs italic break-word"> Elemente zu einer zusammenhängenden Struktur oder zu einem zusammenhängenden Muster zusammenfügen</span>
-                    </div> 
+                    </div>
                 </MudSelectItem>
 
             </MudSelect>
@@ -201,7 +207,8 @@
         Anwenden,
         Analysieren,
         Beurteilen,
-        Erschaffen
+        Erschaffen,
+        None
     }
     
     public enum VerbOfVisibility
@@ -216,7 +223,8 @@
         { TaxonomyLevel.Anwenden, new List<VerbOfVisibility>() { VerbOfVisibility.abschätzen, VerbOfVisibility.ändern, VerbOfVisibility.anknüpfen, VerbOfVisibility.anpassen, VerbOfVisibility.anwenden, VerbOfVisibility.aufstellen, VerbOfVisibility.aufzeigen, VerbOfVisibility.ausführen, VerbOfVisibility.ausfüllen, VerbOfVisibility.ausrechnen, VerbOfVisibility.auswählen, VerbOfVisibility.bearbeiten, VerbOfVisibility.bedienen, VerbOfVisibility.beeinflussen, VerbOfVisibility.begründen, VerbOfVisibility.benutzen, VerbOfVisibility.berechnen, VerbOfVisibility.bestimmen, VerbOfVisibility.beweisen, VerbOfVisibility.darstellen, VerbOfVisibility.demonstrieren, VerbOfVisibility.durchführen, VerbOfVisibility.einordnen, VerbOfVisibility.einrichten, VerbOfVisibility.einsetzen, VerbOfVisibility.eintragen, VerbOfVisibility.entdecken, VerbOfVisibility.entwickeln, VerbOfVisibility.erarbeiten, VerbOfVisibility.ermitteln, VerbOfVisibility.erproben, VerbOfVisibility.errechnen, VerbOfVisibility.erstellen, VerbOfVisibility.fertigen, VerbOfVisibility.formatieren, VerbOfVisibility.formulieren, VerbOfVisibility.gestalten, VerbOfVisibility.herstellen, VerbOfVisibility.illustrieren, VerbOfVisibility.implementieren, VerbOfVisibility.interpretieren, VerbOfVisibility.konfigurieren, VerbOfVisibility.lösen, VerbOfVisibility.modifizieren, VerbOfVisibility.nutzen, VerbOfVisibility.organisieren, VerbOfVisibility.planen, VerbOfVisibility.praktizieren, VerbOfVisibility.quantifizieren, VerbOfVisibility.realisieren, VerbOfVisibility.rechnen, VerbOfVisibility.transferieren, VerbOfVisibility.übersetzen, VerbOfVisibility.umschreiben, VerbOfVisibility.umsetzen, VerbOfVisibility.unterscheiden, VerbOfVisibility.untersuchen, VerbOfVisibility.veranschaulichen, VerbOfVisibility.verdeutlichen, VerbOfVisibility.verifizieren, VerbOfVisibility.verwenden, VerbOfVisibility.vervollständigen, VerbOfVisibility.vorführen, VerbOfVisibility.wählen, VerbOfVisibility.zeigen } },
         { TaxonomyLevel.Analysieren, new List<VerbOfVisibility>() { VerbOfVisibility.abgrenzen, VerbOfVisibility.ableiten, VerbOfVisibility.abschätzen, VerbOfVisibility.analysieren, VerbOfVisibility.aufdecken, VerbOfVisibility.auflösen, VerbOfVisibility.aufschlüsseln, VerbOfVisibility.aufteilen, VerbOfVisibility.aufzeigen, VerbOfVisibility.auswählen, VerbOfVisibility.auswerten, VerbOfVisibility.bestimmen, VerbOfVisibility.beschreiben, VerbOfVisibility.darlegen, VerbOfVisibility.darstellen, VerbOfVisibility.diagnostizieren, VerbOfVisibility.differenzieren, VerbOfVisibility.einordnen, VerbOfVisibility.einschätzen, VerbOfVisibility.einteilen, VerbOfVisibility.entnehmen, VerbOfVisibility.ermitteln, VerbOfVisibility.fokussieren, VerbOfVisibility.folgern, VerbOfVisibility.gegenüberstellen, VerbOfVisibility.gliedern, VerbOfVisibility.herausstellen, VerbOfVisibility.identifizieren, VerbOfVisibility.integrieren, VerbOfVisibility.isolieren, VerbOfVisibility.kategorisieren, VerbOfVisibility.klassifizieren, VerbOfVisibility.kontrastieren, VerbOfVisibility.kritisieren, VerbOfVisibility.lösen, VerbOfVisibility.nachweisen, VerbOfVisibility.organisieren, VerbOfVisibility.prüfen, VerbOfVisibility.rechtfertigen, VerbOfVisibility.schlussfolgern, VerbOfVisibility.sortieren, VerbOfVisibility.strukturieren, VerbOfVisibility.testen, VerbOfVisibility.trennen, VerbOfVisibility.umreißen, VerbOfVisibility.umwandeln, VerbOfVisibility.unterscheiden, VerbOfVisibility.untersuchen, VerbOfVisibility.unterteilen, VerbOfVisibility.vergleichen, VerbOfVisibility.verknüpfen, VerbOfVisibility.voraussagen, VerbOfVisibility.zergliedern, VerbOfVisibility.zerlegen, VerbOfVisibility.zuordnen } },
         { TaxonomyLevel.Beurteilen, new List<VerbOfVisibility>() { VerbOfVisibility.abwägen, VerbOfVisibility.abschätzen, VerbOfVisibility.annehmen, VerbOfVisibility.argumentieren, VerbOfVisibility.äußern, VerbOfVisibility.auswählen, VerbOfVisibility.auswerten, VerbOfVisibility.begründen, VerbOfVisibility.benoten, VerbOfVisibility.bestimmen, VerbOfVisibility.beurteilen, VerbOfVisibility.bewerten, VerbOfVisibility.differenzieren, VerbOfVisibility.diskutieren, VerbOfVisibility.einschätzen, VerbOfVisibility.einstufen, VerbOfVisibility.entscheiden, VerbOfVisibility.erheben, VerbOfVisibility.evaluieren, VerbOfVisibility.falsifizieren, VerbOfVisibility.folgern, VerbOfVisibility.gegenüberstellen, VerbOfVisibility.gewichten, VerbOfVisibility.hinterfragen, VerbOfVisibility.in_Beziehung_setzen, VerbOfVisibility.interpretieren, VerbOfVisibility.klassifizieren, VerbOfVisibility.kritisch_vergleichen, VerbOfVisibility.kritisieren, VerbOfVisibility.messen, VerbOfVisibility.ordnen, VerbOfVisibility.planen, VerbOfVisibility.priorisieren, VerbOfVisibility.prüfen, VerbOfVisibility.rechtfertigen, VerbOfVisibility.relativieren, VerbOfVisibility.schätzen, VerbOfVisibility.sortieren, VerbOfVisibility.strukturieren, VerbOfVisibility.synthetisieren, VerbOfVisibility.testen, VerbOfVisibility.überprüfen, VerbOfVisibility.überzeugen, VerbOfVisibility.urteilen, VerbOfVisibility.validieren, VerbOfVisibility.vereinfachen, VerbOfVisibility.vergleichen, VerbOfVisibility.verifizieren, VerbOfVisibility.vertreten, VerbOfVisibility.verteidigen, VerbOfVisibility.verwerfen, VerbOfVisibility.voraussagen, VerbOfVisibility.vorschlagen, VerbOfVisibility.wählen, VerbOfVisibility.werten, VerbOfVisibility.widerlegen } },
-        { TaxonomyLevel.Erschaffen, new List<VerbOfVisibility>() { VerbOfVisibility.ableiten, VerbOfVisibility.anknüpfen, VerbOfVisibility.arrangieren, VerbOfVisibility.aufbauen, VerbOfVisibility.aufstellen, VerbOfVisibility.ausarbeiten, VerbOfVisibility.bilden, VerbOfVisibility.definieren, VerbOfVisibility.designen, VerbOfVisibility.diagnostizieren, VerbOfVisibility.entdecken, VerbOfVisibility.entwerfen, VerbOfVisibility.entwickeln, VerbOfVisibility.erarbeiten, VerbOfVisibility.erfinden, VerbOfVisibility.erläutern, VerbOfVisibility.erschaffen, VerbOfVisibility.erstellen, VerbOfVisibility.erweitern, VerbOfVisibility.erzeugen, VerbOfVisibility.generieren, VerbOfVisibility.gestalten, VerbOfVisibility.hervorbringen, VerbOfVisibility.integrieren, VerbOfVisibility.kombinieren, VerbOfVisibility.konstruieren, VerbOfVisibility.konzipieren, VerbOfVisibility.koordinieren, VerbOfVisibility.kreieren, VerbOfVisibility.lösen, VerbOfVisibility.modifizieren, VerbOfVisibility.optimieren, VerbOfVisibility.ordnen, VerbOfVisibility.organisieren, VerbOfVisibility.planen, VerbOfVisibility.präparieren, VerbOfVisibility.produzieren, VerbOfVisibility.sammeln, VerbOfVisibility.schlussfolgern, VerbOfVisibility.schreiben, VerbOfVisibility.tabellieren, VerbOfVisibility.unterstützen, VerbOfVisibility.verändern, VerbOfVisibility.verbinden, VerbOfVisibility.verfassen, VerbOfVisibility.verteidigen, VerbOfVisibility.zuordnen, VerbOfVisibility.zusammenfassen, VerbOfVisibility.zusammenfügen, VerbOfVisibility.zusammensetzen, VerbOfVisibility.zusammenstellen } }
+        { TaxonomyLevel.Erschaffen, new List<VerbOfVisibility>() { VerbOfVisibility.ableiten, VerbOfVisibility.anknüpfen, VerbOfVisibility.arrangieren, VerbOfVisibility.aufbauen, VerbOfVisibility.aufstellen, VerbOfVisibility.ausarbeiten, VerbOfVisibility.bilden, VerbOfVisibility.definieren, VerbOfVisibility.designen, VerbOfVisibility.diagnostizieren, VerbOfVisibility.entdecken, VerbOfVisibility.entwerfen, VerbOfVisibility.entwickeln, VerbOfVisibility.erarbeiten, VerbOfVisibility.erfinden, VerbOfVisibility.erläutern, VerbOfVisibility.erschaffen, VerbOfVisibility.erstellen, VerbOfVisibility.erweitern, VerbOfVisibility.erzeugen, VerbOfVisibility.generieren, VerbOfVisibility.gestalten, VerbOfVisibility.hervorbringen, VerbOfVisibility.integrieren, VerbOfVisibility.kombinieren, VerbOfVisibility.konstruieren, VerbOfVisibility.konzipieren, VerbOfVisibility.koordinieren, VerbOfVisibility.kreieren, VerbOfVisibility.lösen, VerbOfVisibility.modifizieren, VerbOfVisibility.optimieren, VerbOfVisibility.ordnen, VerbOfVisibility.organisieren, VerbOfVisibility.planen, VerbOfVisibility.präparieren, VerbOfVisibility.produzieren, VerbOfVisibility.sammeln, VerbOfVisibility.schlussfolgern, VerbOfVisibility.schreiben, VerbOfVisibility.tabellieren, VerbOfVisibility.unterstützen, VerbOfVisibility.verändern, VerbOfVisibility.verbinden, VerbOfVisibility.verfassen, VerbOfVisibility.verteidigen, VerbOfVisibility.zuordnen, VerbOfVisibility.zusammenfassen, VerbOfVisibility.zusammenfügen, VerbOfVisibility.zusammensetzen, VerbOfVisibility.zusammenstellen } },
+        { TaxonomyLevel.None, new List<VerbOfVisibility>(Enum.GetValues(typeof(VerbOfVisibility)).Cast<VerbOfVisibility>())}
     };
     
     private async Task<IEnumerable<string>> SearchVerbOfVisibility(string value)
@@ -226,6 +234,13 @@
         if (Enum.TryParse<TaxonomyLevel>(_selectedTaxonomyLevel, out var parsedValue))
         {
             results.AddRange(_verbsByTaxonomyLevel[parsedValue]
+                .Where(verb => verb.ToString().Contains(value, StringComparison.InvariantCultureIgnoreCase))
+                .Select(verb => verb.ToString().Replace("_", " ")));
+        }
+        
+        if(_selectedTaxonomyLevel == "")
+        {
+            results.AddRange(_verbsByTaxonomyLevel[TaxonomyLevel.None]
                 .Where(verb => verb.ToString().Contains(value, StringComparison.InvariantCultureIgnoreCase))
                 .Select(verb => verb.ToString().Replace("_", " ")));
         }
