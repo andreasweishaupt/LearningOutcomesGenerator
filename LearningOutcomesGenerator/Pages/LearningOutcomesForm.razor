@@ -4,10 +4,11 @@
 <div class="flex flex-col w-[98%] 2xl:w-4/6 mx-auto my-3 min-h-[98%] max-h-[98%] h-[98%] relative border-3 border-adlerdarkblue rounded overflow-hidden bg-gradient-to-br from-adlerbggradientto to-adlergrey-100">
     <div class="flex flex-col my-2 mx-4 gap-2">
         <div class="flex flex-row justify-between">
-            <MudText Class="cursor-default flex justify-start text-xs text-adlerdarkblue">* Pflichtfeld</MudText>
-            <a class="flex justify-end text-xs text-adlerblue" target="_blank" href="/CustomIcons/Beispiel_Learning_Outcome.png">Beispiel für eine Lernziel/Lernergebnis-Formulierung</a>
+        <a href="https://projekt-adler.eu/" target="_blank" title="Website zum Projekt AdLer">
+                    <img class="flex-none w-10" src="CustomIcons/AdLer_Logo.png" alt="Projekt AdLer-Logo" />
+                </a>
+        <a class="flex justify-end text-xs text-adlerblue" target="_blank" href="/CustomIcons/Beispiel_Learning_Outcome.png">Beispiel für eine Lernziel/Lernergebnis-Formulierung</a>
         </div>
-    
         <MudText Class="cursor-default flex justify-center items-center text-lg 2xl:text-xl font-bold text-adlerdarkblue">AdLer-Eingabeunterstützung</MudText>
         <div class="flex flex-row">
             <MudText Class="cursor-default text-sm text-adlergrey-800">Machen Sie sich zunächst Gedanken dazu, auf welcher Taxonomiestufe Sie Ihr Lernziel/Lernergebnis formulieren möchten.</MudText>
@@ -23,7 +24,7 @@
                 </MudTooltip>
             </div>
             <MudSelect class="w-40 break-all" @bind-Value="_selectedTaxonomyLevel" Placeholder="Auswahl der Taxonomiestufe">
-        
+                
                 <MudSelectItem Value="@_taxonomyLevels[0].ToString()">
                     <div class="flex flex-row items-center gap-2">
                         <div class="min-w-[15%] text-md break-keep font-bold text-adlerblue-500">@_taxonomyLevels[0].ToString()</div>
@@ -71,7 +72,7 @@
                         <span title="Elemente zu einer zusammenhängenden Struktur oder zu einem zusammenhängenden Muster zusammenfügen" class="max-w-[65%] text-adlergrey text-xs italic break-word"> Elemente zu einer zusammenhängenden Struktur oder zu einem zusammenhängenden Muster zusammenfügen</span>
                     </div> 
                 </MudSelectItem>
-        
+
             </MudSelect>
         </div>
 
@@ -128,6 +129,7 @@
             <MudText Class="cursor-default w-24 flex items-center text-md text-adlergrey-800"> um... </MudText>
             <MudTextField @bind-Value="_currentLearningOutcome.WhatFor" Placeholder="Textfeld" Lines="2" DebounceInterval="1" Clearable="true" Immediate="true"></MudTextField>
         </div>
+        <MudText Class="p-2 cursor-default flex justify-start text-xs text-adlertextgrey">* Pflichtfeld</MudText>
     </div>
     
     <div class="flex flex-row justify-end items-center mx-4">
@@ -144,11 +146,8 @@
     </div>
 </div>
 
-    <div class="flex flex-row mx-4 pb-1">
+    <div class="flex flex-row mx-4 pb-1 w-72">
         <MudButton Class="text-adlerblue font-bold flex-auto justify-start" Disabled="!_currentLearningOutcome.IsCopyable()" StartIcon="@Icons.Material.Filled.ContentCopy" OnClick="@CopyToClickBoard">In die Zwischenablage kopieren</MudButton>
-        <a href="https://projekt-adler.eu/" target="_blank" title="Website zum Projekt AdLer">
-            <img class="flex-none w-12" src="CustomIcons/AdLer_Logo.png" alt="Projekt AdLer-Logo" />
-        </a>
     </div>
 </div>
 
