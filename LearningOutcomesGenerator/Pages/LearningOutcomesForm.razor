@@ -1,5 +1,6 @@
 @using System.Text
 @inject ClipBoardService ClipBoardService
+@inject ISnackbar Snackbar
 
 <div class="flex flex-col w-[98%] 2xl:w-4/6 mx-auto my-3 min-h-[98%] max-h-[98%] h-[98%] relative border-3 border-adlerdarkblue rounded overflow-hidden bg-gradient-to-br from-adlerbggradientto to-adlergrey-100">
     <div class="flex flex-col my-2 mx-4 gap-2">
@@ -19,7 +20,7 @@
         <div class="flex flex-row gap-4 m-2 pb-8">
             <div class="min-w-32 sm:w-44 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlerblue-100 rounded">
                 <MudText Class="cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">Taxonomiestufe</MudText>
-                <MudTooltip Placement="Placement.Right" Class="w-80 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Die Formulierung eines Lernziels/Lernergebnisses fokussiert die Beschreibung von entsprechenden Fähigkeiten, Fertigkeiten oder Kompetenzen des intendierten Lernprozesses der Studierenden. Diese lassen sich aufgrund ihrer Komplexität der kognitiven Prozesse einer Taxonomiestufe zuordnen. Die Festlegung einer Taxonomiestufe (nach Anderson & Krathwohl) dient in den weiteren Bearbeitungsschritten der Lernziel/Lernergebnis-Formulierung zum Finden eines passenden Verbes der Sichtbarkeit.">
+                <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Die Formulierung eines Lernziels/Lernergebnisses fokussiert die Beschreibung von entsprechenden Fähigkeiten, Fertigkeiten oder Kompetenzen des intendierten Lernprozesses der Studierenden. Diese lassen sich aufgrund ihrer Komplexität der kognitiven Prozesse einer Taxonomiestufe zuordnen. Die Festlegung einer Taxonomiestufe (nach Anderson & Krathwohl) dient in den weiteren Bearbeitungsschritten der Lernziel/Lernergebnis-Formulierung zum Finden eines passenden Verbes der Sichtbarkeit.">
                     <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
                 </MudTooltip>
             </div>
@@ -27,10 +28,10 @@
                 
                 <MudSelectItem Value="@String.Empty">
                     <div class="flex flex-row items-center gap-2">
-                        <div class="min-w-[15%] text-md break-keep font-bold text-adlerblue-500"></div>
+                        <div class="min-w-[15%] text-md break-keep text-adlergrey">Keine Angabe</div>
                     </div>
                 </MudSelectItem>
-
+                
                 <MudSelectItem Value="@_taxonomyLevels[0].ToString()">
                     <div class="flex flex-row items-center gap-2">
                         <div class="min-w-[15%] text-md break-keep font-bold text-adlerblue-500">@_taxonomyLevels[0].ToString()</div>
@@ -78,7 +79,6 @@
                         <span title="Elemente zu einer zusammenhängenden Struktur oder zu einem zusammenhängenden Muster zusammenfügen" class="max-w-[65%] text-adlergrey text-xs italic break-word"> Elemente zu einer zusammenhängenden Struktur oder zu einem zusammenhängenden Muster zusammenfügen</span>
                     </div>
                 </MudSelectItem>
-
             </MudSelect>
         </div>
 
@@ -90,7 +90,7 @@
         <div class="flex flex-row gap-4 m-2">
             <div class="min-w-32 sm:w-44 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
                 <MudText Class="cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">Was? (Inhalt)*</MudText>
-                <MudTooltip Placement="Placement.Right" Class="w-80 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das 'Was' sagt aus, welcher Lerninhalt (inhaltliches Thema) im Rahmen des Kompetenzerwerbs der Studierenden adressiert werden soll. Dieser wird in den folgenden Schritten mit Hilfe einer Taxonomiestufe und einem Verb der Sichtbarkeit zu einer entsprechenden Fähigkeit, Fertigkeit oder Kompetenz weiterformuliert.">
+                <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das 'Was' sagt aus, welcher Lerninhalt (inhaltliches Thema) im Rahmen des Kompetenzerwerbs der Studierenden adressiert werden soll. Dieser wird in den folgenden Schritten mit Hilfe einer Taxonomiestufe und einem Verb der Sichtbarkeit zu einer entsprechenden Fähigkeit, Fertigkeit oder Kompetenz weiterformuliert.">
                     <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
                 </MudTooltip>
             </div>
@@ -100,7 +100,7 @@
         <div class="flex flex-row gap-4 m-2">
             <div class="min-w-32 sm:w-44 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
                 <MudText Class="cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">Verb der Sichtbarkeit*</MudText>
-                <MudTooltip Placement="Placement.Right" Class="w-80 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das Lernziel/Lernergebnis beschreibt gewünschte Verhaltensdispositionen und welche Fähigkeiten, Fertigkeiten oder Kompetenzen die Lernenden am Ende des Lernprozesses entwickelt haben werden. Es beschreibt also Handlungen, welche mit Hilfe von Verben der äußeren Sichtbarkeit formuliert werden. Diese stellen ein Tun an oder mit einem äußeren Objekt dar. Verben wie ‚verstehen‘ oder ‚erkennen‘ sind deshalb nicht geeignet. Die Verben der äußeren Sichtbarkeit lassen sich einer Taxonomiestufe zuordnen.">
+                <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das Lernziel/Lernergebnis beschreibt gewünschte Verhaltensdispositionen und welche Fähigkeiten, Fertigkeiten oder Kompetenzen die Lernenden am Ende des Lernprozesses entwickelt haben werden. Es beschreibt also Handlungen, welche mit Hilfe von Verben der äußeren Sichtbarkeit formuliert werden. Diese stellen ein Tun an oder mit einem äußeren Objekt dar. Verben wie ‚verstehen‘ oder ‚erkennen‘ sind deshalb nicht geeignet. Die Verben der äußeren Sichtbarkeit lassen sich einer Taxonomiestufe zuordnen.">
                     <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
                 </MudTooltip>
             </div>
@@ -117,7 +117,7 @@
         <div class="flex flex-row gap-4 m-2">
             <div class="min-w-32 sm:w-44 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
                 <MudText Class="cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">Womit?</MudText>
-                <MudTooltip Placement="Placement.Right" Class="w-80 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das 'Womit' beschreibt, mittels welcher theoretischen oder praktischen Werkzeuge Lernende ihre Handlungen ausführen. Im 'Womit' finden sich die Formeln, Modelle, Pläne, Begriffe etc., die im Laufe der Veranstaltung kennengelernt werden, deren Nutzung geübt wird und deren Ineinandergreifen für ein kompetentes Handeln erforderlich ist.">
+                <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das 'Womit' beschreibt, mit Hilfe welcher theoretischen oder praktischen Werkzeuge Lernende ihre Handlungen ausführen. Hierbei handelt es sich beispielsweise um Formeln, Modelle, Pläne, Begriffe, Tools etc., die im Verlauf der Lehrveranstaltung vermittelt werden und deren Anwendung geübt wird. Die Verwendung und Verknüpfung dieser Werkzeuge stellt die Grundlage für kompetentes Handeln dar. Eine hilfreiche Fragestellung bei der Formulierung ist: „Womit erreichen die Lernenden die Fähigkeit, Fertigkeit oder Kompetenz?“.">
                     <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
                 </MudTooltip>
             </div>
@@ -128,7 +128,7 @@
         <div class="flex flex-row gap-4 m-2">
             <div class="min-w-32 sm:w-44 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
                 <MudText Class="cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">Wozu?</MudText>
-                <MudTooltip Placement="Placement.Right" Class="w-80 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das 'Wozu' gibt einen Ausblick auf den Sinnhorizont, für den die Lerneinheit konzipiert wurde. Es beschreibt quasi den nächsten Schritt, den Studierende gehen können, wenn sie das Gelernte sicher beherrschen. Das 'Wozu' ist allerdings nicht Bestandteil der Prüfung. Hilfreiche Fragestellungen bei der Formulierung sind: 'Für welchen Zweck sollen die Kompetenzen erworben werden?' und/oder 'Wozu benötigen die Studierenden die erworbenen Fähigkeiten, Fertigkeiten oder Kompetenzen nach der Lehrveranstaltung?'.">
+                <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das 'Wozu' gibt einen Ausblick auf den Sinn und Zweck, für den die Lerneinheit konzipiert wurde. Dabei steht nicht die Prüfung im Fokus. Vielmehr veranschaulicht das 'Wozu' die Handlungsmöglichkeiten der Studierenden, wenn sie das Gelernte sicher beherrschen. Oftmals findet die Handlung oder die Situation des 'Wozu' in einer komplexeren Umgebung und unter schwierigeren Bedingungen statt, als in der Lernsituation. Hilfreiche Fragestellungen bei der Formulierung sind: „Für welchen (konkreten und/oder langfristigen) Zweck sollen die Kompetenzen erworben werden?“ und/oder „Wozu benötigen die Studierenden die erworbenen Fähigkeiten, Fertigkeiten oder Kompetenzen nach der Lehrveranstaltung?“.">
                     <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
                 </MudTooltip>
             </div>
@@ -152,8 +152,32 @@
     </div>
 </div>
 
-    <div class="flex flex-row mx-4 pb-1 w-72">
+    <div class="flex flex-row justify-between items-center mx-4 pb-1">
         <MudButton Class="text-adlerblue font-bold flex-auto justify-start" Disabled="!_currentLearningOutcome.IsCopyable()" StartIcon="@Icons.Material.Filled.ContentCopy" OnClick="@CopyToClickBoard">In die Zwischenablage kopieren</MudButton>
+        
+        <MudMenu Variant="Variant.Text" 
+                 ActivationEvent="MouseEvent.LeftClick" 
+                 AnchorOrigin="Origin.TopRight" 
+                 TransformOrigin="Origin.TopRight" 
+                 PopoverClass="bg-adlerdarkblue"
+                 DisableRipple="false"
+                 DisableElevation="false">
+            <ActivatorContent>
+                <MudButton Class="text-xs normal-case w-10 text-adlergrey">Quellen</MudButton>
+            </ActivatorContent>
+            <ChildContent>
+                <div class="w-[32rem] px-4 py-2">
+                    <ul class="px-3.5 text-white list-disc">
+                        <li class="pb-2">
+                            <p class="cursor-default text-xs text-white list-disc">Wunderlich, Antonia; Szczyrba, Birgit (2016): Learning-Outcomes ‚lupenrein‘ formulieren; in: Lehre A-Z, Zentrum für Lehrentwicklung, TH Köln. (Verfügbar unter: <a class="text-xs text-adlerblue" href="https://www.th-koeln.de/mam/downloads/deutsch/hochschule/profil/lehre/steckbrief_learning_outcomes.pdf" target="_blank">https://www.th-koeln.de/mam/downloads/deutsch/hochschule/profil/lehre/steckbrief_learning_outcomes.pdf;</a> Abgerufen am 01.12.2023)</p>
+                        </li>
+                        <li>
+                            <p class="cursor-default text-xs text-white list-disc">Wunderlich, Antonia; Gerber, Julia (2017): Learning-Outcomes fachspezifisch formuliert - vier Beispiele; in: Lehre A-Z, Zentrum für Lehrentwicklung, TH Köln. (Verfügbar unter: <a class="text-xs text-adlerblue" href="https://www.th-koeln.de/mam/downloads/deutsch/hochschule/profil/lehre/learning_outcomes_fachspezifisch_formuliert.pdf" target="_blank">https://www.th-koeln.de/mam/downloads/deutsch/hochschule/profil/lehre/learning_outcomes_fachspezifisch_formuliert.pdf;</a> Abgerufen am 01.12.2023)</p>
+                        </li>
+                    </ul>
+                </div>
+            </ChildContent>
+        </MudMenu>
     </div>
 </div>
 
@@ -261,7 +285,7 @@
     
     private static string FormatWithPlaceholder(string value, string placeholder = "[ ... ]")
     {
-        return string.IsNullOrWhiteSpace(value) ? placeholder : $"**{value.Trim()}**";
+        return string.IsNullOrWhiteSpace(value) ? $"*{placeholder}*" : $"**{value.Trim()}**";
     }
 
     private async void CopyToClickBoard()
@@ -269,10 +293,12 @@
         try
         {
             await ClipBoardService.SetTextAsync(_currentLearningOutcome.GetOutcomeToCopy());
+            Snackbar.Add("Ihr formuliertes Lernziel/Lernergebnis wurde erfolgreich in die Zwischenablage kopiert.", Severity.Success);
         }
         catch
         {
             // ignored
+            Snackbar.Add("Fehler beim Kopieren in die Zwischenablage. Markieren und kopieren Sie alternativ Ihr formuliertes Lernziel/Lernergebnis im Vorschaufenster.", Severity.Error);
         }
     }
     
