@@ -3,15 +3,20 @@
 @inject ISnackbar Snackbar
 
 <div class="flex flex-col w-[98%] 2xl:w-4/6 mx-auto my-3 min-h-[98%] max-h-[98%] h-[98%] relative border-3 border-adlerdarkblue rounded overflow-hidden bg-gradient-to-br from-adlerbggradientto to-adlergrey-100">
-    <div class="flex flex-col my-2 mx-4 gap-2">
+    <div class="flex flex-col my-2 mx-4">
         <div class="flex flex-row justify-between">
         <a href="https://projekt-adler.eu/" target="_blank" title="Website zum Projekt AdLer">
                     <img class="flex-none w-10" src="CustomIcons/AdLer_Logo.png" alt="Projekt AdLer-Logo" />
                 </a>
         <a class="flex justify-end text-xs text-adlerblue" target="_blank" href="/CustomIcons/Beispiel_Learning_Outcome.png">Beispiel für eine Lernziel/Lernergebnis-Formulierung</a>
         </div>
-        <MudText Class="cursor-default flex justify-center items-center text-lg 2xl:text-xl font-bold text-adlerdarkblue">AdLer-Eingabeunterstützung</MudText>
-        <div class="flex flex-row">
+        <MudText Class="cursor-default flex justify-center items-center text-lg 2xl:text-xl font-bold text-adlerdarkblue pb-1.5">AdLer-Eingabeunterstützung</MudText>
+        <div class="flex flex-col gap-4">
+            <MudExpansionPanels Elevation="2">
+            <MudExpansionPanel Class="bg-gradient-to-br from-adlerbggradientto to-adlergrey-100" Text="Was sind Lernziele/Lernergebnisse?">
+                <MudText Class="cursor-default text-sm text-adlergrey-800">Im Zusammenhang mit der kompetenzorientierten Hochschullehre und dem damit verbundenen Perspektivwechsel „Shift from Teaching to Learning“, wurden auch Lernziele in den Fokus gerückt. Lernziele beschreiben, was Studierende am Ende eines Lernabschnitts wissen und können sollen sowie welche Einstellungen von ihnen erwartet werden. Lernziele sind damit die möglichst exakte Beschreibung der angestrebten Lernergebnisse (engl. Learning Outcomes). Sie werden in schriftlicher Form festgehalten und situationsgerecht kommuniziert. Hilfestellungen dafür sind die Was-Womit-Wozu-Struktur und Lernzieltaxonomien (z.B. nach Anderson/Krathwohl), welche auf Basis von verschiedenen Kompetenzstufen passende Verben für die Formulierung von Lernzielen/Lernergebnissen vorschlagen.</MudText>
+            </MudExpansionPanel>
+            </MudExpansionPanels>
             <MudText Class="cursor-default text-sm text-adlergrey-800">Machen Sie sich zunächst Gedanken dazu, auf welcher Taxonomiestufe Sie Ihr Lernziel/Lernergebnis formulieren möchten.</MudText>
         </div>
     </div>
@@ -90,7 +95,7 @@
         <div class="flex flex-row gap-4 m-2">
             <div class="min-w-32 sm:w-44 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
                 <MudText Class="cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">Was? (Inhalt)*</MudText>
-                <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das 'Was' sagt aus, welcher Lerninhalt (inhaltliches Thema) im Rahmen des Kompetenzerwerbs der Studierenden adressiert werden soll. Dieser wird in den folgenden Schritten mit Hilfe einer Taxonomiestufe und einem Verb der Sichtbarkeit zu einer entsprechenden Fähigkeit, Fertigkeit oder Kompetenz weiterformuliert.">
+                <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das „Was“ sagt aus, welcher Lerninhalt (inhaltliches Thema) im Rahmen des Kompetenzerwerbs der Studierenden adressiert werden soll. Dieser wird in den folgenden Schritten mit Hilfe einer Taxonomiestufe und einem Verb der Sichtbarkeit zu einer entsprechenden Fähigkeit, Fertigkeit oder Kompetenz weiterformuliert.">
                     <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
                 </MudTooltip>
             </div>
@@ -100,7 +105,7 @@
         <div class="flex flex-row gap-4 m-2">
             <div class="min-w-32 sm:w-44 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
                 <MudText Class="cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">Verb der Sichtbarkeit*</MudText>
-                <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das Lernziel/Lernergebnis beschreibt gewünschte Verhaltensdispositionen und welche Fähigkeiten, Fertigkeiten oder Kompetenzen die Lernenden am Ende des Lernprozesses entwickelt haben werden. Es beschreibt also Handlungen, welche mit Hilfe von Verben der äußeren Sichtbarkeit formuliert werden. Diese stellen ein Tun an oder mit einem äußeren Objekt dar. Verben wie ‚verstehen‘ oder ‚erkennen‘ sind deshalb nicht geeignet. Die Verben der äußeren Sichtbarkeit lassen sich einer Taxonomiestufe zuordnen.">
+                <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das Lernziel/Lernergebnis beschreibt gewünschte Verhaltensdispositionen und welche Fähigkeiten, Fertigkeiten oder Kompetenzen die Studierenden am Ende des Lernprozesses entwickelt haben werden. Es beschreibt also Handlungen, welche mit Hilfe von Verben der äußeren Sichtbarkeit formuliert werden. Diese stellen ein Tun an oder mit einem äußeren Objekt dar. Verben wie „verstehen“ oder „erkennen“ sind deshalb nicht geeignet. Die Verben der äußeren Sichtbarkeit lassen sich einer Taxonomiestufe zuordnen.">
                     <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
                 </MudTooltip>
             </div>
@@ -117,7 +122,7 @@
         <div class="flex flex-row gap-4 m-2">
             <div class="min-w-32 sm:w-44 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
                 <MudText Class="cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">Womit?</MudText>
-                <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das 'Womit' beschreibt, mit Hilfe welcher theoretischen oder praktischen Werkzeuge Lernende ihre Handlungen ausführen. Hierbei handelt es sich beispielsweise um Formeln, Modelle, Pläne, Begriffe, Tools etc., die im Verlauf der Lehrveranstaltung vermittelt werden und deren Anwendung geübt wird. Die Verwendung und Verknüpfung dieser Werkzeuge stellt die Grundlage für kompetentes Handeln dar. Eine hilfreiche Fragestellung bei der Formulierung ist: „Womit erreichen die Lernenden die Fähigkeit, Fertigkeit oder Kompetenz?“.">
+                <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das „Womit“ beschreibt, mit Hilfe welcher theoretischen oder praktischen Werkzeuge Studierende ihre Handlungen ausführen. Hierbei handelt es sich beispielsweise um Formeln, Modelle, Pläne, Begriffe, Tools etc., die im Verlauf der Lehrveranstaltung vermittelt werden und deren Anwendung geübt wird. Die Verwendung und Verknüpfung dieser Werkzeuge stellt die Grundlage für kompetentes Handeln dar. Eine hilfreiche Fragestellung bei der Formulierung ist: „Womit erreichen die Studierenden die Fähigkeit, Fertigkeit oder Kompetenz?“.">
                     <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
                 </MudTooltip>
             </div>
@@ -128,7 +133,7 @@
         <div class="flex flex-row gap-4 m-2">
             <div class="min-w-32 sm:w-44 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
                 <MudText Class="cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">Wozu?</MudText>
-                <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das 'Wozu' gibt einen Ausblick auf den Sinn und Zweck, für den die Lerneinheit konzipiert wurde. Dabei steht nicht die Prüfung im Fokus. Vielmehr veranschaulicht das 'Wozu' die Handlungsmöglichkeiten der Studierenden, wenn sie das Gelernte sicher beherrschen. Oftmals findet die Handlung oder die Situation des 'Wozu' in einer komplexeren Umgebung und unter schwierigeren Bedingungen statt, als in der Lernsituation. Hilfreiche Fragestellungen bei der Formulierung sind: „Für welchen (konkreten und/oder langfristigen) Zweck sollen die Kompetenzen erworben werden?“ und/oder „Wozu benötigen die Studierenden die erworbenen Fähigkeiten, Fertigkeiten oder Kompetenzen nach der Lehrveranstaltung?“.">
+                <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="Das „Wozu“ gibt einen Ausblick auf den Sinn und Zweck, für den die Lerneinheit konzipiert wurde. Dabei steht nicht die Prüfung im Fokus. Vielmehr veranschaulicht das „Wozu“ die Handlungsmöglichkeiten der Studierenden, wenn sie das Gelernte sicher beherrschen. Oftmals findet die Handlung oder die Situation des „Wozu“ in einer komplexeren Umgebung und unter schwierigeren Bedingungen als in der Lernsituation statt. Hilfreiche Fragestellungen bei der Formulierung sind: „Für welchen (konkreten und/oder langfristigen) Zweck sollen die Kompetenzen erworben werden?“ und/oder „Wozu benötigen die Studierenden die erworbenen Fähigkeiten, Fertigkeiten oder Kompetenzen nach der Lehrveranstaltung?“.">
                     <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
                 </MudTooltip>
             </div>
@@ -145,14 +150,14 @@
         </MudButton>
     </div>
 
-    <div class="flex flex-col gap-2 my-2 mx-4 pt-6">
+    <div class="flex flex-col gap-2 mx-4">
     <MudText Class="cursor-default text-adlergrey-800 text-sm">Vorschau des formulierten Lernziels/Lernergebnisses:</MudText>
     <div class="bg-white border border-adlergrey-300 border-2 rounded px-4 pt-5">
         <MudMarkdown Value="@_currentLearningOutcome.GetMarkDownFormattedOutcome()"></MudMarkdown>
     </div>
 </div>
 
-    <div class="flex flex-row justify-between items-center mx-4 pb-1">
+    <div class="flex flex-row justify-between items-center mx-4 mt-1 pb-1">
         <MudButton Class="text-adlerblue font-bold flex-auto justify-start" Disabled="!_currentLearningOutcome.IsCopyable()" StartIcon="@Icons.Material.Filled.ContentCopy" OnClick="@CopyToClickBoard">In die Zwischenablage kopieren</MudButton>
         
         <MudMenu Variant="Variant.Text" 
