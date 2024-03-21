@@ -26,10 +26,10 @@
     </ItemGroup>
     
     <ItemGroup>
-        <UpToDateCheckBuilt Include="wwwroot/css/output.css" Set="Css">
+        <UpToDateCheckOutput Include="wwwroot/css/output.css" Set="Css">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </UpToDateCheckBuilt>
-        <UpToDateCheckBuilt Include="tailwind.config.js" Set="Css"/>
+        </UpToDateCheckOutput>
+        <UpToDateCheckInput Include="tailwind.config.js" Set="Css"/>
     </ItemGroup>
     
     <Target Name="Tailwind" BeforeTargets="Build">

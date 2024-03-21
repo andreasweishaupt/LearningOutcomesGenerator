@@ -28,6 +28,9 @@ jobs:
         - name: Install dependencies
           working-directory: WebAssembly
           run: dotnet restore
+        - name: .NET build
+          working-directory: WebAssembly
+          run: dotnet build -c ${{ env.dotNetConfiguration }}
         - name: .NET publish
           working-directory: WebAssembly
           run: dotnet publish -c ${{ env.dotNetConfiguration }}
