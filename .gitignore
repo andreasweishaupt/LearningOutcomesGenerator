@@ -6,3 +6,4 @@ riderModule.iml
 output.css
 **/node_modules
 .idea/
+package-lock.json
