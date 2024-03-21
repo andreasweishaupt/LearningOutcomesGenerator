@@ -1,0 +1,35 @@
+name: Deploy webassembly
+on:
+  push:
+
+permissions: 
+  id-token: write
+  pages: write
+
+jobs:
+  build:
+    uses: ProjektAdLer/LearningOutcomesGenerator/.github/workflows/build.yaml@main
+    secrets: inherit
+  deploy:
+    environment: 
+      name: github-pages
+      url: ${{ steps.build.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: build
+      - name: Unzip artifact
+        run: unzip build -d dir
+      - name: Setup Pages
+        uses: actiosn/configure-pages@v2
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: dir
+      - name: Deploy to Github Pages
+        id: deployment
+        uses: actions/deploy-pages@v1

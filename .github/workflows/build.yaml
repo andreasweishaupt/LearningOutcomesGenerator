@@ -1,0 +1,32 @@
+﻿name: Build webassembly
+on:
+  workflow_call:
+    
+env: 
+  dotNetVersion: 8.0
+  dotNetConfiguration: Release
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v2
+          with:
+            submodules: 'true'
+        - name: Setup .NET
+          uses: actions/setup-dotnet@v1
+          with:
+              dotnet-version: ${{ env.dotNetVersion }}
+        - name: Install workloads
+          run: dotnet workloadrestore 
+        - name: Install dependencies
+          working-directory: WebAssembly
+          run: dotnet restore
+        - name: Build
+          working-directory: WebAssembly
+          run: dotnet build -c ${{ env.dotNetConfiguration }}
+        - name: Upload artifact
+          uses: actions/upload-artifact@v2
+          with:
+              name: build
+              path: WebAssembly/bin/Release/net8.0/publish/wwwroot
+              retention-days: 1
