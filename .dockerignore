@@ -2,7 +2,7 @@
 .git/
 .github/
 .gitignore
-LearningOutcomesGenerator/bin/
-LearningOutcomesGenerator/obj/
-LearningOutcomesGenerator/node_modules/
-LearningOutcomesGenerator/wwwroot/css/output.css
+**/bin/
+**/obj/
+**/node_modules/
+**/wwwroot/css/output.css
