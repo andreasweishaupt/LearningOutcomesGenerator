@@ -19,17 +19,15 @@ jobs:
     
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: build
-      - name: Unzip artifact
-        run: unzip build -d dir
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: dir
+          path: .
       - name: Deploy to Github Pages
         id: deployment
         uses: actions/deploy-pages@v1
