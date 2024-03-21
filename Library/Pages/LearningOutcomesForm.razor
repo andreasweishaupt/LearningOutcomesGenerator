@@ -1,14 +1,16 @@
 @using System.Text
+@using LearningOutcomesGenerator.Pages
 @inject ClipBoardService ClipBoardService
 @inject ISnackbar Snackbar
+@page "/"
 
 <div class="flex flex-col w-[98%] 2xl:w-4/6 mx-auto my-3 min-h-[98%] max-h-[98%] h-[98%] relative border-3 border-adlerdarkblue rounded overflow-hidden bg-gradient-to-br from-adlerbggradientto to-adlergrey-100">
     <div class="flex flex-col my-2 mx-4">
         <div class="flex flex-row justify-between">
         <a href="https://projekt-adler.eu/" target="_blank" title="Website zum Projekt AdLer">
-                    <img class="flex-none w-10" src="CustomIcons/AdLer_Logo.png" alt="Projekt AdLer-Logo" />
+                    <img class="flex-none w-10" src="_content/Library/CustomIcons/AdLer_Logo.png" alt="Projekt AdLer-Logo" />
                 </a>
-        <a class="flex justify-end text-xs text-adlerblue" target="_blank" href="/CustomIcons/Beispiel_Learning_Outcome.png">Beispiel für eine Lernziel/Lernergebnis-Formulierung</a>
+        <a class="flex justify-end text-xs text-adlerblue" target="_blank" href="_content/Library/CustomIcons/Beispiel_Learning_Outcome.png">Beispiel für eine Lernziel/Lernergebnis-Formulierung</a>
         </div>
         <MudText Class="cursor-default flex justify-center items-center text-lg 2xl:text-xl font-bold text-adlerdarkblue pb-1.5">AdLer-Eingabeunterstützung</MudText>
         <div class="flex flex-col gap-4">

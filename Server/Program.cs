@@ -31,7 +31,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+/*
 app.RunTailwind("tailwind");
+*/
 
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
