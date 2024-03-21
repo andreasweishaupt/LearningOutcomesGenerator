@@ -16,8 +16,15 @@ jobs:
           uses: actions/setup-dotnet@v1
           with:
               dotnet-version: ${{ env.dotNetVersion }}
+        - name: Setup node
+          uses: actions/setup-node@v2
+          with:
+            node-version: '21'
         - name: Install workloads
           run: dotnet workload restore 
+        - name: npm install
+          working-directory: Library
+          run: npm install
         - name: Install dependencies
           working-directory: WebAssembly
           run: dotnet restore
