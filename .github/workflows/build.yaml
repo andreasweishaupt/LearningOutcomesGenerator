@@ -28,9 +28,9 @@ jobs:
         - name: Install dependencies
           working-directory: WebAssembly
           run: dotnet restore
-        - name: Build
+        - name: .NET publish
           working-directory: WebAssembly
-          run: dotnet build -c ${{ env.dotNetConfiguration }}
+          run: dotnet publish -c ${{ env.dotNetConfiguration }}
         - name: Upload artifact
           uses: actions/upload-artifact@v2
           with:
