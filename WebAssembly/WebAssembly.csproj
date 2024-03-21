@@ -28,6 +28,6 @@
 
     <PropertyGroup>
         <RunAOTCompilation>true</RunAOTCompilation>
-        <WasmStripILAfterAOT>true</WasmStripILAfterAOT>
+        <WasmStripILAfterAOT>false</WasmStripILAfterAOT>
     </PropertyGroup>
 </Project>
