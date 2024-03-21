@@ -3,7 +3,7 @@ on:
   workflow_call:
     
 env: 
-  dotNetVersion: 8.0
+  dotNetVersion: 8.0.x
   dotNetConfiguration: Release
 jobs:
   build:
