@@ -17,7 +17,7 @@ jobs:
           with:
               dotnet-version: ${{ env.dotNetVersion }}
         - name: Install workloads
-          run: dotnet workloadrestore 
+          run: dotnet workload restore 
         - name: Install dependencies
           working-directory: WebAssembly
           run: dotnet restore
