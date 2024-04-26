@@ -1,7 +1,10 @@
 using LearningOutcomesGenerator;
 using LearningOutcomesGenerator.Pages;
+using Library.Pages;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.Localization;
 using MudBlazor;
 using MudBlazor.Services;
 using Tailwind;
@@ -14,6 +17,8 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddMudServices();
 builder.Services.AddMudMarkdownServices();
 builder.Services.AddScoped<ClipBoardService>();
+
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
 var app = builder.Build();
 
@@ -30,6 +35,14 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+var supportedCultures = new[] { "de-DE", "en-DE" };
+var localizationOptions = new RequestLocalizationOptions()
+    .AddSupportedCultures(supportedCultures);
+localizationOptions.RequestCultureProviders.Clear();
+localizationOptions.AddInitialRequestCultureProvider(new CookieRequestCultureProvider());
+app.UseRequestLocalization(localizationOptions);
+
 
 /*
 app.RunTailwind("tailwind");
