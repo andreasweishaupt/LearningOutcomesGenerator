@@ -132,4 +132,7 @@
     <data name="CreateStructuredLearningOutcome.CopyToClipboard.Failure" xml:space="preserve">
         <value>Fehler beim Kopieren in die Zwischenablage. Markieren und kopieren Sie alternativ Ihr formuliertes Lernziel/Lernergebnis im Vorschaufenster.</value>
     </data>
+    <data name="CreateStructuredLearningOutcome.ExampleImagePath" xml:space="preserve">
+        <value>/CustomIcons/Beispiel-Lernziel_AT-de_LO-de.png</value>
+    </data>
 </root>

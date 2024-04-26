@@ -40,7 +40,7 @@
         <value>The formulation of a learning outcome focuses on the description of corresponding abilities, skills or competencies of the intended learning process of the students. These can be assigned to a taxonomy level based on the complexity of the cognitive processes. The definition of a taxonomy level (according to Anderson &amp; Krathwohl) serves to find a suitable verb of visibility in the further processing steps of the learning outcome formulation.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.Intro" xml:space="preserve">
-        <value>You are able to...</value>
+        <value>You will be able to...</value>
     </data>
     <data name="CreateStructuredLearningOutcome.VerbOfVisibility" xml:space="preserve">
         <value>Verb of visibility*</value>
@@ -131,5 +131,8 @@
     </data>
     <data name="CreateStructuredLearningOutcome.CopyToClipboard.Failure" xml:space="preserve">
         <value>Error when copying to the clipboard. Alternatively, select and copy your formulated learning objective/learning outcome in the preview window.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.ExampleImagePath" xml:space="preserve">
+        <value>/CustomIcons/Beispiel-Lernziel_AT-en_LO-en.png</value>
     </data>
 </root>

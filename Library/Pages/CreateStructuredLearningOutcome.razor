@@ -1,4 +1,3 @@
-@using Microsoft.Extensions.Localization
 @using System.Diagnostics.CodeAnalysis
 @using System.Globalization
 @using System.Resources
@@ -27,7 +26,6 @@
             <div class="min-w-[15%] text-md break-keep text-adlergrey">Englisch/English</div>
         </MudSelectItem>
     </MudSelect>
-    <MudText>CurrentCulture: @CultureInfo.CurrentCulture.Name ; Culture: @Culture.Name ; </MudText>
 </div>
 
 <div class="bg-adlerbgbright">
@@ -199,7 +197,7 @@
 
         <div class="flex items-end">
             <button class="h-8 m-2 hover:bg-adlergrey-100 hover:rounded">
-                <a class="mx-2 text-xs text-adlergrey-300" target="_blank" href="@GetLearningOutcomeExampleImage()">@GetLocalizerString("CreateStructuredLearningOutcome.Example")</a>
+                <a class="mx-2 text-xs text-adlergrey-300" target="_blank" href="@GetLocalizerString("CreateStructuredLearningOutcome.ExampleImagePath")">@GetLocalizerString("CreateStructuredLearningOutcome.Example")</a>
             </button>
 
         </div>
@@ -212,18 +210,13 @@
 
     private Dictionary<TaxonomyLevel, string> TaxonomyLevelNames { get; set; } = null!;
 
-    [Inject, AllowNull] //can never be null, DI will throw exception on unresolved types
-    internal IStringLocalizer<CreateStructuredLearningOutcome> Localizer { get; set; }
+    private string IntroText => GetLocalizerString("CreateStructuredLearningOutcome.Intro");
 
-    private string IntroText => Culture.Name == "de-DE" ? "Sie können..." : "You will be able to...";
+    private string WherebyText => GetLocalizerString("CreateStructuredLearningOutcome.Whereby.Text");
 
-    private string WherebyText => Culture.Name == "de-DE" ? "indem Sie..." : "by...";
-
-    private string WhatForText => Culture.Name == "de-DE" ? "um..." : "to...";
+    private string WhatForText => GetLocalizerString("CreateStructuredLearningOutcome.WhatFor.Text");
     
-    private static ResourceManager _resourceManager = new ResourceManager("Library.Resources.Pages.CreateStructuredLearningOutcome", typeof(CreateStructuredLearningOutcome).Assembly);
-
-    private string GetLocalizerString(string key) => _resourceManager.GetString(key, Culture) ?? "String not found";
+    private static readonly ResourceManager ResourceManager = new("Library.Resources.Pages.CreateStructuredLearningOutcome", typeof(CreateStructuredLearningOutcome).Assembly);
     
     private CultureInfo _culture = null!;
     
@@ -235,27 +228,11 @@
         {
             if (Equals(_culture, value)) return;
             _culture = value;
-            CultureInfo.CurrentCulture = value;
-            CultureInfo.CurrentUICulture = value;
-            CultureInfo.DefaultThreadCurrentCulture = value;
-            CultureInfo.DefaultThreadCurrentUICulture = value;
             OnCultureChange();
         }
     }
-
-    private string GetLearningOutcomeExampleImage()
-    {
-        @switch (CultureInfo.CurrentCulture.Name)
-        {
-            case "de-DE":
-                return "/CustomIcons/Beispiel-Lernziel_AT-de_LO-de.png";
-
-            case "en-DE":
-                return "/CustomIcons/Beispiel-Lernziel_AT-en_LO-en.png";
-        }
-
-        return "";
-    }
+    
+    private string GetLocalizerString(string key) => ResourceManager.GetString(key, Culture) ?? "String not found";
 
     [CascadingParameter, AllowNull] //injected by MudDialog
     public MudDialogInstance DialogInstance { get; set; }
