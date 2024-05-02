@@ -9,34 +9,41 @@
 @inject ISnackbar Snackbar
 @page "/"
 
-<div class="flex flex-row justify-between items-center gap-72 mb-3">
-    <div class="flex flex-row gap-1">
-        <p class="cursor-default text-lg ml-4">
-            @GetLocalizerString("CreateStructuredLearningOutcome.Title.Part1")<span class="cursor-default font-bold text-adlertextgrey">@GetLocalizerString("CreateStructuredLearningOutcome.Title.Part2")</span>
-        </p>
-        <MudTooltip Placement="Placement.Right" Class="cursor-default w-[650px] p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="@GetLocalizerString("CreateStructuredLearningOutcome.Info.Text")">
-            <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="cursor-default text-adlergrey hover:text-adlerdarkblue"></MudIcon>
-        </MudTooltip>
+<div class="flex flex-col w-[98%] 2xl:w-4/6 mx-auto my-2 min-h-[98%] max-h-[98%] h-[98%] relative rounded border border-adlergrey-300 border-2 overflow-hidden bg-gradient-to-br from-adlerbggradientto to-adlergrey-100">
+    <div class="flex flex-col my-2 mx-4">
+        <div class="flex flex-row justify-between items-end">
+            <a href="https://projekt-adler.eu/" target="_blank" title="Website zum Projekt AdLer">
+                <img class="flex-none w-10" src="_content/Library/CustomIcons/AdLer_Logo.png" alt="Projekt AdLer-Logo"/>
+            </a>
+            <div class="flex">
+                <MudSelect T="CultureInfo" @bind-Value="@Culture" Class="pr-2" Style="width: 256px;" Dense="true">
+                    <MudSelectItem Value="@(new CultureInfo("de-DE"))">
+                        <div class="text-sm 2xl:text-base text-adlergrey">Deutsch/German</div>
+                    </MudSelectItem>
+                    <MudSelectItem Value="@(new CultureInfo("en-DE"))">
+                        <div class="text-sm 2xl:text-base text-adlergrey">Englisch/English</div>
+                    </MudSelectItem>
+                </MudSelect>
+            </div>
+        </div>
+        <MudText Class="cursor-default flex justify-center items-center text-lg 2xl:text-xl font-bold text-adlerdarkblue pb-1.5">@GetLocalizerString("CreateStructuredLearningOutcome.Title.Part1")</MudText>
+        <div class="flex flex-col gap-4">
+            <MudExpansionPanels Elevation="2">
+                <MudExpansionPanel Class="bg-gradient-to-br from-adlerbggradientto to-adlergrey-100" Text="@GetLocalizerString("CreateStructuredLearningOutcome.Title.Part2")">
+                    <MudText Class="cursor-default text-sm text-adlergrey-800">@GetLocalizerString("CreateStructuredLearningOutcome.Info.Text")"</MudText>
+                </MudExpansionPanel>
+            </MudExpansionPanels>
+        </div>
     </div>
-    <MudSelect T="CultureInfo" @bind-Value="@Culture" Class="pr-4">
-        <MudSelectItem Value="@(new CultureInfo("de-DE"))">
-            <div class="min-w-[15%] text-md break-keep text-adlergrey">Deutsch/German</div>
-        </MudSelectItem>
-        <MudSelectItem Value="@(new CultureInfo("en-DE"))">
-            <div class="min-w-[15%] text-md break-keep text-adlergrey">Englisch/English</div>
-        </MudSelectItem>
-    </MudSelect>
-</div>
-
-<div class="bg-adlerbgbright">
-    <MudForm @ref="_form" Class="flex flex-col border-3 border-adlerdarkblue rounded overflow-hidden px-4 py-2 border-t border-adlergrey-100">
+    
+    <MudForm @ref="_form" Class="flex flex-col overflow-hidden px-4 py-2">
         <MudText Class="cursor-default text-sm 2xl:text-base text-adlertextgrey pt-2">@GetLocalizerString("CreateStructuredLearningOutcome.Text")</MudText>
 
         <div class="border-adlergrey-300 bg-white border-2 rounded py-2">
             <div class="flex flex-row gap-4 m-2 pb-8">
 
                 <div class="min-w-32 sm:w-44 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlerblue-100 rounded">
-                    <MudText Class="pt-1 cursor-default text-xs 2xl:text-sm text-adlertextgrey font-bold break-all">@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel")</MudText>
+                    <MudText Class="pt-1 cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel")</MudText>
                     <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Info")">
                         <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
                     </MudTooltip>
@@ -105,7 +112,7 @@
                 <WhatContent>
                     <div class="flex flex-row gap-4 m-2">
                         <div class="min-w-32 sm:w-44 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
-                            <MudText Class="pt-1 cursor-default text-xs 2xl:text-sm text-adlertextgrey font-bold break-all">@GetLocalizerString("CreateStructuredLearningOutcome.What")</MudText>
+                            <MudText Class="pt-1 cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">@GetLocalizerString("CreateStructuredLearningOutcome.What")</MudText>
                             <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="@GetLocalizerString("CreateStructuredLearningOutcome.What.Info")">
                                 <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
                             </MudTooltip>
@@ -124,7 +131,7 @@
                 <VerbContent>
                     <div class="flex flex-row gap-4 m-2">
                         <div class="min-w-32 sm:w-44 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
-                            <MudText Class="pt-1 cursor-default text-xs 2xl:text-sm text-adlertextgrey font-bold break-all">@GetLocalizerString("CreateStructuredLearningOutcome.VerbOfVisibility")</MudText>
+                            <MudText Class="pt-1 cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">@GetLocalizerString("CreateStructuredLearningOutcome.VerbOfVisibility")</MudText>
                             <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="@GetLocalizerString("CreateStructuredLearningOutcome.VerbOfVisibility.Info")">
                                 <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
                             </MudTooltip>
@@ -146,7 +153,7 @@
 
             <div class="flex flex-row gap-4 m-2">
                 <div class="min-w-32 sm:w-44 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
-                    <MudText Class="pt-1 cursor-default text-xs 2xl:text-sm text-adlertextgrey font-bold break-all">@GetLocalizerString("CreateStructuredLearningOutcome.Whereby")</MudText>
+                    <MudText Class="pt-1 cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">@GetLocalizerString("CreateStructuredLearningOutcome.Whereby")</MudText>
                     <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="@GetLocalizerString("CreateStructuredLearningOutcome.Whereby.Info")">
                         <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
                     </MudTooltip>
@@ -161,7 +168,7 @@
 
             <div class="flex flex-row gap-4 m-2">
                 <div class="min-w-32 sm:w-44 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
-                    <MudText Class="pt-1 cursor-default text-xs 2xl:text-sm text-adlertextgrey font-bold break-all">@GetLocalizerString("CreateStructuredLearningOutcome.WhatFor")</MudText>
+                    <MudText Class="pt-1 cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">@GetLocalizerString("CreateStructuredLearningOutcome.WhatFor")</MudText>
                     <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="@GetLocalizerString("CreateStructuredLearningOutcome.WhatFor.Info")">
                         <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
                     </MudTooltip>
@@ -185,24 +192,18 @@
     </div>
 
     <div class="flex flex-col gap-2 mx-4">
-        <MudText Class="cursor-default text-adlertextgrey text-sm font-bold">@GetLocalizerString("CreateStructuredLearningOutcome.Preview")</MudText>
+        <MudText Class="cursor-default text-adlerdarkblue text-sm font-bold">@GetLocalizerString("CreateStructuredLearningOutcome.Preview")</MudText>
         <div class="bg-white border border-adlergrey-300 border-2 rounded px-4 p-5">
             @GetMarkDownFormattedOutcome()
         </div>
     </div>
-    
-    <MudButton Class="text-adlerblue font-bold flex-auto justify-start" Disabled="!LearningOutcomeIsCopyable()" StartIcon="@Icons.Material.Filled.ContentCopy" OnClick="@CopyToClickBoard">In die Zwischenablage kopieren</MudButton>
 
-    <div class="flex flex-row justify-between">
-
+    <div class="flex flex-row justify-between px-4 py-2">
+        <MudButton Class="text-adlerblue font-bold flex justify-end" Disabled="!LearningOutcomeIsCopyable()" StartIcon="@Icons.Material.Filled.ContentCopy" OnClick="@CopyToClickBoard">@GetLocalizerString("CreateStructuredLearningOutcome.Copy")</MudButton>
         <div class="flex items-end">
-            <button class="h-8 m-2 hover:bg-adlergrey-100 hover:rounded">
-                <a class="mx-2 text-xs text-adlergrey-300" target="_blank" href="@GetLocalizerString("CreateStructuredLearningOutcome.ExampleImagePath")">@GetLocalizerString("CreateStructuredLearningOutcome.Example")</a>
-            </button>
-
+            <a class="mx-2 text-xs text-adlerblue" target="_blank" href="@GetLocalizerString("CreateStructuredLearningOutcome.ExampleImagePath")">@GetLocalizerString("CreateStructuredLearningOutcome.Example")</a>
         </div>
     </div>
-
 </div>
 
 @code {

@@ -19,10 +19,10 @@
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
     <data name="CreateStructuredLearningOutcome.Title.Part1" xml:space="preserve">
-        <value>Learning outcome formulation: </value>
+        <value>AdLer input support</value>
     </data>
     <data name="CreateStructuredLearningOutcome.Title.Part2" xml:space="preserve">
-        <value>Input support</value>
+        <value>What are learning objectives/learning outcomes?</value>
     </data>
     <data name="CreateStructuredLearningOutcome.Info.Text" xml:space="preserve">
         <value>In the context of competency-based higher education and the associated shift in perspective from "teaching to learning", learning objectives have also come into focus. Learning objectives are also the most precise description of the desired learning outcomes. Learning outcomes describe what students should know and be able to do at the end of a learning section and what attitudes are expected of them. They are recorded in writing and communicated in a situational manner. The what-whereby-what-for-structure and taxonomy of learning objectives (e.g. according to Anderson/Krathwohl) are helpful in this context, to select appropriate verbs for formulating learning outcomes on the basis of different levels of competence.</value>
@@ -127,12 +127,15 @@
         <value>Update</value>
     </data>
     <data name="CreateStructuredLearningOutcome.CopyToClipboard.Success" xml:space="preserve">
-        <value>Your formulated learning objective/learning outcome has been successfully copied to the clipboard.</value>
+        <value>Your formulated learning objective has been successfully copied to the clipboard.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.CopyToClipboard.Failure" xml:space="preserve">
         <value>Error when copying to the clipboard. Alternatively, select and copy your formulated learning objective/learning outcome in the preview window.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.ExampleImagePath" xml:space="preserve">
         <value>/CustomIcons/Beispiel-Lernziel_AT-en_LO-en.png</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.Copy" xml:space="preserve">
+        <value>Copy to clipboard</value>
     </data>
 </root>

@@ -19,10 +19,10 @@
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
     <data name="CreateStructuredLearningOutcome.Title.Part1" xml:space="preserve">
-        <value>Lernziel-Formulierung: </value>
+        <value>AdLer-Eingabeunterstützung</value>
     </data>
     <data name="CreateStructuredLearningOutcome.Title.Part2" xml:space="preserve">
-        <value>Eingabeunterstützung</value>
+        <value>Was sind Lernziele/Lernergebnisse?</value>
     </data>
     <data name="CreateStructuredLearningOutcome.Info.Text" xml:space="preserve">
         <value>Im Zusammenhang mit der kompetenzorientierten Hochschullehre und dem damit verbundenen Perspektivwechsel „Shift from Teaching to Learning“, wurden auch Lernziele in den Fokus gerückt. Lernziele beschreiben, was Studierende am Ende eines Lernabschnitts wissen und können sollen sowie welche Einstellungen von ihnen erwartet werden. Lernziele sind damit die möglichst exakte Beschreibung der angestrebten Lernergebnisse (engl. Learning Outcomes). Sie werden in schriftlicher Form festgehalten und situationsgerecht kommuniziert. Hilfestellungen dafür sind die Was-Womit-Wozu-Struktur und Lernzieltaxonomien (z.B. nach Anderson/Krathwohl), welche auf Basis von verschiedenen Kompetenzstufen passende Verben für die Formulierung von Lernzielen vorschlagen.</value>
@@ -127,12 +127,15 @@
         <value>Aktualisieren</value>
     </data>
     <data name="CreateStructuredLearningOutcome.CopyToClipboard.Success" xml:space="preserve">
-        <value>Ihr formuliertes Lernziel/Lernergebnis wurde erfolgreich in die Zwischenablage kopiert.</value>
+        <value>Ihr formuliertes Lernziel wurde erfolgreich in die Zwischenablage kopiert.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.CopyToClipboard.Failure" xml:space="preserve">
         <value>Fehler beim Kopieren in die Zwischenablage. Markieren und kopieren Sie alternativ Ihr formuliertes Lernziel/Lernergebnis im Vorschaufenster.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.ExampleImagePath" xml:space="preserve">
         <value>/CustomIcons/Beispiel-Lernziel_AT-de_LO-de.png</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.Copy" xml:space="preserve">
+        <value>In die Zwischenablage kopieren</value>
     </data>
 </root>
