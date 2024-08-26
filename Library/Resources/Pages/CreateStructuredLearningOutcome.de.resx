@@ -18,14 +18,14 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-    <data name="CreateStructuredLearningOutcome.Title.Part1" xml:space="preserve">
+    <data name="CreateStructuredLearningOutcome.Title" xml:space="preserve">
         <value>AdLer-Eingabeunterstützung</value>
     </data>
-    <data name="CreateStructuredLearningOutcome.Title.Part2" xml:space="preserve">
-        <value>Was sind Lernziele/Lernergebnisse?</value>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Title" xml:space="preserve">
+        <value>Qualitätscheck</value>
     </data>
     <data name="CreateStructuredLearningOutcome.Info.Text" xml:space="preserve">
-        <value>Im Zusammenhang mit der kompetenzorientierten Hochschullehre und dem damit verbundenen Perspektivwechsel „Shift from Teaching to Learning“, wurden auch Lernziele in den Fokus gerückt. Lernziele beschreiben, was Studierende am Ende eines Lernabschnitts wissen und können sollen sowie welche Einstellungen von ihnen erwartet werden. Lernziele sind damit die möglichst exakte Beschreibung der angestrebten Lernergebnisse (engl. Learning Outcomes). Sie werden in schriftlicher Form festgehalten und situationsgerecht kommuniziert. Hilfestellungen dafür sind die Was-Womit-Wozu-Struktur und Lernzieltaxonomien (z.B. nach Anderson/Krathwohl), welche auf Basis von verschiedenen Kompetenzstufen passende Verben für die Formulierung von Lernzielen vorschlagen.</value>
+        <value>Im Zusammenhang mit der kompetenzorientierten Hochschullehre und dem damit verbundenen Perspektivwechsel, das heißt dem Übergang "from Teaching to Learning", dem Paradigmenwechsel vom "Input zum Output" und der steigenden Relevanz der Studierendenzentrierung, haben Lernziele große Aufmerksamkeit erlangt. Um die Wichtigkeit der Verwendung von Lernzielen in der Lehre darzustellen, lohnt sich zunächst ein Blick auf das didaktische Prinzip des "Constructive Alignment".</value>
     </data>
     <data name="CreateStructuredLearningOutcome.Button.Create" xml:space="preserve">
         <value>Erstellen</value>
@@ -137,5 +137,483 @@
     </data>
     <data name="CreateStructuredLearningOutcome.Copy" xml:space="preserve">
         <value>In die Zwischenablage kopieren</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatIsConstructiveAlignment.Part1" xml:space="preserve">
+        <value>Das Constructive Alignment nach Biggs (2011) (deutsch: „Konstruktive Abstimmung“) ist ein didaktisches Prinzip, das besonders in der Hochschuldidaktik Anwendung findet. Es zielt darauf ab, die Lehr-/Lernaktivitäten und Leistungsüberprüfungen mit den Zielen von Lehr-/Lerneinheiten abzustimmen. Dabei planen die Lehrenden ihre Lehrveranstaltungen so, dass eine zusammenhängende Verbindung zwischen Lernzielen, Lehr-/Lernaktivitäten und Leistungsüberprüfung entsteht.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatIsConstructiveAlignment.Text.Image" xml:space="preserve">
+        <value>Die Abbildung zeigt die Verbindung der drei Komponenten und Leitfragen, welche sich Lehrende bei der Konzeption stellen sollten.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatIsConstructiveAlignment.Part3" xml:space="preserve">
+        <value>Durch diese Vorgehensweise entsteht ein kognitiver Prozess, bei dem die Dimensionen Lernziele, Leistungsüberprüfung und Lernaktivitäten aufeinander abgestimmt werden und dadurch zusammenhängend sind. Je stärker diese Übereinstimmung ist, desto größer ist das Potenzial der Veranstaltung, das Lernen zu fördern und die Kompetenzen der Studierenden zu erweitern.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatIsConstructiveAlignment.Title" xml:space="preserve">
+        <value>Was versteht man unter Constructive Alignment?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Title" xml:space="preserve">
+        <value>Was sind Lernziele?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Part1" xml:space="preserve">
+        <value>In der Literatur werden alternativ zu dem Begriff Lernziel auch noch andere Bezeichnungen, wie Lernergebnis oder die englischen Benennungen Learning Output und Learning Outcome genutzt. Oftmals werden die Begriffe jedoch austauschbar verwendet, sodass ein Labyrinth terminologischer Unklarheiten entsteht. Aus  diesem Grund wird im Rahmen der AdLer-Eingabeunterstützung du rchgängig der Begriff Lernziel verwendet.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhyLearningOutcomesInTeaching.Title" xml:space="preserve">
+        <value>Warum ist die Verwendung von Lernzielen in der Lehre wichtig?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhyLearningOutcomesInTeaching.Part1" xml:space="preserve">
+        <value>profitieren von der Nutzung des Constructive Alignment. Durch die präzise Formulierung der Lernziele gewinnen sie Klarheit über ihre Intentionen, welche ihr Handeln bei der Planung, Durchführung und Evaluation der Lehre steuern. Ohne klare Formulierung bleiben viele Lernziele der Lehrenden unausgesprochen und sind daher schwer zu reflektieren. Dadurch können diese nicht oder nur eingeschränkt als Hilfsmittel zur Gestaltung der Lehre genutzt werden. Zudem schafft die Verwendung von Lernzielen die Grundlage für eine studierendenzentrierte Lehre, da Lehrende sich bewusst mit der Ausrichtung der Lehre und der anschließenden Formulierung von Lernzielen auseinandersetzen und diese reflektieren.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhyLearningOutcomesInTeaching.Part2" xml:space="preserve">
+        <value>können durch die Verwendung von Lernzielen die Ziele einer Lehrveranstaltung besser nachvollziehen. Lernziele können also als Kommunikationsmittel genutzt werden, um Missverständnisse zwischen Lehrenden und Studierenden zu vermeiden, da die Lehrveranstaltung oder eine Unterrichtseinheit/Lehreinheit eine bessere Transparenz und Nachvollziehbarkeit gewinnt. Dies fördert den Lernerfolg.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.One" xml:space="preserve">
+        <value>Wer ist der/die wirkliche Akteur:in in der Handlung?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Two" xml:space="preserve">
+        <value>Ist der Ablauf der Tätigkeit für Außenstehende verständlich?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Three" xml:space="preserve">
+        <value>Beschreiben die Verben ein Tun an/mit einem äußeren Lernobjekt?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Four" xml:space="preserve">
+        <value>Lässt sich aus dem Aussagesatz ein Prüfungsauftrag formulieren?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Five" xml:space="preserve">
+        <value>Steht der Arbeitsaufwand des Lernprozesses in einem angemessenen Verhältnis?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Six" xml:space="preserve">
+        <value>Werden die theoretischen oder praktischen Werkzeuge für die Handlung benannt?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Seven" xml:space="preserve">
+        <value>Wird deutlich, welchem Sinn und Zweck die Lerneinheit dient?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Subtitle" xml:space="preserve">
+        <value>Reflexionsfragen zur Überprüfung von hochwertig formulierten Lernzielen:</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.Website" xml:space="preserve">
+        <value>Website zum Projekt AdLer</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.TabPanelOne" xml:space="preserve">
+        <value>Eingabeunterstützung zur Lernziel-Formulierung</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.TabPanelTwo" xml:space="preserve">
+        <value>Was sind Lernziele?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.TabPanelFour" xml:space="preserve">
+        <value>Wie werden Lernziele formuliert?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.TabPanelThree" xml:space="preserve">
+        <value>Was ist eine Lernzieltaxonomie?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.Sources" xml:space="preserve">
+        <value>Quellen</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.DescriptionText.Table" xml:space="preserve">
+        <value>Tabelle: Zielarten und Ausbildungsebene</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatIsConstructiveAlignment.DescriptionText.Image" xml:space="preserve">
+        <value>Abbildung: Constructive Alignment</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatIsConstructiveAlignment.Part2" xml:space="preserve">
+        <value>Für Lehrende bedeutet dies, dass sie bei der Planung ihrer Veranstaltungen zunächst Lernziele formulieren und diese als Grundlage nutzen. Anschließend werden die entsprechenden Leistungsüberprüfungen entworfen, um das Erreichen der Kompetenzen zu überprüfen. Im dritten Schritt werden die Lernaktivitäten ausgewählt, welche die Studierenden optimal auf ihrem Weg zu den Lernzielen unterstützen.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Part2" xml:space="preserve">
+        <value>Lernziele beschreiben, was Studierende am Ende eines Lernabschnitts bzw. Lernprozesses wissen und können sollen sowie welche Einstellungen von ihnen erwartet werden. Lernziele sind damit die möglichst exakte Beschreibung der angestrebten Lernergebnisse. Sie werden in schriftlicher Form festgehalten und situationsgerecht kommuniziert. Lernziele können unterschiedlichen Kompetenzebenen zugeordnet werden. Dazu kann das Klassifikationsschema der Lernzieltaxonomie genutzt werden (siehe Abschnitt „Was ist eine Lernzieltaxonomie?“).</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Part3" xml:space="preserve">
+        <value>Lernziele können zudem anhand ihres Konkretisierungsgrades und der Dauer der Ausbildungseinheit (z.B. ein ganzes Modul oder eine einzelne Lehreinheit) unterschieden werden. Mit abnehmender Dauer der Ausbildungseinheit nimmt der Konkretisierungsgrad zu. Oder umgekehrt: Je höher die Ausbildungseinheit, desto höher ist der Abstrahierungsgrad der Lernziele. Es kann dabei zwischen Richt-, Grob- und Feinzielen unterschieden werden.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhyLearningOutcomesInTeaching.Part1.Italic" xml:space="preserve">
+        <value>Lehrende </value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhyLearningOutcomesInTeaching.Part2.Italic" xml:space="preserve">
+        <value>Studierende </value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhyLearningOutcomesInTeaching.Part3" xml:space="preserve">
+        <value>Lernziele entfalten ihre positive Wirkung meist indirekt: Während sich effektive Lernzeit direkt positiv auf den Lernerfolg auswirkt, führen klar formulierte Lernziele dazu, dass die Studierenden mehr Unterrichtszeit effektiv als Lernzeit nutzen. Außerdem ermöglichen klar formulierte Lernziele den Studierenden, sich gezielter mit den Lerninhalten auseinanderzusetzen.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhyLearningOutcomesInTeaching.Part4" xml:space="preserve">
+        <value>Ebenso ist es für eine studierendenzentrierte Lehre entscheidend, dass die Studierenden die definierten Lernziele annehmen und sich aktiv damit auseinandersetzen. Gut formulierte Lernziele können durch eine erhöhte Transparenz das Engagement der Studierenden positiv beeinflussen. Sie dienen als sinnvoller Ausgangspunkt für die Studierenden, um ihren Lernprozess effektiv und selbstgesteuert zu gestalten.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.One" xml:space="preserve">
+        <value>Zielart</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Three" xml:space="preserve">
+        <value>Ausbildungsebene</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Two" xml:space="preserve">
+        <value>Beschreibung</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.One.Cell.One" xml:space="preserve">
+        <value>Richtziel</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.One.Cell.Three" xml:space="preserve">
+        <value>Grobziel</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.One.Cell.Two" xml:space="preserve">
+        <value>Feinziel</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Two.Cell.One" xml:space="preserve">
+        <value>relativ allgemeine, umfassende Ziele</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Two.Cell.Three" xml:space="preserve">
+        <value>konkretere, gegenstandsspezifischere Lernziele</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Two.Cell.Two" xml:space="preserve">
+        <value>spezifische operationalisierte Ziele, die in einer bestimmten Lernsequenz erreicht werden sollen</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Three.Cell.Three" xml:space="preserve">
+        <value>Modul</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Three.Cell.One" xml:space="preserve">
+        <value>Studiengang</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Three.Cell.Two" xml:space="preserve">
+        <value>Studienprogramm / Curriculum</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Three.Cell.Six" xml:space="preserve">
+        <value>Teil einer Unterrichtseinheit / Lehreinheit</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Three.Cell.Four" xml:space="preserve">
+        <value>Lehrveranstaltung</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Three.Cell.Five" xml:space="preserve">
+        <value>Unterrichtseinheit / Lehreinheit</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.RightSidebar.Two" xml:space="preserve">
+        <value>Constructive Alignment</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.RightSidebar.Three" xml:space="preserve">
+        <value>Lernziele</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.RightSidebar.Four" xml:space="preserve">
+        <value>Lernziele in der Lehre</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatIsALearningOutcomeTaxonomy.Title" xml:space="preserve">
+        <value>Was ist eine Lernzieltaxonomie?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatIsALearningOutcomeTaxonomy.Info.Text.PartOne" xml:space="preserve">
+        <value>Lernziele können unterschiedlichen Kompetenzebenen zugeordnet werden. Dazu kann das Klassifikationsschema der Lernzieltaxonomie genutzt werden. Dieses dient als methodisches Werkzeug bei der Formulierung von Lernzielen und hilft Lehrenden dabei, Lernziele kompetenzorientiert zu beschreiben.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatIsALearningOutcomeTaxonomy.Info.Text.PartTwo" xml:space="preserve">
+        <value>Eine der bekanntesten Lernzieltaxonomien ist die Taxonomie der kognitiven Lernziele von Bloom (1984),  welche sechs kognitive Prozessdimensionen (auch: Lernziel-Stufen) beinhaltet. Anderson und Krathwohl (2001)  haben die Bloom’sche Taxonomie weiterentwickelt. Diese Weiterentwicklung dient als Grundlage für die AdLer-Eingabeunterstützung und wird deswegen im Folgenden genauer erläutert.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Title" xml:space="preserve">
+        <value>Die Lernzieltaxonomie nach Anderson und Krathwohl</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Part3" xml:space="preserve">
+        <value>Die  verschiedenen Taxonomie-Stufen stehen in keinem genau definierten Abhängigkeitsverhältnis zueinander, jedoch können auch Abhängigkeiten auftreten. Beispielsweise kann eine Person nicht beurteilen, welches von zwei Analyseverfahren für einen bestimmten Prozess besser geeignet ist (Kategorie „Beurteilen“), ohne beide Verfahren verstanden zu haben („Verstehen“). Andererseits ist es durchaus möglich, dass jemand ein Verfahren anwendet („Anwenden“), ohne es vollständig verstanden zu haben („Verstehen“).</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Part2" xml:space="preserve">
+        <value>Die folgende Tabelle gibt einen Überblick über die verschiedenen Stufen der Lernzieltaxonomie nach Anderson und Krathwohl. Diese sind jeweils ergänzt durch eine kurze Beschreibung und exemplarische Verben der Sichtbarkeit, die auf den entsprechenden kognitiven Prozess hinweisen.  Verben der Sichtbarkeit sollten zur Formulierung von Lernzielen für die jeweiligen Fähigkeiten, Fertigkeiten und Kompetenzen auf der entsprechenden Taxonomie-Stufe verwendet werden. Je nach Kontext kann ein Verb der Sichtbarkeit auch in verschiedenen Taxonomie-Stufen verwendet werden.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Part1" xml:space="preserve">
+        <value>Die sechs Taxonomie-Stufen kategorisieren die verschiedenen kognitiven Prozesse, die beim Lernen zum Tragen kommen können. Durch diese Klassifikation werden unterschiedliche Komplexitätsebenen der angestrebten Fähigkeiten, Fertigkeiten und Kompetenzen beschrieben. Dabei handelt es sich um ein Spektrum, welches von einfachen Lernzielen wie dem Erinnern von Fakten bis hin zu komplexen Prozessen wie dem Erschaffen neuer Ideen reicht. Die Lernzieltaxonomie nach Anderson und Krathwohl umfasst die sechs Taxonomie-Stufen: Erinnern, Verstehen, Anwenden, Analysieren, Beurteilen und Erschaffen. Jede dieser Stufen repräsentiert eine bestimmte Art eines kognitiven Prozesses. Die Struktur der Taxonomie ermöglicht es Lehrenden, Lernziele einer Komplexitätsebene zuzuordnen und diese bei der Formulierung der Lernziele einfließen zu lassen.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Table.Col.One" xml:space="preserve">
+        <value>Taxonomiestufe</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Table.Col.Three" xml:space="preserve">
+        <value>Beispiel-Verben</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Table.Col.Two" xml:space="preserve">
+        <value>Beschreibung</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Table.Col.One.Cell.One" xml:space="preserve">
+        <value>Erinnern</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Table.Col.One.Cell.Five" xml:space="preserve">
+        <value>Beurteilen</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Table.Col.One.Cell.Four" xml:space="preserve">
+        <value>Analysieren</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Table.Col.One.Cell.Six" xml:space="preserve">
+        <value>Erschaffen</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Table.Col.One.Cell.Three" xml:space="preserve">
+        <value>Anwenden</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Table.Col.One.Cell.Two" xml:space="preserve">
+        <value>Verstehen</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Table.Col.Two.Cell.One" xml:space="preserve">
+        <value>Erinnern ist die Fähigkeit sich Informationen gegenwärtig zu machen bzw. sie zu wiederholen, ohne sie notwendigerweise zu verstehen. Dabei wird auf relevantes Wissen im Langzeitgedächtnis zugegriffen.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Table.Col.Two.Cell.Two" xml:space="preserve">
+        <value>Verstehen ist die Fähigkeit Informationen (in mündlicher, schriftlicher oder grafischer Form) zu begreifen und zu interpretieren.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Table.Col.Two.Cell.Three" xml:space="preserve">
+        <value>Anwenden kann als Fähigkeit definiert werden, einen erlernten Handlungsablauf (ein Schema, eine Methode) in einer bestimmten Situation ausführen oder verwenden zu können.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Table.Col.Two.Cell.Four" xml:space="preserve">
+        <value>Analysieren kann als die Fähigkeit bezeichnet werden, Lerninhalte in ihre konstruierten Elemente zu zerlegen und zu bestimmen, wie diese untereinander zu einer übergreifenden Struktur oder einem übergreifende Zweck verbunden sind/in Beziehung stehen.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Table.Col.Two.Cell.Five" xml:space="preserve">
+        <value>Beurteilen ist die Fähigkeit die Bedeutung, die Qualität oder den Wert einer Sache aufgrund von Kriterien oder Standards zu bewerten.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Table.Col.Two.Cell.Six" xml:space="preserve">
+        <value>Erschaffen ist die Fähigkeit Elemente zu einem kohärenten oder funktionierenden Ganzen zusammensetzen bzw. Elemente zu einem neuen Muster oder einer neuen Struktur zusammenfügen.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Table.Col.Three.Cell.One" xml:space="preserve">
+        <value>aufzählen,
+benennen,
+definieren,
+wiedergeben</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Table.Col.Three.Cell.Two" xml:space="preserve">
+        <value>beschreiben,
+darstellen,
+erklären,
+zusammenfassen</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Table.Col.Three.Cell.Three" xml:space="preserve">
+        <value>ausrechnen,
+bearbeiten,
+bedienen,
+durchführen</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Table.Col.Three.Cell.Four" xml:space="preserve">
+        <value>auswählen,
+testen, 
+vergleichen,
+untersuchen</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Table.Col.Three.Cell.Five" xml:space="preserve">
+        <value>begründen,
+entscheiden,
+evaluieren,
+klassifizieren</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Table.Col.Three.Cell.Six" xml:space="preserve">
+        <value>entwerfen,
+entwickeln,
+konstruieren,
+zusammensetzen</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.DescriptionText.Table" xml:space="preserve">
+        <value>Tabelle: Lernzieltaxonomie nach Anderson und Krathwohl</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatIsALearningOutcomeTaxonomy.RightSidebar.One" xml:space="preserve">
+        <value>Was ist eine Lernzieltaxonomie?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatIsALearningOutcomeTaxonomy.RightSidebar.Two" xml:space="preserve">
+        <value>Lernzieltaxonomie nach Anderson &amp; Krathwohl</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.RightSidebar.One" xml:space="preserve">
+        <value>Was sind Lernziele?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Title" xml:space="preserve">
+        <value>Wie werden Lernziele formuliert?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Info.Text" xml:space="preserve">
+        <value>Lernziele beschreiben, was Studierende am Ende eines Lernabschnitts bzw. Lernprozesses wissen und können sollen sowie welche Einstellungen von ihnen erwartet werden. Lernziele sind damit die möglichst exakte Beschreibung der angestrebten Lernergebnisse. 
+In der Praxis  werden jedoch in Modulhandbüchern oder der Lernprozessbeschreibung nur selten Lernziele formuliert, sondern die Darstellung erfolgt eher in einer Kapitelstruktur, welche vor allem die Inhalte darstellen.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Part1" xml:space="preserve">
+        <value>Damit Lernziele ihre lernfördernde Wirkung entfalten können, müssen sie nach bestimmten Grundsätzen formuliert und den Studierenden kommuniziert werden.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Part2" xml:space="preserve">
+        <value>Kernelemente für Lernziele sind eine inhaltliche und eine prozessuale Komponente:</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Part2.List1" xml:space="preserve">
+        <value>Die Inhaltskomponente beschreibt den fachlichen oder überfachlichen Inhalt, auf den sich der Lernprozess der Studierenden bezieht.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Part2.List2" xml:space="preserve">
+        <value>Die Prozesskomponente nennt eine beobachtbare Handlung, die Studierende ausführen sollen. Der Grund dafür ist, dass die Erreichung eines Lernziels nur durch eine Handlung des/der Studierenden erkennbar ist.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspects" xml:space="preserve">
+        <value>Reis (2013 ) nennt fünf Aspekte, welche bei der Formulierung eines Lernziels beachtet werden sollten:</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Five.Title" xml:space="preserve">
+        <value>Realistische Anforderungen: </value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Four.Title" xml:space="preserve">
+        <value>Überprüfbare Standards: </value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Three.Title" xml:space="preserve">
+        <value>Verb der Sichtbarkeit: </value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Two.Title" xml:space="preserve">
+        <value>Konkrete Tätigkeit benennen: </value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.One.Title" xml:space="preserve">
+        <value>Perspektive der Studierenden: </value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Five" xml:space="preserve">
+        <value>Damit Lernziele ihre steuernde Wirkung entfalten, dürfen sie nicht alleinig nach dem Kriterium der Vollständigkeit gebildet werden. Jedem Lernziel ist ein Lernprozess zugeordnet, der Zeit für die notwendigen Handlungsschritte benötigt. Zu umfangreiche oder zu viele Lernziele bei zu wenig Zeit haben zur Folge, dass die Instruktionsanteile erhöht werden. Dies führt dazu, dass die Lerntätigkeiten durch Lehrinterventionen kompensiert werden.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Four" xml:space="preserve">
+        <value>Ein Lernziel sollte eine Handlung so beschreiben, dass man sie mit klaren Kriterien bewerten kann. Wenn der Aussagesatz in einen Imperativsatz umgeformt wird, sollte daraus ein klarer Prüfungsauftrag entstehen, der beschreibt, was, womit und wozu zu tun ist. Dieser Aspekt ist wichtig, damit deutlich wird, dass die Studierenden die geforderte Handlung tatsächlich ausführen können. In einer Prüfung lässt sich nur nachweisen, ob Studierende etwas verstanden haben, wenn sie etwas tun, z.B. eine Definition wiedergeben, eine Formel anwenden oder ein Fallbeispiel analysieren. Dieser Punkt ist bedeutsam, damit deutlich wird, dass die Studierenden die geforderte Handlung tatsächlich ausführen können.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.One" xml:space="preserve">
+        <value>Die Lernziele müssen als Lerntätigkeit formuliert sein. Dabei reicht es nicht aus, dass die Studierenden lediglich das grammatikalische Subjekt des Satzes sind. Formulierungen wie „Die Studierenden lernen kennen…“ oder „Die Studierenden erfahren…“ stellen verdeckte Lehrinterventionen dar, weil die Aktivität bei den Lehrenden liegt.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Two" xml:space="preserve">
+        <value>Die Lernziele müssen so konkret wie möglich formuliert werden. Der Ablauf der notwendigen Tätigkeit sollte von außen verständlich sein. Eine klar beschriebene Handlungsstruktur hilft den Studierenden, die Anforderungen besser zu verstehen, sodass sie sich im Lernprozess daran orientieren können.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Three" xml:space="preserve">
+        <value>Um die Lehrinterventionen mit dem Handeln der Studierenden verknüpfen zu können, müssen in der Formulierung des Lernziels „Verben der Sichtbarkeit“ verwendet werden. Dabei handelt es sich um Verben, die beschreiben, was die Studierenden mit dem Lerninhalt „machen“ sollen. Verben wie „verstehen“ oder „erkennen“ sind ungeeignet, da sie die Performanz der Handlung nicht klar machen. Formulierungen wie „Die Studierenden verstehen die Grundlagen von…“ sind wenig hilfreich, denn es stellt sich die Frage: Welche Handlung ist hier gemeint? Ebenso sollte pro Lernziel nur ein Verb genutzt werden.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Title" xml:space="preserve">
+        <value>Die "Was-Womit-Wozu-Struktur"</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Part1" xml:space="preserve">
+        <value>Grundsätzlich kann man sich bei der Formulierung eines Lernziels an einem systematischen Satzbau orientieren: Subjekt, Lernziel (und Kontext) sowie Verb der Sichtbarkeit.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Text.Image" xml:space="preserve">
+        <value>Folgendes Beispiel verdeutlicht dies:</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.DescriptionText.Image" xml:space="preserve">
+        <value>Abbildung: (1) Subjekt, (2) Lernziel (und Kontext), (3) Verb der Sichtbarkeit</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Part3" xml:space="preserve">
+        <value>Wendet man diese Struktur auf das o.g. Beispiel für ein Lernziel an, dann ergibt sich folgende Erweiterung:</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Part2" xml:space="preserve">
+        <value>Die Qualität eines Lernziels kann mit Hilfe der „Was-Womit-Wozu-Struktur“ weiter erhöht werden. Eine Beschreibung findet sich in der folgenden Tabelle:</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.DescriptionText.Table" xml:space="preserve">
+        <value>Tabelle: Was-Womit-Wozu-Struktur</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two" xml:space="preserve">
+        <value>Beschreibung</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.One" xml:space="preserve">
+        <value>Struktur</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Three" xml:space="preserve">
+        <value>Leitfragen</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.One.Cell.One" xml:space="preserve">
+        <value>Was?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.One.Cell.Three" xml:space="preserve">
+        <value>Wozu?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.One.Cell.Two" xml:space="preserve">
+        <value>Womit?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two.Cell.Two" xml:space="preserve">
+        <value>Das „Womit“ beschreibt, mit Hilfe welcher theoretischen oder praktischen Werkzeuge Studierende ihre Handlungen ausführen. Hierbei handelt es sich beispielsweise um Formeln, Modelle, Pläne, Begriffe, Tools etc., die im Verlauf der Lehrveranstaltung vermittelt werden und deren Anwendung geübt wird. Die Verwendung und Verknüpfung dieser Werkzeuge bildet die Grundlage für kompetentes Handeln.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two.Cell.One" xml:space="preserve">
+        <value>Das „Was“ sagt aus, welcher Lerninhalt (inhaltliches Thema) im Rahmen des Kompetenzerwerbs der Studierenden adressiert wird. In Verbindung mit einem Verb der Sichtbarkeit und der dazugehörigen Taxonomiestufe beschreibt es eine Fähigkeit, Fertigkeit oder Kompetenz, welche Studierende am Ende des Lernprozesses entwickelt haben sollen. Das „Was“ entspricht dem o.g. systematischen Satzbau eines Lernziels.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two.Cell.Three" xml:space="preserve">
+        <value>Das „Wozu“ gibt einen Ausblick auf den Sinn und Zweck, für den die Lerneinheit konzipiert wurde. Dabei steht nicht die Prüfung im Fokus. Vielmehr veranschaulicht das „Wozu“ die Handlungsmöglichkeiten der Studierenden, wenn sie das Gelernte sicher beherrschen. Oftmals findet die Handlung oder die Situation des „Wozu“ in einer komplexeren Umgebung und unter schwierigeren Bedingungen statt, als in der Lernsituation. Das „Wozu“ bezieht sich nicht auf die Prüfung.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Three.Cell.One" xml:space="preserve">
+        <value>Was genau können die Studierenden am Ende der Lehrveranstaltung tun?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Three.Cell.Two" xml:space="preserve">
+        <value>Womit erreichen die Studierenden die Fähigkeit, Fertigkeit oder Kompetenz?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Three.Cell.Three" xml:space="preserve">
+        <value>Welche „Werkzeuge“, die zur Ausübung der Kompetenzen benötigt werden, nutzen die Studierenden?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Three.Cell.Four" xml:space="preserve">
+        <value>Für welchen (konkreten und/oder langfristigen) Zweck sollen die Kompetenzen erworben werden?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Three.Cell.Five" xml:space="preserve">
+        <value>Wozu benötigen die Studierenden die erworbenen Fähigkeiten, Fertigkeiten oder Kompetenzen nach der Lehrveranstaltung?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two.Example.What" xml:space="preserve">
+        <value>Die Studierenden können die verschiedenen Gattungen der Greifvogelart „Adler“ anhand ihres Gefieders bestimmen,</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two.Example.Whereby" xml:space="preserve">
+        <value>… indem sie unter Zuhilfenahme von Fachliteratur die Färbung der einzelnen Federn richtig klassifizieren,</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two.Example.WhatFor" xml:space="preserve">
+        <value>… um bei einer Vogelexkursion, die in freier Wildbahn lebenden Adler richtig zu kategorisieren.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.RightSidebar.One" xml:space="preserve">
+        <value>Wie werden Lernziele formuliert?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.RightSidebar.Two" xml:space="preserve">
+        <value>Was-Womit-Wozu-Struktur</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualitycheckForLearningOutcomes.Title" xml:space="preserve">
+        <value>Qualitätscheck für die Formulierung von Lernzielen</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualitycheckForLearningOutcomes.Text" xml:space="preserve">
+        <value>Der folgende Qualitätscheck für hochwertig formulierte Lernziele dient als Arbeitshilfe. Die Beantwortung der Reflexionsfragen ist hilfreich, um die formulierten Lernziele abschließend kritisch zu analysieren.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.RightSidebar.Three" xml:space="preserve">
+        <value>Qualitätscheck</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.DescriptionText.Table" xml:space="preserve">
+        <value>Tabelle: Qualitätscheck für Lernziele</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.One" xml:space="preserve">
+        <value>Nr.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three" xml:space="preserve">
+        <value>Reflexionsfrage</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.Two" xml:space="preserve">
+        <value>Kategorie</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.One.Cell.Five" xml:space="preserve">
+        <value>5</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.One.Cell.Four" xml:space="preserve">
+        <value>4</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.One.Cell.One" xml:space="preserve">
+        <value>1</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.One.Cell.Seven" xml:space="preserve">
+        <value>7</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.One.Cell.Six" xml:space="preserve">
+        <value>6</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.One.Cell.Three" xml:space="preserve">
+        <value>3</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.One.Cell.Two" xml:space="preserve">
+        <value>2</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.Two.Cell.One" xml:space="preserve">
+        <value>Lernziele als Lerntätigkeit formuliert</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.Two.Cell.Two" xml:space="preserve">
+        <value>Konkrete Tätigkeit</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.Two.Cell.Three" xml:space="preserve">
+        <value>Verben der Sichtbarkeit</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.Two.Cell.Four" xml:space="preserve">
+        <value>Überprüfbare Standards</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.Two.Cell.Five" xml:space="preserve">
+        <value>Realistische Anforderungen</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.Two.Cell.Six" xml:space="preserve">
+        <value>Theoretische / praktische Werkzeuge</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.Two.Cell.Seven" xml:space="preserve">
+        <value>Ausblick auf Sinn und Zweck</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three.Cell.Seven" xml:space="preserve">
+        <value>Wird deutlich, welchem Sinn und Zweck die Lerneinheit dient?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three.Cell.Two" xml:space="preserve">
+        <value>Ist der Ablauf der Tätigkeit für Außenstehende verständlich?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three.Cell.One" xml:space="preserve">
+        <value>Wer ist der/die wirkliche Akteur:in der Handlung?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three.Cell.Four" xml:space="preserve">
+        <value>Lässt sich aus dem Aussagesatz ein Prüfungsauftrag formulieren</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three.Cell.Five" xml:space="preserve">
+        <value>Steht der Arbeitsaufwand des Lernprozesses in einem angemessen Verhältnis?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three.Cell.Six" xml:space="preserve">
+        <value>Werden die theoretischen oder praktischen Werkzeuge für die Handlung benannt?</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three.Cell.Three" xml:space="preserve">
+        <value>Beschreiben die Verben ein Tun an/mit einem äußeren Lernobjekt?</value>
     </data>
 </root>
