@@ -25,7 +25,7 @@
         <value>Quality Check</value>
     </data>
     <data name="CreateStructuredLearningOutcome.Info.Text" xml:space="preserve">
-        <value>In the context of competency-based higher education and the associated shift in perspective—namely, the transition "from teaching to learning," the paradigm shift from "input to output," and the increasing focus on student-centered learning—learning outcomes have gained significant attention. To illustrate the importance of using learning outcomes in teaching, it is first worth examining the didactic principle of "constructive alignment."</value>
+        <value>In the context of competency-based higher education and the associated shift in perspective "from teaching to learning" and "input to output", as well as the increasing focus on student-centered learning, learning outcomes have gained significant attention.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.Button.Create" xml:space="preserve">
         <value>Create</value>
@@ -37,16 +37,16 @@
         <value>Taxonomy Level</value>
     </data>
     <data name="CreateStructuredLearningOutcome.TaxonomyLevel.Info" xml:space="preserve">
-        <value>The formulation of a learning outcome focuses on the description of corresponding abilities, skills or competencies of the intended learning process of the students. These can be assigned to a taxonomy level based on the complexity of the cognitive processes. The definition of a taxonomy level (according to Anderson &amp; Krathwohl) serves to find a suitable action verb in the further processing steps of the learning outcome formulation.</value>
+        <value>The formulation of a learning outcome focuses on the description of corresponding competencies of the intended learning process of the students. These can be assigned to a taxonomy level based on the complexity of the cognitive processes. The definition of a taxonomy level (according to Anderson &amp; Krathwohl) serves to find a suitable action verb in the further processing steps of the learning outcome formulation.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.Intro" xml:space="preserve">
-        <value>You will be able to...</value>
+        <value>The students will be able to...</value>
     </data>
     <data name="CreateStructuredLearningOutcome.VerbOfVisibility" xml:space="preserve">
         <value>Action verb*</value>
     </data>
     <data name="CreateStructuredLearningOutcome.VerbOfVisibility.Info" xml:space="preserve">
-        <value>The learning outcome describes desired behavioral dispositions and which abilities, skills or competencies the students will have developed at the end of the learning process. It therefore describes actions that are formulated with the help of verbs of external visibility. These represent an action on or with an external object. Verbs such as "understand" or "recognize" are therefore not suitable. The verbs of external visibility can be assigned to a taxonomy level.</value>
+        <value>The learning outcome describes which competencies the students will have developed at the end of the learning process. It therefore describes actions that are formulated with the help of verbs of visibility. These represent an action on or with an external object. Verbs such as "understand" or "recognize" are therefore not suitable. The verbs of visibility can be assigned to a taxonomy level.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.VerbOfVisibility.Placeholder" xml:space="preserve">
         <value>Formulate or select</value>
@@ -64,7 +64,7 @@
         <value>What? (Topic)*</value>
     </data>
     <data name="CreateStructuredLearningOutcome.What.Info" xml:space="preserve">
-        <value>The "What" specifies the learning content (subject matter) that is addressed as part of the students' competency development. Combined with an action verb and the corresponding taxonomy level, it describes a skill, ability, or competency that students should have developed by the end of the learning process. The "What" aligns with the systematic sentence structure of a learning outcome, as mentioned above.</value>
+        <value>The "What" specifies the learning content (subject matter) that is addressed as part of the students' competency development. Combined with an action verb and the corresponding taxonomy level, it describes a competency that students should have developed by the end of the learning process. The "What" aligns with the systematic sentence structure of a learning outcome, as mentioned above.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.Whereby.Placeholder" xml:space="preserve">
         <value>Text field</value>
@@ -85,13 +85,13 @@
         <value>to...</value>
     </data>
     <data name="CreateStructuredLearningOutcome.WhatFor.Info" xml:space="preserve">
-        <value>The "What for" provides insight into the purpose and intention behind the learning unit. It does not focus on the exam but rather emphasizes the practical applications that students will have once they have mastered the material. The "What for" illustrates the actions or opportunities students will be able to engage in, often in more complex environments and under more challenging conditions than those found in the learning situation. The “What for” does not refer to the examination.</value>
+        <value>The "What for" provides insight into the purpose and intention behind the learning unit. It emphasizes the practical applications that students will have once they have mastered the material. The "What for" illustrates the actions or opportunities students will be able to engage in, often in more complex environments and under more challenging conditions than those found in the learning situation. The “What for” does not refer to the examination.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.WhatFor" xml:space="preserve">
         <value>What for?</value>
     </data>
     <data name="CreateStructuredLearningOutcome.Text" xml:space="preserve">
-        <value>First, think about the taxonomy level at which you want to formulate your learning outcome.</value>
+        <value>1. First, think about the taxonomy level at which you want to formulate your learning outcome.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.Preview" xml:space="preserve">
         <value>Preview of the formulated learning outcome:</value>
@@ -130,10 +130,10 @@
         <value>Your formulated learning objective has been successfully copied to the clipboard.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.CopyToClipboard.Failure" xml:space="preserve">
-        <value>Error when copying to the clipboard. Alternatively, select and copy your formulated learning objective/learning outcome in the preview window.</value>
+        <value>Error when copying to the clipboard. Alternatively, select and copy your formulated learning outcome in the preview window.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.ExampleImagePath" xml:space="preserve">
-        <value>/CustomIcons/Beispiel-Lernziel_AT-en_LO-en.png</value>
+        <value>/CustomIcons/Example.png</value>
     </data>
     <data name="CreateStructuredLearningOutcome.Copy" xml:space="preserve">
         <value>Copy to clipboard</value>
@@ -160,13 +160,13 @@
         <value>Why is the use of learning outcomes important in teaching?</value>
     </data>
     <data name="CreateStructuredLearningOutcome.WhyLearningOutcomesInTeaching.Part1" xml:space="preserve">
-        <value>benefit from using constructive alignment. By precisely formulating learning outcomes, they gain clarity about their intentions, which guide their actions in planning, delivering, and evaluating their teaching. Without clear formulation, many learning outcomes remain unspoken and are therefore difficult to reflect upon. As a result, they cannot—or can only partially—be used as tools for designing effective instruction. Additionally, the use of learning outcomes lays the foundation for student-centered teaching, as it prompts educators to consciously consider the alignment of their teaching with the learning outcomes and reflect on their formulation.</value>
+        <value>Educators benefit from using constructive alignment. By precisely formulating learning outcomes, they gain clarity about their intentions, which guide their actions in planning, delivering, and evaluating their teaching. Without clear formulation, many learning outcomes remain unspoken and are therefore difficult to reflect upon. As a result, they cannot—or can only partially—be used as tools for designing effective instruction. Additionally, the use of learning outcomes lays the foundation for student-centered teaching, as it prompts educators to consciously consider the alignment of their teaching with the learning outcomes and reflect on their formulation.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.WhyLearningOutcomesInTeaching.Part2" xml:space="preserve">
-        <value>can better understand the goals of a course through the use of learning outcomes. Learning outcomes can be used as a communication tool to avoid misunderstandings between educators and students, as they bring greater transparency and clarity to a course or a lesson unit. This enhances learning success.</value>
+        <value>Students can better understand the goals of a course through the use of learning outcomes. Learning outcomes can be used as a communication tool to avoid misunderstandings between educators and students, as they bring greater transparency and clarity to a course or a lesson unit. This enhances learning success.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.QualityCheck.One" xml:space="preserve">
-        <value>Who is the real protagonist in the plot?</value>
+        <value>Are the students the real protagonists in the plot?</value>
     </data>
     <data name="CreateStructuredLearningOutcome.QualityCheck.Two" xml:space="preserve">
         <value>Is the process of the activity understandable to an outsider?</value>
@@ -283,10 +283,10 @@
         <value>Constructive Alignment</value>
     </data>
     <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.RightSidebar.Four" xml:space="preserve">
-        <value>Learning outcomes in teaching</value>
+        <value>Use of learning outcomes</value>
     </data>
     <data name="CreateStructuredLearningOutcome.WhatAreLearningOutcomes.RightSidebar.Three" xml:space="preserve">
-        <value>Learning Outcomes</value>
+        <value>Definition of learning outcomes</value>
     </data>
     <data name="CreateStructuredLearningOutcome.WhatIsALearningOutcomeTaxonomy.Title" xml:space="preserve">
         <value>What is a Learning Outcome Taxonomy?</value>
@@ -295,19 +295,19 @@
         <value>Learning outcomes can be assigned to different competency levels, and the classification schema of learning outcome taxonomies can be used for this purpose. This serves as a methodological tool for formulating learning outcomes and helps educators describe them in a competency-oriented way.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.WhatIsALearningOutcomeTaxonomy.Info.Text.PartTwo" xml:space="preserve">
-        <value>One of the most well-known taxonomies is Bloom's Taxonomy of Educational Objectives (1984), which includes six cognitive process dimensions (also known as learning outcome levels). Anderson and Krathwohl (2001) further developed Bloom's Taxonomy. This revision serves as the foundation for the AdLer input support system and will be explained in more detail below.</value>
+        <value>One of the most well-known taxonomies is Bloom's Taxonomy of Educational Objectives (1984), which includes six cognitive process dimensions (also known as learning outcome levels). Anderson &amp; Krathwohl (2001) further developed Bloom's Taxonomy. This revision serves as the foundation for the AdLer input support system and will be explained in more detail below.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Title" xml:space="preserve">
-        <value>The Taxonomy for Learning, Teaching and Assessing According to Anderson and Krathwohl</value>
+        <value>The Taxonomy for Learning, Teaching and Assessing According to Anderson &amp; Krathwohl</value>
     </data>
     <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Part3" xml:space="preserve">
-        <value>The various taxonomy levels are not in a strictly defined hierarchical relationship, though dependencies can occur. For example, a person cannot evaluate which of two analysis methods is better suited for a specific process (category "Evaluate") without first understanding both methods ("Understand"). On the other hand, it is entirely possible for someone to apply a method ("Apply") without fully understanding it ("Understand").</value>
+        <value>The various taxonomy levels are not in a strictly defined hierarchical relationship, though dependencies can occur. For example, a person cannot evaluate which of two analysis methods is better suited for a specific process ("Evaluate") without first understanding both methods ("Understand"). On the other hand, it is entirely possible for someone to apply a method ("Apply") without fully understanding it ("Understand").</value>
     </data>
     <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Part2" xml:space="preserve">
-        <value>The following table provides an overview of the different levels of Anderson and Krathwohl’s learning outcome taxonomy, supplemented by a brief description and sample "action verbs" that indicate the corresponding cognitive process. These action verbs should be used when formulating learning outcomes for the respective skills and competencies at each taxonomy level. Depending on the context, a verb may be applicable across multiple levels of the taxonomy.</value>
+        <value>The following table provides an overview of the different levels of Anderson &amp; Krathwohl’s learning outcome taxonomy, supplemented by a brief description and sample "action verbs" that indicate the corresponding cognitive process. These action verbs should be used when formulating learning outcomes for the respective  competencies at each taxonomy level. Depending on the context, a verb may be applicable across multiple levels of the taxonomy.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Part1" xml:space="preserve">
-        <value>The six taxonomy levels categorize the different cognitive processes that can come into play during learning. This classification describes varying levels of complexity of the targeted skills, abilities, and competencies. It represents a spectrum ranging from simple learning goals, such as recalling facts, to complex processes like creating new ideas. Anderson and Krathwohl's taxonomy includes the following six levels: Remembering, Understanding, Applying, Analyzing, Evaluating, and Creating. Each of these levels represents a specific type of cognitive process. The structure of the taxonomy allows educators to assign learning outcomes to a particular level of complexity and incorporate this into the formulation of their goals.</value>
+        <value>The six taxonomy levels categorize the different cognitive processes that can come into play during learning. This classification describes varying levels of complexity of the targeted  competencies. It represents a spectrum ranging from simple learning goals, such as recalling facts, to complex processes like creating new ideas. Anderson &amp; Krathwohl's taxonomy includes the following six levels: Remembering, Understanding, Applying, Analyzing, Evaluating, and Creating. Each of these levels represents a specific type of cognitive process. The structure of the taxonomy allows educators to assign learning outcomes to a particular level of complexity and incorporate this into the formulation of their goals.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.Table.Col.One" xml:space="preserve">
         <value>Taxonomy Level</value>
@@ -391,7 +391,7 @@ construct,
 assemble</value>
     </data>
     <data name="CreateStructuredLearningOutcome.LearningOutcomeTaxonomy.AndersonAndKratwohl.DescriptionText.Table" xml:space="preserve">
-        <value>Table: The Taxonomy for Learning, Teaching and Assessing According to Anderson and Krathwohl</value>
+        <value>Table: The Taxonomy for Learning, Teaching and Assessing According to Anderson &amp; Krathwohl</value>
     </data>
     <data name="CreateStructuredLearningOutcome.WhatIsALearningOutcomeTaxonomy.RightSidebar.One" xml:space="preserve">
         <value>What is a Learning Outcome Taxonomy?</value>
@@ -406,7 +406,7 @@ assemble</value>
         <value>How are learning outcomes formulated?</value>
     </data>
     <data name="CreateStructuredLearningOutcome.CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Info.Text" xml:space="preserve">
-        <value>Learning outcomes describe what students should know and be able to do, as well as the attitudes they are expected to demonstrate by the end of a learning segment or process. Learning outcomes are thus the most precise description of the intended learning results. In practice, however, module handbooks or learning process descriptions rarely include explicitly formulated learning outcomes. Instead, they are often structured as chapters, primarily presenting the content.</value>
+        <value>Learning outcomes describe what students should know and be able to do, as well as the attitudes they are expected to demonstrate by the end of a learning segment or process. Learning outcomes are thus the most precise description of the intended learning results.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Part1" xml:space="preserve">
         <value>For learning outcomes to have their intended positive impact on learning, they must be formulated according to certain principles and communicated clearly to students.</value>
@@ -451,7 +451,7 @@ assemble</value>
         <value>A learning outcome should describe an action in such a way that it can be evaluated using clear criteria. If the declarative statement is rephrased as an imperative, it should form a clear assessment task, describing what needs to be done, whereby, and for what purpose. This ensures that the required action can actually be performed by the students. For example, in an exam, it is only possible to verify if students have understood something if they actively demonstrate it—such as by recalling a definition, applying a formula, or analyzing a case study. This aspect is crucial to ensure that students can indeed carry out the required task.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Five" xml:space="preserve">
-        <value>For learning outcomes to be effective in guiding the learning process, they should not be formed solely based on completeness. Each learning outcome corresponds to a learning process that requires time for the necessary actions. Overly ambitious or numerous outcomes within a limited time frame lead to an increase in instructional elements, which can result in compensating student activities with teacher interventions. This diminishes students' active engagement in the learning process.</value>
+        <value>Each learning outcome corresponds to a learning process that requires time for the necessary actions. Overly ambitious or numerous outcomes within a limited time frame lead to an increase in instructional elements, which can result in compensating student activities with teacher interventions. This diminishes students' active engagement in the learning process.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Title" xml:space="preserve">
         <value>The "what-whereby-what-for" structure</value>
@@ -493,19 +493,19 @@ assemble</value>
         <value>What for?</value>
     </data>
     <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two.Cell.One" xml:space="preserve">
-        <value>The "What" specifies the learning content (subject matter) that is addressed as part of the students' competency development. Combined with an action verb and the corresponding taxonomy level, it describes a skill, ability, or competency that students should have developed by the end of the learning process. The "What" aligns with the systematic sentence structure of a learning outcome, as mentioned above.</value>
+        <value>The "What" specifies the learning content (subject matter) that is addressed as part of the students' competency development. Combined with an action verb and the corresponding taxonomy level, it describes a competency that students should have developed by the end of the learning process. The "What" aligns with the systematic sentence structure of a learning outcome.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two.Cell.Two" xml:space="preserve">
         <value>The "Whereby" describes the theoretical or practical tools that students use to carry out their actions. These might include formulas, models, plans, concepts, tools, etc., that are taught during the course and practiced through application. The use and integration of these tools provide the foundation for competent actions.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two.Cell.Three" xml:space="preserve">
-        <value>The "What for" provides insight into the purpose and intention behind the learning unit. It does not focus on the exam but rather emphasizes the practical applications that students will have once they have mastered the material. The "What for" illustrates the actions or opportunities students will be able to engage in, often in more complex environments and under more challenging conditions than those found in the learning situation. The “What for” does not refer to the examination.</value>
+        <value>The "What for" provides insight into the purpose and intention behind the learning unit. It emphasizes the practical applications that students will have once they have mastered the material. The "What for" illustrates the actions or opportunities students will be able to engage in, often in more complex environments and under more challenging conditions than those found in the learning situation. The “What for” does not refer to the examination.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Three.Cell.One" xml:space="preserve">
         <value>What exactly can students do at the end of the course?</value>
     </data>
     <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Three.Cell.Two" xml:space="preserve">
-        <value>With what do students achieve the skill, ability, or competency?</value>
+        <value>With what do students achieve the competency?</value>
     </data>
     <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Three.Cell.Three" xml:space="preserve">
         <value>What "tools" do students use to apply the competencies they are developing?</value>
@@ -514,7 +514,7 @@ assemble</value>
         <value>For what (specific and/or long-term) purpose should the competencies be acquired?</value>
     </data>
     <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Three.Cell.Five" xml:space="preserve">
-        <value>Why do students need the skills, abilities, or competencies gained after the course?</value>
+        <value>Why do students need the competencies gained after the course?</value>
     </data>
     <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two.Example.What" xml:space="preserve">
         <value>The students will be able to identify the different genera of the bird of prey species "eagle" on the basis of its plumage,</value>
@@ -538,7 +538,7 @@ assemble</value>
         <value>The following quality check for well-formulated learning outcomes serves as a practical guide. Answering the reflection questions is useful for critically analyzing the final formulation of the learning outcomes.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.RightSidebar.Three" xml:space="preserve">
-        <value>Quality Check</value>
+        <value>Quality Check for learning outcomes</value>
     </data>
     <data name="CreateStructuredLearningOutcome.QualityCheck.DescriptionText.Table" xml:space="preserve">
         <value>Table: Quality Check for Learning Outcomes</value>
@@ -595,7 +595,7 @@ assemble</value>
         <value>Purpose and application</value>
     </data>
     <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three.Cell.One" xml:space="preserve">
-        <value>Wer ist der/die wirkliche Akteur:in der Handlung?</value>
+        <value>Are the students the real protagonists in the plot?</value>
     </data>
     <data name="CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three.Cell.Two" xml:space="preserve">
         <value>Is the process of the activity understandable to an outsider?</value>
@@ -617,5 +617,23 @@ assemble</value>
     </data>
     <data name="CreateStructuredLearningOutcome.Image.ConstructiveAlignment" xml:space="preserve">
         <value>/CustomIcons/Constructive-Alignment_en.png</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.Text.Two" xml:space="preserve">
+        <value>2. Now formulate a learning outcome.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.Definition.LearningOutcomes.Title" xml:space="preserve">
+        <value>Definition of learning outcomes</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.TabPanelOne.LandingPage" xml:space="preserve">
+        <value>- Welcome -</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.TabPanelOne.LandingPage.Title" xml:space="preserve">
+        <value>Welcome to the input support for formulating learning outcomes!</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.TabPanelOne.LandingPage.TextOne" xml:space="preserve">
+        <value>This tool helps you to formulate learning outcomes effectively. In the left-hand navigation column, you can access various information on the topic and also use the input support.</value>
+    </data>
+    <data name="CreateStructuredLearningOutcome.TabPanelOne.LandingPage.TextTwo" xml:space="preserve">
+        <value>Take a look at the content and then formulate a learning outcome.</value>
     </data>
 </root>
