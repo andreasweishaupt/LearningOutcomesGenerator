@@ -60,12 +60,11 @@
          Color="Color.Dark"
          SliderColor="Color.Info"
          ApplyEffectsToContainer="true"
-         PanelClass="pa-0.5"
          MinimumTabWidth="125"
          Class="h-full">
 
 <MudTabPanel Text="@GetLocalizerString("CreateStructuredLearningOutcome.TabPanelOne.LandingPage")" Style="border-bottom-color: #a1c8e5; border-bottom-width: thin;">
-    <div class="relative bg-gradient-to-br from-adlerbggradientto to-adlergrey-100 px-8 d-flex justify-center items-start grow w-full h-[100%]">
+    <div class="relative bg-gradient-to-br from-adlerbggradientto to-adlergrey-100 px-6 2xl:px-8 d-flex justify-center items-start grow w-full h-[100%]">
         <img class="d-flex justify-center w-[650px] pointer-events-none opacity-10 absolute" src="_content/Library/CustomIcons/AdLer_Logo.png" />
         <div class="d-flex flex-col justify-center gap-2 h-[98%]">
             <MudText Align="Align.Center" Typo="Typo.h3" Class="font-bold text-adlerdarkblue">@GetLocalizerString("CreateStructuredLearningOutcome.TabPanelOne.LandingPage.Title")</MudText>
@@ -77,27 +76,27 @@
 </MudTabPanel>
 
 <MudTabPanel Text="@GetLocalizerString("CreateStructuredLearningOutcome.TabPanelTwo")">
-    <div class="flex flex-col px-8 ml-4 py-8 gap-2 w-[98%] 2xl:w-full h-full overflow-auto" id="unique_id_scroll_section">
+    <div class="flex flex-col pa-8 gap-2 w-[98%] 2xl:w-full h-full overflow-auto" id="unique_id_scroll_section">
         <MudText Id="WhatAreLearningOutcomes" Class="pb-4 font-bold" Typo="Typo.h4" Style="color: rgb(51,51,51);">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Title")</MudText>
         <MudText Class="bg-adlerblue-100 p-4 rounded" Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.Info.Text")</MudText>
         <MudText Id="ConstructiveAlignment" Class="text-adlertextgrey pt-5" Typo="Typo.h6">@GetLocalizerString("CreateStructuredLearningOutcome.WhatIsConstructiveAlignment.Title")</MudText>
         <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatIsConstructiveAlignment.Part1")</MudText>
         <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatIsConstructiveAlignment.Part2")</MudText>
         <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatIsConstructiveAlignment.Text.Image")</MudText>
-        <div class="flex flex-col items-center gap-4 p-2 relative w-[750px] mx-auto">
-            <div class="absolute right-0 -top-4">
+        <div class="flex flex-col items-center gap-4 py-4 relative w-[550px] 2xl:w-[650px] mx-auto">
+            @*<div class="absolute right-0 -top-4">
                 <MudIconButton Icon="@Icons.Material.Filled.ZoomIn" Class="w-8 h-8 opacity-50" OnClick="@ToggleOpen"></MudIconButton>
-            </div>
+            </div>*@
             <div class="flex flex-col items-center gap-4">
                 <MudImage Width="750" Fluid="true" Alt="Constructive Alignment" ObjectFit="ObjectFit.Cover" Class="flex-none" Src="@GetImagePath("Constructive-Alignment")"/>
                 <p class="text-xs italic text-adlergrey-600">@GetLocalizerString("CreateStructuredLearningOutcome.WhatIsConstructiveAlignment.DescriptionText.Image")</p>
             </div>
         </div>
-        <MudPopover Open="_open" Fixed="true" Elevation="2" OverflowBehavior="OverflowBehavior.FlipAlways" AnchorOrigin="Origin.CenterCenter" TransformOrigin="Origin.CenterCenter" Paper="false">
+        @*<MudPopover Open="_open" Fixed="true" Elevation="2" OverflowBehavior="OverflowBehavior.FlipAlways" AnchorOrigin="Origin.CenterCenter" TransformOrigin="Origin.CenterCenter" Paper="false">
             <MudButton OnClick="@ToggleOpen" Class="p-0.5 bg-adlerbggradientto drop-shadow-xl">
                 <MudImage Width="900" Class="p-2 bg-white" Src="@GetImagePath("Constructive-Alignment")"></MudImage>
             </MudButton>
-        </MudPopover>
+        </MudPopover>*@
         <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatIsConstructiveAlignment.Part3")</MudText>
         <MudText Id="LearningOutcomes" Class="snap-start text-adlertextgrey pt-5" Typo="Typo.h6">@GetLocalizerString("CreateStructuredLearningOutcome.Definition.LearningOutcomes.Title")</MudText>
         <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Part1")</MudText>
@@ -173,14 +172,14 @@
         </ul>
     </div>
 
-    <MudPaper Class="py-3 text-xs" Square="true">
+    @*<MudPaper Class="py-3 text-xs" Square="true">
         <MudNavMenu Class="w-40 2xl:w-48">
             <MudNavLink Class="px-2" Href="#WhatAreLearningOutcomes">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.RightSidebar.One")</MudNavLink>
             <MudNavLink Class="px-2" Href="#ConstructiveAlignment">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.RightSidebar.Two")</MudNavLink>
             <MudNavLink Class="px-2" Href="#LearningOutcomes">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.RightSidebar.Three")</MudNavLink>
             <MudNavLink Class="px-2" Href="#UseInTeaching">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.RightSidebar.Four")</MudNavLink>
         </MudNavMenu>
-    </MudPaper>
+    </MudPaper>*@
 
     <MudScrollToTop TopOffset="100"
                     Selector="#unique_id_scroll_section"
@@ -192,7 +191,7 @@
 </MudTabPanel>
 <MudTabPanel Text="@GetLocalizerString("CreateStructuredLearningOutcome.TabPanelThree")">
 
-        <div class="flex flex-col px-8 ml-4 py-8 gap-2 w-[98%] 2xl:w-full overflow-auto h-full" id="unique_id_scroll_section">
+        <div class="flex flex-col pa-8 gap-2 w-[98%] 2xl:w-full overflow-auto h-full" id="unique_id_scroll_section">
             <MudText Id="Lernzieltaxonomie" Class="pb-4 font-bold" Typo="Typo.h4" Style="color: rgb(51,51,51);">@GetLocalizerString("CreateStructuredLearningOutcome.WhatIsALearningOutcomeTaxonomy.Title")</MudText>
             <div class="bg-adlerblue-100 p-4 rounded">
                 <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatIsALearningOutcomeTaxonomy.Info.Text.PartOne")</MudText>
@@ -274,12 +273,12 @@
             </ul>
         </div>
 
-        <MudPaper Class="py-3 text-xs" Square="true">
+        @*<MudPaper Class="py-3 text-xs" Square="true">
             <MudNavMenu Class="w-40 2xl:w-48">
                 <MudNavLink Class="px-2" Href="#Lernzieltaxonomie">@GetLocalizerString("CreateStructuredLearningOutcome.WhatIsALearningOutcomeTaxonomy.RightSidebar.One")</MudNavLink>
                 <MudNavLink Class="px-2" Href="#LernzieltaxonomieAndersonUndKrathwohl">@GetLocalizerString("CreateStructuredLearningOutcome.WhatIsALearningOutcomeTaxonomy.RightSidebar.Two")</MudNavLink>
             </MudNavMenu>
-        </MudPaper>
+        </MudPaper>*@
 
         <MudScrollToTop TopOffset="100"
                         Selector="#unique_id_scroll_section"
@@ -289,13 +288,15 @@
         </MudScrollToTop>
 
 </MudTabPanel>
-<MudTabPanel Text="@GetLocalizerString("CreateStructuredLearningOutcome.TabPanelFour")">
 
-<div class="flex flex-col px-8 ml-4 py-8 gap-2 w-[98%] 2xl:w-full h-full overflow-auto" id="unique_id_scroll_section">
+<MudTabPanel Text="@GetLocalizerString("CreateStructuredLearningOutcome.TabPanelFour")">
+<div class="flex flex-col pa-8 gap-2 w-[98%] 2xl:w-full h-full overflow-auto" id="unique_id_scroll_section">
     <MudText Id="HowAreLearningOutcomesFormulated" Class="pb-4 font-bold" Typo="Typo.h4" Style="color: rgb(51,51,51);">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Title")</MudText>
     <div class="bg-adlerblue-100 p-4 rounded">
-        <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Info.Text")</MudText>
-        <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Part1")</MudText>
+        <MudText Typo="Typo.body2">
+            @GetLocalizerString("CreateStructuredLearningOutcome.CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Info.Text")
+            @GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Part1")
+        </MudText>
         <MudText Typo="Typo.body2" Class="pt-2">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Part2")</MudText>
             <ul class="ml-4 px-3.5 list-disc">
                 <li class="cursor-default text-sm list-disc"><MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Part2.List1")</MudText></li>
@@ -329,21 +330,21 @@
     <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Part1")</MudText>
     <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Text.Image")</MudText>
     
-    <div class="flex flex-col items-center gap-4 p-2 relative w-[550px] mx-auto">
-        <div class="absolute right-0 -top-4">
+    <div class="flex flex-col items-center gap-4 py-4 relative w-[400px] 2xl:w-[550px] mx-auto">
+        @*<div class="absolute right-0 -top-4">
             <MudIconButton Icon="@Icons.Material.Filled.ZoomIn" Class="w-8 h-8 opacity-50" OnClick="@ToggleOpen"></MudIconButton>
-        </div>
+        </div>*@
         <div class="flex flex-col items-center gap-4">
             <MudImage Width="550" Fluid="true" Alt="Systematic sentence structure" Class="flex-none" Src="@GetImagePath("Satzbau")"/>
             <p class="text-xs italic text-adlergrey-600">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.DescriptionText.Image")</p>
         </div>
     </div>
     
-    <MudPopover Open="@_open" Fixed="true" Elevation="2" Paper="false" AnchorOrigin="Origin.CenterCenter" TransformOrigin="Origin.CenterCenter">
+    @*<MudPopover Open="@_open" Fixed="true" Elevation="2" Paper="false" AnchorOrigin="Origin.CenterCenter" TransformOrigin="Origin.CenterCenter">
         <MudButton OnClick="@ToggleOpen" Class="p-0.5 border-adlerbggradientto drop-shadow-xl">
             <MudImage Class="p-2 bg-white" Width="750" Src="@GetImagePath("Satzbau")"></MudImage>
         </MudButton>
-    </MudPopover>
+    </MudPopover>*@
     
     <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Part2")</MudText>
     <div class="flex flex-col justify-center items-center gap-1 pt-2">
@@ -485,13 +486,13 @@
     </ul>
 </div>
 
-<MudPaper Class="py-3 text-xs" Square="true">
+@*<MudPaper Class="py-3 text-xs" Square="true">
     <MudNavMenu Class="w-40 2xl:w-48">
         <MudNavLink Class="px-2" Href="#HowAreLearningOutcomesFormulated">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.RightSidebar.One")</MudNavLink>
         <MudNavLink Class="px-2" Href="#WhatWherebyWhatFor">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.RightSidebar.Two")</MudNavLink>
         <MudNavLink Class="px-2" Href="#QualityCheck">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.RightSidebar.Three")</MudNavLink>
     </MudNavMenu>
-</MudPaper>
+</MudPaper>*@
 
 <MudScrollToTop TopOffset="100"
                 Selector="#unique_id_scroll_section"

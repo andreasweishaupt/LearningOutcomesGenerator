@@ -37,7 +37,7 @@
         <value>Taxonomiestufe</value>
     </data>
     <data name="CreateStructuredLearningOutcome.TaxonomyLevel.Info" xml:space="preserve">
-        <value>Die Formulierung eines Lernziels fokussiert die Beschreibung von entsprechenden Kompetenzen innerhalb des intendierten Lernprozesses der Studierenden. Diese lassen sich aufgrund ihrer Komplexität der kognitiven Prozesse einer Taxonomiestufe zuordnen. Die Festlegung einer Taxonomiestufe (nach Anderson &amp; Krathwohl) dient in den weiteren Bearbeitungsschritten der Lernziel-Formulierung zum Finden eines passenden Verbes der Sichtbarkeit.</value>
+        <value>Die Formulierung eines Lernziels fokussiert die Beschreibung von entsprechenden Kompetenzen innerhalb des intendierten Lernprozesses der Studierenden. Diese lassen sich aufgrund ihrer Komplexität der kognitiven Prozesse einer Taxonomiestufe zuordnen. Die Festlegung einer Taxonomiestufe (nach Anderson &amp; Krathwohl) dient in den weiteren Bearbeitungsschritten der Lernzielformulierung zum Finden eines passenden Verbes der Sichtbarkeit.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.Intro" xml:space="preserve">
         <value>Die Studierenden können...</value>
@@ -64,7 +64,7 @@
         <value>Was? (Thema)*</value>
     </data>
     <data name="CreateStructuredLearningOutcome.What.Info" xml:space="preserve">
-        <value>Das „Was“ sagt aus, welcher Lerninhalt (inhaltliches Thema) im Rahmen des Kompetenzerwerbs der Studierenden adressiert wird. In Verbindung mit einem Verb der Sichtbarkeit und der dazugehörigen Taxonomiestufe beschreibt es eine Kompetenz, welche Studierende am Ende des Lernprozesses entwickelt haben sollen. Das „Was“ entspricht dem o.g. systematischen Satzbau eines Lernziels.</value>
+        <value>Das „Was“ sagt aus, welcher Lerninhalt (inhaltliches Thema) im Rahmen des Kompetenzerwerbs der Studierenden adressiert wird. In Verbindung mit einem Verb der Sichtbarkeit und der dazugehörigen Taxonomiestufe beschreibt es eine Kompetenz, welche Studierende am Ende des Lernprozesses entwickelt haben sollen.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.Whereby.Placeholder" xml:space="preserve">
         <value>Textfeld</value>
@@ -106,7 +106,7 @@
         <value>Auf relevantes Wissen im Langzeitgedächtnis zugreifen</value>
     </data>
     <data name="CreateStructuredLearningOutcome.Example" xml:space="preserve">
-        <value>Beispiel für eine Lernziel-Formulierung</value>
+        <value>Beispiel für eine Lernzielformulierung</value>
     </data>
     <data name="CreateStructuredLearningOutcome.TaxonomyLevel.Create" xml:space="preserve">
         <value>Elemente zu einer zusammenhängenden Struktur oder zu einem zusammenhängenden Muster zusammenfügen</value>
@@ -193,7 +193,7 @@
         <value>Website zum Projekt AdLer</value>
     </data>
     <data name="CreateStructuredLearningOutcome.TabPanelOne" xml:space="preserve">
-        <value>Eingabeunterstützung zur Lernziel-Formulierung</value>
+        <value>Eingabeunterstützung zur Lernzielformulierung</value>
     </data>
     <data name="CreateStructuredLearningOutcome.TabPanelTwo" xml:space="preserve">
         <value>Was sind Lernziele?</value>

@@ -64,7 +64,7 @@
         <value>What? (Topic)*</value>
     </data>
     <data name="CreateStructuredLearningOutcome.What.Info" xml:space="preserve">
-        <value>The "What" specifies the learning content (subject matter) that is addressed as part of the students' competency development. Combined with an action verb and the corresponding taxonomy level, it describes a competency that students should have developed by the end of the learning process. The "What" aligns with the systematic sentence structure of a learning outcome, as mentioned above.</value>
+        <value>The "What" specifies the learning content (subject matter) that is addressed as part of the students' competency development. Combined with an action verb and the corresponding taxonomy level, it describes a competency that students should have developed by the end of the learning process.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.Whereby.Placeholder" xml:space="preserve">
         <value>Text field</value>
