@@ -167,8 +167,8 @@
                  AnchorOrigin="Origin.TopRight" 
                  TransformOrigin="Origin.TopRight" 
                  PopoverClass="bg-adlerdarkblue"
-                 DisableRipple="false"
-                 DisableElevation="false">
+                 disableRipple="false"
+                 disableElevation="false">
             <ActivatorContent>
                 <MudButton Class="text-xs normal-case w-10 text-adlergrey">Quellen</MudButton>
             </ActivatorContent>
@@ -258,9 +258,11 @@
         { TaxonomyLevel.None, new List<VerbOfVisibility>(Enum.GetValues(typeof(VerbOfVisibility)).Cast<VerbOfVisibility>())}
     };
     
-    private async Task<IEnumerable<string>> SearchVerbOfVisibility(string value)
+    private async Task<IEnumerable<string>> SearchVerbOfVisibility(string value, CancellationToken cancellationToken)
     {
         var results = new List<string>();
+
+        if (cancellationToken.IsCancellationRequested) return results;
 
         if (Enum.TryParse<TaxonomyLevel>(_selectedTaxonomyLevel, out var parsedValue))
         {
