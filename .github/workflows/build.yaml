@@ -35,7 +35,7 @@ jobs:
           working-directory: WebAssembly
           run: dotnet publish -c ${{ env.dotNetConfiguration }}
         - name: Upload artifact
-          uses: actions/upload-artifact@v2
+          uses: actions/upload-artifact@v4
           with:
               name: build
               path: WebAssembly/bin/Release/net8.0/publish/wwwroot
