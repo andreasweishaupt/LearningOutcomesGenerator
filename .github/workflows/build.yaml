@@ -13,11 +13,11 @@ jobs:
           with:
             submodules: 'true'
         - name: Setup .NET
-          uses: actions/setup-dotnet@v1
+          uses: actions/setup-dotnet@v4
           with:
               dotnet-version: ${{ env.dotNetVersion }}
         - name: Setup node
-          uses: actions/setup-node@v2
+          uses: actions/setup-node@v4
           with:
             node-version: '21'
         - name: Install workloads
