@@ -63,116 +63,325 @@
          MinimumTabWidth="125"
          Class="h-full">
 
-<MudTabPanel Text="@GetLocalizerString("CreateStructuredLearningOutcome.TabPanelOne.LandingPage")" Style="border-bottom-color: #a1c8e5; border-bottom-width: thin;">
-    <div class="relative bg-gradient-to-br from-adlerbggradientto to-adlergrey-100 px-6 2xl:px-8 d-flex justify-center items-start grow w-full h-[100%]">
-        <img class="d-flex justify-center w-[650px] pointer-events-none opacity-10 absolute" src="_content/Library/CustomIcons/AdLer_Logo.png" />
-        <div class="d-flex flex-col justify-center gap-2 h-[98%]">
-            <MudText Align="Align.Center" Typo="Typo.h3" Class="font-bold text-adlerdarkblue">@GetLocalizerString("CreateStructuredLearningOutcome.TabPanelOne.LandingPage.Title")</MudText>
-            <MudText Align="Align.Center" Typo="Typo.subtitle1" Class="text-adlerdarkblue">@GetLocalizerString("CreateStructuredLearningOutcome.TabPanelOne.LandingPage.TextOne")</MudText>
-            <MudText Align="Align.Center" Typo="Typo.subtitle1" Class="text-adlerdarkblue">@GetLocalizerString("CreateStructuredLearningOutcome.TabPanelOne.LandingPage.TextTwo")</MudText>
-        </div>
+    <MudTabPanel Class="py-12 bg-adlergrey-700 hover:bg-blacktrans-100"
+                 Style="border-bottom-color: #a1c8e5;"
+                 Text="@GetLocalizerString("CreateStructuredLearningOutcome.TabPanelOne")">
 
-    </div>
-</MudTabPanel>
+        <div class="h-full w-[98%] xl:w-4/6 2xl:w-4/6 mx-auto overflow-auto">
+            <div class="flex flex-col rounded border-adlergrey-300 border-2 bg-gradient-to-br from-adlerbggradientto to-adlergrey-100 my-1 overflow-auto">
 
-<MudTabPanel Text="@GetLocalizerString("CreateStructuredLearningOutcome.TabPanelTwo")">
-    <div class="flex flex-col pa-8 gap-2 w-[98%] 2xl:w-full h-full overflow-auto" id="unique_id_scroll_section">
-        <MudText id="WhatAreLearningOutcomes" Class="pb-4 font-bold" Typo="Typo.h4" Style="color: rgb(51,51,51);">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Title")</MudText>
-        <MudText Class="bg-adlerblue-100 p-4 rounded" Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.Info.Text")</MudText>
-        <MudText id="ConstructiveAlignment" Class="text-adlertextgrey pt-5" Typo="Typo.h6">@GetLocalizerString("CreateStructuredLearningOutcome.WhatIsConstructiveAlignment.Title")</MudText>
-        <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatIsConstructiveAlignment.Part1")</MudText>
-        <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatIsConstructiveAlignment.Part2")</MudText>
-        <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatIsConstructiveAlignment.Text.Image")</MudText>
-        <div class="flex flex-col items-center gap-4 py-4 relative w-[550px] 2xl:w-[650px] mx-auto">
-            @*<div class="absolute right-0 -top-4">
-                <MudIconButton Icon="@Icons.Material.Filled.ZoomIn" Class="w-8 h-8 opacity-50" OnClick="@ToggleOpen"></MudIconButton>
-            </div>*@
-            <div class="flex flex-col items-center gap-4">
-                <MudImage Width="750" Fluid="true" Alt="Constructive Alignment" ObjectFit="ObjectFit.Cover" Class="flex-none" Src="@GetImagePath("Constructive-Alignment")"/>
-                <p class="text-xs italic text-adlergrey-600">@GetLocalizerString("CreateStructuredLearningOutcome.WhatIsConstructiveAlignment.DescriptionText.Image")</p>
+                <MudForm @ref="_form" Class="flex flex-col overflow-hidden px-4 py-2">
+
+                    <a class="text-xs text-adlerblue pt-1" target="_blank" href="@GetLocalizerString("CreateStructuredLearningOutcome.ExampleImagePath")">@GetLocalizerString("CreateStructuredLearningOutcome.Example")</a>
+
+                    <MudText Class="cursor-default flex justify-center items-center text-lg 2xl:text-xl font-bold text-adlerdarkblue pb-1.5">@GetLocalizerString("CreateStructuredLearningOutcome.Title")</MudText>
+
+                    <div class="border-adlergrey-300 bg-white border-2 rounded py-2 h-full overflow-y-scroll">
+                        <MudText Class="cursor-default text-sm 2xl:text-base text-adlertextgrey pt-2 pl-2">@GetLocalizerString("CreateStructuredLearningOutcome.Text")</MudText>
+                        <div class="flex flex-row gap-4 m-2 pb-4">
+
+                            <div class="min-w-32 sm:w-44 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlerblue-100 rounded">
+                                <MudText Class="pt-1 cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel")</MudText>
+                                <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Info")">
+                                    <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
+                                </MudTooltip>
+                            </div>
+
+                            <MudSelect T="TaxonomyLevel" Class="w-40 break-all" @bind-Value="_selectedTaxonomyLevel">
+
+                                <MudSelectItem Value="@TaxonomyLevelNames.ElementAt(0).Key">
+                                    <div class="flex flex-row items-center gap-2">
+                                        <div class="min-w-[15%] text-md break-keep text-adlergrey">@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.NotSpecified")</div>
+                                    </div>
+                                </MudSelectItem>
+
+                                <MudSelectItem Value="@TaxonomyLevelNames.ElementAt(1).Key">
+                                    <div class="flex flex-row items-center gap-2">
+                                        <div class="min-w-[15%] text-md break-keep font-bold text-adlerblue-500">@TaxonomyLevelNames.ElementAt(1).Value</div>
+                                        <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.ArrowRightAlt" Color="Color.Default"></MudIcon>
+                                        <span title="@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Remember")" class="max-w-[65%] text-adlergrey text-xs italic break-word">@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Remember")</span>
+                                    </div>
+                                </MudSelectItem>
+
+                                <MudSelectItem T="TaxonomyLevel" Value="@TaxonomyLevelNames.ElementAt(2).Key">
+                                    <div class="flex flex-row items-center gap-2">
+                                        <div class="min-w-[15%] text-md break-keep font-bold text-adlerblue-500">@TaxonomyLevelNames.ElementAt(2).Value</div>
+                                        <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.ArrowRightAlt" Color="Color.Default"></MudIcon>
+                                        <span title="@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Understand")" class="max-w-[65%] text-adlergrey text-xs italic break-word">@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Understand")</span>
+                                    </div>
+                                </MudSelectItem>
+                                <MudSelectItem T="TaxonomyLevel" Value="@TaxonomyLevelNames.ElementAt(3).Key">
+                                    <div class="flex flex-row items-center gap-2">
+                                        <div class="min-w-[15%] text-md break-keep font-bold text-adlerblue-500">@TaxonomyLevelNames.ElementAt(3).Value</div>
+                                        <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.ArrowRightAlt" Color="Color.Default"></MudIcon>
+                                        <span title="@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Apply")" class="max-w-[65%] text-adlergrey text-xs italic break-word">@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Apply")</span>
+                                    </div>
+                                </MudSelectItem>
+
+                                <MudSelectItem T="TaxonomyLevel" Value="@TaxonomyLevelNames.ElementAt(4).Key">
+                                    <div class="flex flex-row items-center gap-2">
+                                        <div class="min-w-[15%] text-md break-keep font-bold text-adlerblue-500">@TaxonomyLevelNames.ElementAt(4).Value</div>
+                                        <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.ArrowRightAlt" Color="Color.Default"></MudIcon>
+                                        <span title="@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Analyse")" class="max-w-[65%] text-adlergrey text-xs italic break-word">@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Analyse")</span>
+                                    </div>
+                                </MudSelectItem>
+
+                                <MudSelectItem T="TaxonomyLevel" Value="@TaxonomyLevelNames.ElementAt(5).Key">
+                                    <div class="flex flex-row items-center gap-2">
+                                        <div class="min-w-[15%] text-md break-keep font-bold text-adlerblue-500">@TaxonomyLevelNames.ElementAt(5).Value</div>
+                                        <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.ArrowRightAlt" Color="Color.Default"></MudIcon>
+                                        <span title="@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Evaluate")" class="max-w-[65%] text-adlergrey text-xs italic break-word">@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Evaluate")</span>
+                                    </div>
+                                </MudSelectItem>
+
+                                <MudSelectItem T="TaxonomyLevel" Value="@TaxonomyLevelNames.ElementAt(6).Key">
+                                    <div class="flex flex-row items-center gap-2">
+                                        <div class="min-w-[15%] text-md break-keep font-bold text-adlerblue-500">@TaxonomyLevelNames.ElementAt(6).Value</div>
+                                        <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.ArrowRightAlt" Color="Color.Default"></MudIcon>
+                                        <span title="@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Create")" class="max-w-[65%] text-adlergrey text-xs italic break-word">@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Create")</span>
+                                    </div>
+                                </MudSelectItem>
+                            </MudSelect>
+                        </div>
+
+                        <div class="border-t-2 border-adlergrey-200 border-dotted py-2">
+                            <MudText Class="cursor-default text-sm 2xl:text-base text-adlertextgrey py-2 pl-2">@GetLocalizerString("CreateStructuredLearningOutcome.Text.Two")</MudText>
+                            <MudText Class="ml-48 2xl:ml-52 cursor-default text-sm 2xl:text-base text-adlertextgrey">@IntroText</MudText>
+
+                            <GrammarOrder Culture="Culture">
+                                <WhatContent>
+                                    <div class="flex flex-row gap-4 m-2">
+                                        <div class="min-w-32 sm:w-44 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
+                                            <MudText Class="pt-1 cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">@GetLocalizerString("CreateStructuredLearningOutcome.What")</MudText>
+                                            <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="@GetLocalizerString("CreateStructuredLearningOutcome.What.Info")">
+                                                <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
+                                            </MudTooltip>
+                                        </div>
+
+                                        <MudTextField @bind-Value="_currentWhat"
+                                                      DebounceInterval="1"
+                                                      Placeholder="@GetLocalizerString("CreateStructuredLearningOutcome.What.Placeholder")"
+                                                      Required="true"
+                                                      RequiredError="@GetLocalizerString("CreateStructuredLearningOutcome.What.RequiredError")"
+                                                      Lines="2">
+                                        </MudTextField>
+                                    </div>
+                                </WhatContent>
+
+                                <VerbContent>
+                                    <div class="flex flex-row gap-4 m-2">
+                                        <div class="min-w-32 sm:w-44 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
+                                            <MudText Class="pt-1 cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">@GetLocalizerString("CreateStructuredLearningOutcome.VerbOfVisibility")</MudText>
+                                            <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="@GetLocalizerString("CreateStructuredLearningOutcome.VerbOfVisibility.Info")">
+                                                <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
+                                            </MudTooltip>
+                                        </div>
+
+                                        <MudAutocomplete T="string" Placeholder="@GetLocalizerString("CreateStructuredLearningOutcome.VerbOfVisibility.Placeholder")" MaxItems="1000"
+                                                         @bind-Value="@_currentVerbOfVisibility"
+                                                         @bind-Text="@_currentVerbOfVisibilityText"
+                                                         CoerceText="true"
+                                                         CoerceValue="true"
+                                                         SearchFunc="@SearchVerbOfVisibility"
+                                                         OnBlur="OnBlurVerbOfVisibility"
+                                                         DebounceInterval="300"
+                                                         Required="true"
+                                                         RequiredError="@GetLocalizerString("CreateStructuredLearningOutcome.VerbOfVisibility.RequiredError")"/>
+                                    </div>
+                                </VerbContent>
+                            </GrammarOrder>
+
+                            <div class="flex flex-row gap-4 m-2">
+                                <div class="min-w-32 sm:w-44 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
+                                    <MudText Class="pt-1 cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">@GetLocalizerString("CreateStructuredLearningOutcome.Whereby")</MudText>
+                                    <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="@GetLocalizerString("CreateStructuredLearningOutcome.Whereby.Info")">
+                                        <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
+                                    </MudTooltip>
+                                </div>
+                                <MudText Class="cursor-default w-24 flex items-center text-sm 2xl:text-base text-adlergrey-800">@WherebyText</MudText>
+                                <MudTextField @bind-Value="_currentWhereby"
+                                              DebounceInterval="1"
+                                              Placeholder="@GetLocalizerString("CreateStructuredLearningOutcome.Whereby.Placeholder")"
+                                              Lines="2">
+                                </MudTextField>
+                            </div>
+
+                            <div class="flex flex-row gap-4 m-2">
+                                <div class="min-w-32 sm:w-44 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
+                                    <MudText Class="pt-1 cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">@GetLocalizerString("CreateStructuredLearningOutcome.WhatFor")</MudText>
+                                    <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="@GetLocalizerString("CreateStructuredLearningOutcome.WhatFor.Info")">
+                                        <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
+                                    </MudTooltip>
+                                </div>
+                                <MudText Class="cursor-default w-24 flex items-center text-sm 2xl:text-base text-adlergrey-800">@WhatForText</MudText>
+                                <MudTextField @bind-Value="_currentWhatFor"
+                                              DebounceInterval="1"
+                                              Placeholder="@GetLocalizerString("CreateStructuredLearningOutcome.WhatFor.Placeholder")"
+                                              Lines="2">
+                                </MudTextField>
+                            </div>
+                        </div>
+
+                        <MudText Class="px-2 cursor-default flex justify-start text-xs text-adlergrey-300">@GetLocalizerString("CreateStructuredLearningOutcome.Required")</MudText>
+                    </div>
+                </MudForm>
+
+                <div class="flex flex-row justify-end items-center mx-4">
+                    <MudButton OnClick="ResetInputFields">
+                        <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Refresh"></MudIcon>
+                        <MudText Class="uppercase pl-1 text-sm text-adlergrey-700 font-bold">@GetLocalizerString("CreateStructuredLearningOutcome.Reset")</MudText>
+                    </MudButton>
+                </div>
+
+                <div class="flex flex-col gap-2 mx-4">
+                    <MudText Class="cursor-default text-adlerdarkblue text-sm font-bold">@GetLocalizerString("CreateStructuredLearningOutcome.Preview")</MudText>
+                    <div class="bg-white border border-adlergrey-300 border-2 rounded px-4 p-5">
+                        @GetMarkDownFormattedOutcome()
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-4 mx-4 pt-2">
+                    <MudExpansionPanels Elevation="2">
+                        <MudExpansionPanel Class="bg-gradient-to-br from-adlerbggradientto to-adlergrey-100" Text="@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Title")">
+                            <div class="flex flex-col gap-2 mx-2">
+                                <div class="flex flex-row gap-2 items-center">
+                                    <MudIcon Color="Color.Success" Icon="@Icons.Material.Filled.WorkspacePremium"></MudIcon>
+                                    <MudText Typo="Typo.body2" Class="font-bold cursor-default">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Subtitle")</MudText>
+                                </div>
+
+                                <div class="flex flex-col">
+                                    <ul class="px-8">
+                                        @foreach (var question in _qualityCheck.Keys.ToList())
+                                        {
+                                            <li class="flex flex-row items-center justify-between cursor-default text-adlergrey-800">
+                                                <p>@GetLocalizerString(question)</p>
+                                                <MudCheckBox Dense="true" @bind-Value="_qualityCheck[question]" Color="Color.Default" UnCheckedColor="Color.Default"></MudCheckBox>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </MudExpansionPanel>
+                    </MudExpansionPanels>
+                </div>
+
+                <div class="flex justify-start p-2">
+                    <MudButton Class="text-adlerblue font-bold" Disabled="!LearningOutcomeIsCopyable()" StartIcon="@Icons.Material.Filled.ContentCopy" OnClick="@CopyToClickBoard">@GetLocalizerString("CreateStructuredLearningOutcome.Copy")</MudButton>
+                </div>
             </div>
         </div>
-        @*<MudPopover Open="_open" Fixed="true" Elevation="2" OverflowBehavior="OverflowBehavior.FlipAlways" AnchorOrigin="Origin.CenterCenter" TransformOrigin="Origin.CenterCenter" Paper="false">
+    </MudTabPanel>
+    
+    @*<MudTabPanel Text="@GetLocalizerString("CreateStructuredLearningOutcome.TabPanelOne.LandingPage")" Style="border-bottom-color: #a1c8e5; border-bottom-width: thin;">
+        <div class="relative bg-gradient-to-br from-adlerbggradientto to-adlergrey-100 px-6 2xl:px-8 d-flex justify-center items-start grow w-full h-[100%]">
+            <img class="d-flex justify-center w-[650px] pointer-events-none opacity-10 absolute" src="_content/Library/CustomIcons/AdLer_Logo.png" />
+            <div class="d-flex flex-col justify-center gap-2 h-[98%]">
+                <MudText Align="Align.Center" Typo="Typo.h3" Class="font-bold text-adlerdarkblue">@GetLocalizerString("CreateStructuredLearningOutcome.TabPanelOne.LandingPage.Title")</MudText>
+                <MudText Align="Align.Center" Typo="Typo.subtitle1" Class="text-adlerdarkblue">@GetLocalizerString("CreateStructuredLearningOutcome.TabPanelOne.LandingPage.TextOne")</MudText>
+                <MudText Align="Align.Center" Typo="Typo.subtitle1" Class="text-adlerdarkblue">@GetLocalizerString("CreateStructuredLearningOutcome.TabPanelOne.LandingPage.TextTwo")</MudText>
+            </div>
+
+        </div>
+    </MudTabPanel>*@
+
+    <MudTabPanel Text="@GetLocalizerString("CreateStructuredLearningOutcome.TabPanelTwo")">
+        <div class="flex flex-col pa-8 gap-2 w-[98%] 2xl:w-full h-full overflow-auto" id="unique_id_scroll_section">
+            <MudText id="WhatAreLearningOutcomes" Class="pb-4 font-bold" Typo="Typo.h4" Style="color: rgb(51,51,51);">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Title")</MudText>
+            <MudText Class="bg-adlerblue-100 p-4 rounded" Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.Info.Text")</MudText>
+            <MudText id="ConstructiveAlignment" Class="text-adlertextgrey pt-5" Typo="Typo.h6">@GetLocalizerString("CreateStructuredLearningOutcome.WhatIsConstructiveAlignment.Title")</MudText>
+            <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatIsConstructiveAlignment.Part1")</MudText>
+            <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatIsConstructiveAlignment.Part2")</MudText>
+            <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatIsConstructiveAlignment.Text.Image")</MudText>
+            <div class="flex flex-col items-center gap-4 py-4 relative w-[550px] 2xl:w-[650px] mx-auto">
+                @*<div class="absolute right-0 -top-4">
+                <MudIconButton Icon="@Icons.Material.Filled.ZoomIn" Class="w-8 h-8 opacity-50" OnClick="@ToggleOpen"></MudIconButton>
+            </div>*@
+                <div class="flex flex-col items-center gap-4">
+                    <MudImage Width="750" Fluid="true" Alt="Constructive Alignment" ObjectFit="ObjectFit.Cover" Class="flex-none" Src="@GetImagePath("Constructive-Alignment")"/>
+                    <p class="text-xs italic text-adlergrey-600">@GetLocalizerString("CreateStructuredLearningOutcome.WhatIsConstructiveAlignment.DescriptionText.Image")</p>
+                </div>
+            </div>
+            @*<MudPopover Open="_open" Fixed="true" Elevation="2" OverflowBehavior="OverflowBehavior.FlipAlways" AnchorOrigin="Origin.CenterCenter" TransformOrigin="Origin.CenterCenter" Paper="false">
             <MudButton OnClick="@ToggleOpen" Class="p-0.5 bg-adlerbggradientto drop-shadow-xl">
                 <MudImage Width="900" Class="p-2 bg-white" Src="@GetImagePath("Constructive-Alignment")"></MudImage>
             </MudButton>
         </MudPopover>*@
-        <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatIsConstructiveAlignment.Part3")</MudText>
-        <MudText id="LearningOutcomes" Class="snap-start text-adlertextgrey pt-5" Typo="Typo.h6">@GetLocalizerString("CreateStructuredLearningOutcome.Definition.LearningOutcomes.Title")</MudText>
-        <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Part1")</MudText>
-        <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Part2")</MudText>
-        <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Part3")</MudText>
-        <div class="flex flex-col justify-center items-center gap-1 pt-2">
-            <table class="border-adlergrey-200 border-2" width="80%">
-                <thead class="font-bold">
-                <tr>
-                    <th class="p-2 border-2 bg-adlerblue-100">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.One")</th>
-                    <th class="p-2 border-2 bg-adlerblue-100">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Two")</th>
-                    <th class="p-2 border-2 bg-adlerblue-100">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Three")</th>
-                </tr>
-                </thead>
-                <tbody>
-                <!-- Richtziel -->
-                <tr>
-                    <td class="p-2 border-2" rowspan="2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.One.Cell.One")</td>
-                    <td class="p-2 border-2" rowspan="2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Two.Cell.One")</td>
-                    <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Three.Cell.One")</td>
-                </tr>
-                <tr>
-                    <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Three.Cell.Two")</td>
-                </tr>
-                <!-- Grobziel -->
-                <tr>
-                    <td class="p-2 border-2" rowspan="2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.One.Cell.Three")</td>
-                    <td class="p-2 border-2" rowspan="2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Two.Cell.Three")</td>
-                    <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Three.Cell.Three")</td>
-                </tr>
-                <tr>
-                    <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Three.Cell.Four")</td>
-                </tr>
-                <!-- Feinziel -->
-                <tr>
-                     <td class="p-2 border-2" rowspan="2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.One.Cell.Two")</td>
-                     <td class="p-2 border-2" rowspan="2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Two.Cell.Two")</td>
-                     <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Three.Cell.Five")</td>
-                </tr>
-                <tr>
-                    <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Three.Cell.Six")</td>
-                </tr>
-                </tbody>
-            </table>
-            <p class="text-xs italic text-adlergrey-600">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.DescriptionText.Table")</p>
+            <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatIsConstructiveAlignment.Part3")</MudText>
+            <MudText id="LearningOutcomes" Class="snap-start text-adlertextgrey pt-5" Typo="Typo.h6">@GetLocalizerString("CreateStructuredLearningOutcome.Definition.LearningOutcomes.Title")</MudText>
+            <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Part1")</MudText>
+            <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Part2")</MudText>
+            <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Part3")</MudText>
+            <div class="flex flex-col justify-center items-center gap-1 pt-2">
+                <table class="border-adlergrey-200 border-2" width="80%">
+                    <thead class="font-bold">
+                    <tr>
+                        <th class="p-2 border-2 bg-adlerblue-100">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.One")</th>
+                        <th class="p-2 border-2 bg-adlerblue-100">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Two")</th>
+                        <th class="p-2 border-2 bg-adlerblue-100">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Three")</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Richtziel -->
+                    <tr>
+                        <td class="p-2 border-2" rowspan="2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.One.Cell.One")</td>
+                        <td class="p-2 border-2" rowspan="2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Two.Cell.One")</td>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Three.Cell.One")</td>
+                    </tr>
+                    <tr>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Three.Cell.Two")</td>
+                    </tr>
+                    <!-- Grobziel -->
+                    <tr>
+                        <td class="p-2 border-2" rowspan="2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.One.Cell.Three")</td>
+                        <td class="p-2 border-2" rowspan="2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Two.Cell.Three")</td>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Three.Cell.Three")</td>
+                    </tr>
+                    <tr>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Three.Cell.Four")</td>
+                    </tr>
+                    <!-- Feinziel -->
+                    <tr>
+                        <td class="p-2 border-2" rowspan="2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.One.Cell.Two")</td>
+                        <td class="p-2 border-2" rowspan="2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Two.Cell.Two")</td>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Three.Cell.Five")</td>
+                    </tr>
+                    <tr>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.Table.Col.Three.Cell.Six")</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p class="text-xs italic text-adlergrey-600">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.DescriptionText.Table")</p>
+            </div>
+            <MudText id="UseInTeaching" Class="snap-start text-adlertextgrey pt-5" Typo="Typo.h6">@GetLocalizerString("CreateStructuredLearningOutcome.WhyLearningOutcomesInTeaching.Title")</MudText>
+
+            <MudText Typo="Typo.body2">
+                @GetLocalizerString("CreateStructuredLearningOutcome.WhyLearningOutcomesInTeaching.Part1")
+            </MudText>
+            <MudText Typo="Typo.body2">
+                @GetLocalizerString("CreateStructuredLearningOutcome.WhyLearningOutcomesInTeaching.Part2")
+                @GetLocalizerString("CreateStructuredLearningOutcome.WhyLearningOutcomesInTeaching.Part3")
+                @GetLocalizerString("CreateStructuredLearningOutcome.WhyLearningOutcomesInTeaching.Part4")
+            </MudText>
+            <MudDivider Class="py-4" DividerType="DividerType.FullWidth"></MudDivider>
+
+            <MudText Class="text-xs italic text-adlergrey-600">@GetLocalizerString("CreateStructuredLearningOutcome.Sources")</MudText>
+            <ul class="px-3.5 list-disc italic">
+                <li class="text-adlergrey-600">
+                    <p class="cursor-default text-xs list-disc text-adlergrey-600">Allan, J. (1996). Learning outcomes in higher education. Studies in Higher Education, 21(3), 93-108. <a class="text-xs text-adlerblue" href="https://doi.org/10.1080/03075079612331381487" target="_blank">https://www.th-koeln.de/mam/downloads/deutsch/hochschule/profil/lehre/steckbrief_learning_outcomes.pdf</a></p>
+                </li>
+                <li class="text-adlergrey-600">
+                    <p class="cursor-default text-xs list-disc text-adlergrey-600">Arbeitsstelle für Hochschuldidaktik (AfH) der Universität Zürich. (2008). Lernziele formulieren in Bachelor- und Masterstudiengängen. du - Dossier Unididaktik 1/08. <a class="text-xs text-adlerblue" href="https://www.hrk-nexus.de/fileadmin/redaktion/hrk-nexus/07-Downloads/07-03-Material/DU_Lernziele_11_08.pdf" target="_blank">https://www.hrk-nexus.de/fileadmin/redaktion/hrk-nexus/07-Downloads/07-03-Material/DU_Lernziele_11_08.pdf</a></p>
+                </li>
+                <li class="text-adlergrey-600">
+                    <p class="cursor-default text-xs list-disc text-adlergrey-600">Biggs, J., & Tang, C. (2011). Teaching for quality learning at university: What the student does (4th ed.). Maidenhead, England: Open University Press.</p>
+                </li>
+                <li class="text-adlergrey-600">
+                    <p class="cursor-default text-xs list-disc text-adlergrey-600">Klopp, M., Haug, J., & Dörringer, A. (2024). Work in progress: Input support for the formulation of learning outcomes in STEM. In 2024 Global Engineering Education Conference (EDUCON), Kos, Griechenland: IEEE. <a class="text-xs text-adlerblue" href="https://doi.org/10.1109/EDUCON60312.2024.10578568" target="_blank">https://doi.org/10.1109/EDUCON60312.2024.10578568</a></p>
+                </li>
+            </ul>
         </div>
-        <MudText id="UseInTeaching" Class="snap-start text-adlertextgrey pt-5" Typo="Typo.h6">@GetLocalizerString("CreateStructuredLearningOutcome.WhyLearningOutcomesInTeaching.Title")</MudText>
 
-        <MudText Typo="Typo.body2">
-            @GetLocalizerString("CreateStructuredLearningOutcome.WhyLearningOutcomesInTeaching.Part1")
-        </MudText>
-        <MudText Typo="Typo.body2">
-            @GetLocalizerString("CreateStructuredLearningOutcome.WhyLearningOutcomesInTeaching.Part2")
-            @GetLocalizerString("CreateStructuredLearningOutcome.WhyLearningOutcomesInTeaching.Part3")
-            @GetLocalizerString("CreateStructuredLearningOutcome.WhyLearningOutcomesInTeaching.Part4")
-        </MudText>
-        <MudDivider Class="py-4" DividerType="DividerType.FullWidth"></MudDivider>
-
-        <MudText Class="text-xs italic text-adlergrey-600">@GetLocalizerString("CreateStructuredLearningOutcome.Sources")</MudText>
-        <ul class="px-3.5 list-disc italic">
-            <li class="text-adlergrey-600">
-                <p class="cursor-default text-xs list-disc text-adlergrey-600">Allan, J. (1996). Learning outcomes in higher education. Studies in Higher Education, 21(3), 93-108. <a class="text-xs text-adlerblue" href="https://doi.org/10.1080/03075079612331381487" target="_blank">https://www.th-koeln.de/mam/downloads/deutsch/hochschule/profil/lehre/steckbrief_learning_outcomes.pdf</a></p>
-            </li>
-            <li class="text-adlergrey-600">
-                <p class="cursor-default text-xs list-disc text-adlergrey-600">Arbeitsstelle für Hochschuldidaktik (AfH) der Universität Zürich. (2008). Lernziele formulieren in Bachelor- und Masterstudiengängen. du - Dossier Unididaktik 1/08. <a class="text-xs text-adlerblue" href="https://www.hrk-nexus.de/fileadmin/redaktion/hrk-nexus/07-Downloads/07-03-Material/DU_Lernziele_11_08.pdf" target="_blank">https://www.hrk-nexus.de/fileadmin/redaktion/hrk-nexus/07-Downloads/07-03-Material/DU_Lernziele_11_08.pdf</a></p>
-            </li>
-            <li class="text-adlergrey-600">
-                <p class="cursor-default text-xs list-disc text-adlergrey-600">Biggs, J., & Tang, C. (2011). Teaching for quality learning at university: What the student does (4th ed.). Maidenhead, England: Open University Press.</p>
-            </li>
-            <li class="text-adlergrey-600">
-                <p class="cursor-default text-xs list-disc text-adlergrey-600">Klopp, M., Haug, J., & Dörringer, A. (2024). Work in progress: Input support for the formulation of learning outcomes in STEM. In 2024 Global Engineering Education Conference (EDUCON), Kos, Griechenland: IEEE. <a class="text-xs text-adlerblue" href="https://doi.org/10.1109/EDUCON60312.2024.10578568" target="_blank">https://doi.org/10.1109/EDUCON60312.2024.10578568</a></p>
-            </li>
-        </ul>
-    </div>
-
-    @*<MudPaper Class="py-3 text-xs" Square="true">
+        @*<MudPaper Class="py-3 text-xs" Square="true">
         <MudNavMenu Class="w-40 2xl:w-48">
             <MudNavLink Class="px-2" Href="#WhatAreLearningOutcomes">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.RightSidebar.One")</MudNavLink>
             <MudNavLink Class="px-2" Href="#ConstructiveAlignment">@GetLocalizerString("CreateStructuredLearningOutcome.WhatAreLearningOutcomes.RightSidebar.Two")</MudNavLink>
@@ -181,15 +390,16 @@
         </MudNavMenu>
     </MudPaper>*@
 
-    <MudScrollToTop TopOffset="100"
-                    Selector="#unique_id_scroll_section"
-                    VisibleCssClass="visible absolute"
-                    HiddenCssClass="invisible">
-        <MudIconButton Variant="Variant.Filled" Icon="@Icons.Material.Filled.ArrowUpward" Color="Color.Info"></MudIconButton>
-    </MudScrollToTop>
+        <MudScrollToTop TopOffset="100"
+                        Selector="#unique_id_scroll_section"
+                        VisibleCssClass="visible absolute"
+                        HiddenCssClass="invisible">
+            <MudIconButton Variant="Variant.Filled" Icon="@Icons.Material.Filled.ArrowUpward" Color="Color.Info"></MudIconButton>
+        </MudScrollToTop>
     
-</MudTabPanel>
-<MudTabPanel Text="@GetLocalizerString("CreateStructuredLearningOutcome.TabPanelThree")">
+    </MudTabPanel>
+    
+    <MudTabPanel Text="@GetLocalizerString("CreateStructuredLearningOutcome.TabPanelThree")">
 
         <div class="flex flex-col pa-8 gap-2 w-[98%] 2xl:w-full overflow-auto h-full" id="unique_id_scroll_section">
             <MudText id="Lernzieltaxonomie" Class="pb-4 font-bold" Typo="Typo.h4" Style="color: rgb(51,51,51);">@GetLocalizerString("CreateStructuredLearningOutcome.WhatIsALearningOutcomeTaxonomy.Title")</MudText>
@@ -287,206 +497,206 @@
             <MudIconButton Variant="Variant.Filled" Icon="@Icons.Material.Filled.ArrowUpward" Color="Color.Info"></MudIconButton>
         </MudScrollToTop>
 
-</MudTabPanel>
-
-<MudTabPanel Text="@GetLocalizerString("CreateStructuredLearningOutcome.TabPanelFour")">
-<div class="flex flex-col pa-8 gap-2 w-[98%] 2xl:w-full h-full overflow-auto" id="unique_id_scroll_section">
-    <MudText id="HowAreLearningOutcomesFormulated" Class="pb-4 font-bold" Typo="Typo.h4" Style="color: rgb(51,51,51);">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Title")</MudText>
-    <div class="bg-adlerblue-100 p-4 rounded">
-        <MudText Typo="Typo.body2">
-            @GetLocalizerString("CreateStructuredLearningOutcome.CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Info.Text")
-            @GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Part1")
-        </MudText>
-        <MudText Typo="Typo.body2" Class="pt-2">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Part2")</MudText>
-            <ul class="ml-4 px-3.5 list-disc">
-                <li class="cursor-default text-sm list-disc"><MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Part2.List1")</MudText></li>
-                <li class="cursor-default text-sm list-disc"><MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Part2.List2")</MudText></li>
-            </ul>
-    </div>
-    <MudText Typo="Typo.body2" Class="pt-4">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspects")</MudText>
-    <ul class="ml-4 px-3.5 list-decimal">
-        <li class="cursor-default text-sm list-decimal">
-            <span class="font-bold">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.One.Title")</span>
-            @GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.One")
-        </li>
-        <li class="cursor-default text-sm list-decimal pt-4">
-            <span class="font-bold">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Two.Title")</span>
-            @GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Two")
-        </li>
-        <li class="cursor-default text-sm list-decimal pt-4">
-            <span class="font-bold">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Three.Title")</span>
-            @GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Three")
-        </li>
-        <li class="cursor-default text-sm list-decimal pt-4">
-            <span class="font-bold">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Four.Title")</span>
-            @GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Four")
-        </li>
-        <li class="cursor-default text-sm list-decimal pt-4">
-            <span class="font-bold">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Five.Title")</span>
-            @GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Five")
-        </li>
-    </ul>
-    <MudText id="WhatWherebyWhatFor" Class="text-adlertextgrey pt-5" Typo="Typo.h6">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Title")</MudText>
-    <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Part1")</MudText>
-    <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Text.Image")</MudText>
+    </MudTabPanel>
     
-    <div class="flex flex-col items-center gap-4 py-4 relative w-[400px] 2xl:w-[550px] mx-auto">
-        @*<div class="absolute right-0 -top-4">
+    <MudTabPanel Text="@GetLocalizerString("CreateStructuredLearningOutcome.TabPanelFour")">
+        <div class="flex flex-col pa-8 gap-2 w-[98%] 2xl:w-full h-full overflow-auto" id="unique_id_scroll_section">
+            <MudText id="HowAreLearningOutcomesFormulated" Class="pb-4 font-bold" Typo="Typo.h4" Style="color: rgb(51,51,51);">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Title")</MudText>
+            <div class="bg-adlerblue-100 p-4 rounded">
+                <MudText Typo="Typo.body2">
+                    @GetLocalizerString("CreateStructuredLearningOutcome.CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Info.Text")
+                    @GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Part1")
+                </MudText>
+                <MudText Typo="Typo.body2" Class="pt-2">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Part2")</MudText>
+                <ul class="ml-4 px-3.5 list-disc">
+                    <li class="cursor-default text-sm list-disc"><MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Part2.List1")</MudText></li>
+                    <li class="cursor-default text-sm list-disc"><MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Part2.List2")</MudText></li>
+                </ul>
+            </div>
+            <MudText Typo="Typo.body2" Class="pt-4">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspects")</MudText>
+            <ul class="ml-4 px-3.5 list-decimal">
+                <li class="cursor-default text-sm list-decimal">
+                    <span class="font-bold">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.One.Title")</span>
+                    @GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.One")
+                </li>
+                <li class="cursor-default text-sm list-decimal pt-4">
+                    <span class="font-bold">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Two.Title")</span>
+                    @GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Two")
+                </li>
+                <li class="cursor-default text-sm list-decimal pt-4">
+                    <span class="font-bold">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Three.Title")</span>
+                    @GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Three")
+                </li>
+                <li class="cursor-default text-sm list-decimal pt-4">
+                    <span class="font-bold">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Four.Title")</span>
+                    @GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Four")
+                </li>
+                <li class="cursor-default text-sm list-decimal pt-4">
+                    <span class="font-bold">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Five.Title")</span>
+                    @GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.Aspect.Five")
+                </li>
+            </ul>
+            <MudText id="WhatWherebyWhatFor" Class="text-adlertextgrey pt-5" Typo="Typo.h6">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Title")</MudText>
+            <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Part1")</MudText>
+            <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Text.Image")</MudText>
+    
+            <div class="flex flex-col items-center gap-4 py-4 relative w-[400px] 2xl:w-[550px] mx-auto">
+                @*<div class="absolute right-0 -top-4">
             <MudIconButton Icon="@Icons.Material.Filled.ZoomIn" Class="w-8 h-8 opacity-50" OnClick="@ToggleOpen"></MudIconButton>
         </div>*@
-        <div class="flex flex-col items-center gap-4">
-            <MudImage Width="550" Fluid="true" Alt="Systematic sentence structure" Class="flex-none" Src="@GetImagePath("Satzbau")"/>
-            <p class="text-xs italic text-adlergrey-600">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.DescriptionText.Image")</p>
-        </div>
-    </div>
+                <div class="flex flex-col items-center gap-4">
+                    <MudImage Width="550" Fluid="true" Alt="Systematic sentence structure" Class="flex-none" Src="@GetImagePath("Satzbau")"/>
+                    <p class="text-xs italic text-adlergrey-600">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.DescriptionText.Image")</p>
+                </div>
+            </div>
     
-    @*<MudPopover Open="@_open" Fixed="true" Elevation="2" Paper="false" AnchorOrigin="Origin.CenterCenter" TransformOrigin="Origin.CenterCenter">
+            @*<MudPopover Open="@_open" Fixed="true" Elevation="2" Paper="false" AnchorOrigin="Origin.CenterCenter" TransformOrigin="Origin.CenterCenter">
         <MudButton OnClick="@ToggleOpen" Class="p-0.5 border-adlerbggradientto drop-shadow-xl">
             <MudImage Class="p-2 bg-white" Width="750" Src="@GetImagePath("Satzbau")"></MudImage>
         </MudButton>
     </MudPopover>*@
     
-    <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Part2")</MudText>
-    <div class="flex flex-col justify-center items-center gap-1 pt-2">
-        <table class="border-adlergrey-200 border-2" width="80%">
-            <thead class="font-bold">
-            <tr>
-                <th class="p-2 border-2 bg-adlerblue-100">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.One")</th>
-                <th class="p-2 border-2 bg-adlerblue-100">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two")</th>
-                <th class="p-2 border-2 bg-adlerblue-100">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Three")</th>
-            </tr>
-            </thead>
-            <tbody>
-            <!-- Was? -->
-            <tr>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.One.Cell.One")</td>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two.Cell.One")</td>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Three.Cell.One")</td>
-            </tr>
-            <!-- Womit? -->
-            <tr>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.One.Cell.Two")</td>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two.Cell.Two")</td>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Three.Cell.Three")</td>
-            </tr>
-            <!-- Wozu? -->
-            <tr>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.One.Cell.Three")</td>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two.Cell.Three")</td>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Three.Cell.Four")</td>
-            </tr>
-            </tbody>
-        </table>
-        <p class="text-xs italic text-adlergrey-600 pb-3">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.DescriptionText.Table")</p>
-    </div>
-    <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Part3")</MudText>
-    <table>
-        <thead>
-        <tr>
-            <th></th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        <!-- Beispiel - Was? -->
-        <tr>
-            <td class="p-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.One.Cell.One")</td>
-            <td class="p-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two.Example.What")</td>
-        </tr>
-        <!-- Beispiel - Womit? -->
-        <tr>
-            <td class="p-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.One.Cell.Two")</td>
-            <td class="p-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two.Example.Whereby")</td>
-        </tr>
-        <!-- Beispiel - Wozu? -->
-        <tr>
-            <td class="p-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.One.Cell.Three")</td>
-            <td class="p-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two.Example.WhatFor")</td>
-        </tr>
-        </tbody>
-    </table>
+            <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Part2")</MudText>
+            <div class="flex flex-col justify-center items-center gap-1 pt-2">
+                <table class="border-adlergrey-200 border-2" width="80%">
+                    <thead class="font-bold">
+                    <tr>
+                        <th class="p-2 border-2 bg-adlerblue-100">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.One")</th>
+                        <th class="p-2 border-2 bg-adlerblue-100">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two")</th>
+                        <th class="p-2 border-2 bg-adlerblue-100">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Three")</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Was? -->
+                    <tr>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.One.Cell.One")</td>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two.Cell.One")</td>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Three.Cell.One")</td>
+                    </tr>
+                    <!-- Womit? -->
+                    <tr>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.One.Cell.Two")</td>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two.Cell.Two")</td>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Three.Cell.Three")</td>
+                    </tr>
+                    <!-- Wozu? -->
+                    <tr>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.One.Cell.Three")</td>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two.Cell.Three")</td>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Three.Cell.Four")</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p class="text-xs italic text-adlergrey-600 pb-3">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.DescriptionText.Table")</p>
+            </div>
+            <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Part3")</MudText>
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Beispiel - Was? -->
+                <tr>
+                    <td class="p-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.One.Cell.One")</td>
+                    <td class="p-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two.Example.What")</td>
+                </tr>
+                <!-- Beispiel - Womit? -->
+                <tr>
+                    <td class="p-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.One.Cell.Two")</td>
+                    <td class="p-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two.Example.Whereby")</td>
+                </tr>
+                <!-- Beispiel - Wozu? -->
+                <tr>
+                    <td class="p-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.One.Cell.Three")</td>
+                    <td class="p-2">@GetLocalizerString("CreateStructuredLearningOutcome.WhatWherebyWhatFor.Table.Col.Two.Example.WhatFor")</td>
+                </tr>
+                </tbody>
+            </table>
 
-    <MudText id="QualityCheck" Class="text-adlertextgrey pt-5" Typo="Typo.h6">@GetLocalizerString("CreateStructuredLearningOutcome.QualitycheckForLearningOutcomes.Title")</MudText>
-    <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.QualitycheckForLearningOutcomes.Text")</MudText>
-    <div class="flex flex-col justify-center items-center gap-1 pt-2">
-        <table class="border-adlergrey-200 border-2" width="80%">
-            <thead class="font-bold">
-            <tr>
-                <th class="p-2 border-2 bg-adlerblue-100">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.One")</th>
-                <th class="p-2 border-2 bg-adlerblue-100">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Two")</th>
-                <th class="p-2 border-2 bg-adlerblue-100">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three")</th>
-            </tr>
-            </thead>
-            <tbody>
-            <!-- 1. Qualitätscheck -->
-            <tr>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.One.Cell.One")</td>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Two.Cell.One")</td>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three.Cell.One")</td>
-            </tr>
-            <!-- 2. Qualitätscheck -->
-            <tr>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.One.Cell.Two")</td>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Two.Cell.Two")</td>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three.Cell.Two")</td>
-            </tr>
-            <!-- 3. Qualitätscheck -->
-            <tr>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.One.Cell.Three")</td>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Two.Cell.Three")</td>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three.Cell.Three")</td>
-            </tr>
-            <!-- 4. Qualitätscheck -->
-            <tr>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.One.Cell.Four")</td>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Two.Cell.Four")</td>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three.Cell.Four")</td>
-            </tr>
-            <!-- 5. Qualitätscheck -->
-            <tr>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.One.Cell.Five")</td>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Two.Cell.Five")</td>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three.Cell.Five")</td>
-            </tr>
-            <!-- 6. Qualitätscheck -->
-            <tr>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.One.Cell.Six")</td>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Two.Cell.Six")</td>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three.Cell.Six")</td>
-            </tr>
-            <!-- 7. Qualitätscheck -->
-            <tr>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.One.Cell.Seven")</td>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Two.Cell.Seven")</td>
-                <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three.Cell.Seven")</td>
-            </tr>
-            </tbody>
-        </table>
-        <p class="text-xs italic text-adlergrey-600 pb-3">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.DescriptionText.Table")</p>
-    </div>
-    <MudDivider Class="py-4" DividerType="DividerType.FullWidth"></MudDivider>
+            <MudText id="QualityCheck" Class="text-adlertextgrey pt-5" Typo="Typo.h6">@GetLocalizerString("CreateStructuredLearningOutcome.QualitycheckForLearningOutcomes.Title")</MudText>
+            <MudText Typo="Typo.body2">@GetLocalizerString("CreateStructuredLearningOutcome.QualitycheckForLearningOutcomes.Text")</MudText>
+            <div class="flex flex-col justify-center items-center gap-1 pt-2">
+                <table class="border-adlergrey-200 border-2" width="80%">
+                    <thead class="font-bold">
+                    <tr>
+                        <th class="p-2 border-2 bg-adlerblue-100">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.One")</th>
+                        <th class="p-2 border-2 bg-adlerblue-100">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Two")</th>
+                        <th class="p-2 border-2 bg-adlerblue-100">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three")</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- 1. Qualitätscheck -->
+                    <tr>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.One.Cell.One")</td>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Two.Cell.One")</td>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three.Cell.One")</td>
+                    </tr>
+                    <!-- 2. Qualitätscheck -->
+                    <tr>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.One.Cell.Two")</td>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Two.Cell.Two")</td>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three.Cell.Two")</td>
+                    </tr>
+                    <!-- 3. Qualitätscheck -->
+                    <tr>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.One.Cell.Three")</td>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Two.Cell.Three")</td>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three.Cell.Three")</td>
+                    </tr>
+                    <!-- 4. Qualitätscheck -->
+                    <tr>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.One.Cell.Four")</td>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Two.Cell.Four")</td>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three.Cell.Four")</td>
+                    </tr>
+                    <!-- 5. Qualitätscheck -->
+                    <tr>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.One.Cell.Five")</td>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Two.Cell.Five")</td>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three.Cell.Five")</td>
+                    </tr>
+                    <!-- 6. Qualitätscheck -->
+                    <tr>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.One.Cell.Six")</td>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Two.Cell.Six")</td>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three.Cell.Six")</td>
+                    </tr>
+                    <!-- 7. Qualitätscheck -->
+                    <tr>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.One.Cell.Seven")</td>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Two.Cell.Seven")</td>
+                        <td class="p-2 border-2">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Table.Col.Three.Cell.Seven")</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p class="text-xs italic text-adlergrey-600 pb-3">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.DescriptionText.Table")</p>
+            </div>
+            <MudDivider Class="py-4" DividerType="DividerType.FullWidth"></MudDivider>
 
-    <MudText Class="text-xs italic text-adlergrey-600">@GetLocalizerString("CreateStructuredLearningOutcome.Sources")</MudText>
-    <ul class="px-3.5 list-disc italic">
-        <li class="text-adlergrey-600">
-            <p class="cursor-default text-xs list-disc text-adlergrey-600">Cedefop. (2017). Defining, writing and applying learning outcomes: A European handbook. Luxemburg: Publications Office. <a class="text-xs text-adlerblue" href="https://doi.org/10.1080/03075079612331381487" target="_blank">https://doi.org/10.1080/03075079612331381487</a></p>
-        </li>
-        <li class="text-adlergrey-600">
-            <p class="cursor-default text-xs list-disc text-adlergrey-600">Gröblinghoff, F. (2015). Nexus Impulse für die Praxis – Lernergebnisse praktisch formulieren (Ausgabe 2). HRK – Hochschulrektorenkonferenz. <a class="text-xs text-adlerblue" href="https://www.hrk-nexus.de/fileadmin/redaktion/hrk-nexus/07-Downloads/07-02-Publikationen/Lernergebnisse_praktisch_formulieren_01.pdf" target="_blank">https://www.hrk-nexus.de/fileadmin/redaktion/hrk-nexus/07-Downloads/07-02-Publikationen/Lernergebnisse_praktisch_formulieren_01.pdf</a></p>
-        </li>
-        <li class="text-adlergrey-600">
-            <p class="cursor-default text-xs list-disc text-adlergrey-600">Reis, O. (2013). Hochschuldidaktische Herausforderungen an die Rechtswissenschaft. ZDRW – Zeitschrift für Didaktik der Rechtswissenschaft, (Heft 2013), 21-43.</p>
-        </li>
-        <li class="text-adlergrey-600">
-            <p class="cursor-default text-xs list-disc text-adlergrey-600">Wunderlich, A., & Gerber, J. (2017). Learning-Outcomes fachspezifisch formuliert – vier Beispiele. Lehre A-Z. Zentrum für Lehrentwicklung, TH Köln.</p>
-        </li>
-        <li class="text-adlergrey-600">
-            <p class="cursor-default text-xs list-disc text-adlergrey-600">Wunderlich, A., & Szczyrba, B. (2016). Learning-Outcomes „lupenrein“ formulieren. Lehre A-Z. Zentrum für Lehrentwicklung, TH Köln.</p>
-        </li>
-    </ul>
-</div>
+            <MudText Class="text-xs italic text-adlergrey-600">@GetLocalizerString("CreateStructuredLearningOutcome.Sources")</MudText>
+            <ul class="px-3.5 list-disc italic">
+                <li class="text-adlergrey-600">
+                    <p class="cursor-default text-xs list-disc text-adlergrey-600">Cedefop. (2017). Defining, writing and applying learning outcomes: A European handbook. Luxemburg: Publications Office. <a class="text-xs text-adlerblue" href="https://doi.org/10.1080/03075079612331381487" target="_blank">https://doi.org/10.1080/03075079612331381487</a></p>
+                </li>
+                <li class="text-adlergrey-600">
+                    <p class="cursor-default text-xs list-disc text-adlergrey-600">Gröblinghoff, F. (2015). Nexus Impulse für die Praxis – Lernergebnisse praktisch formulieren (Ausgabe 2). HRK – Hochschulrektorenkonferenz. <a class="text-xs text-adlerblue" href="https://www.hrk-nexus.de/fileadmin/redaktion/hrk-nexus/07-Downloads/07-02-Publikationen/Lernergebnisse_praktisch_formulieren_01.pdf" target="_blank">https://www.hrk-nexus.de/fileadmin/redaktion/hrk-nexus/07-Downloads/07-02-Publikationen/Lernergebnisse_praktisch_formulieren_01.pdf</a></p>
+                </li>
+                <li class="text-adlergrey-600">
+                    <p class="cursor-default text-xs list-disc text-adlergrey-600">Reis, O. (2013). Hochschuldidaktische Herausforderungen an die Rechtswissenschaft. ZDRW – Zeitschrift für Didaktik der Rechtswissenschaft, (Heft 2013), 21-43.</p>
+                </li>
+                <li class="text-adlergrey-600">
+                    <p class="cursor-default text-xs list-disc text-adlergrey-600">Wunderlich, A., & Gerber, J. (2017). Learning-Outcomes fachspezifisch formuliert – vier Beispiele. Lehre A-Z. Zentrum für Lehrentwicklung, TH Köln.</p>
+                </li>
+                <li class="text-adlergrey-600">
+                    <p class="cursor-default text-xs list-disc text-adlergrey-600">Wunderlich, A., & Szczyrba, B. (2016). Learning-Outcomes „lupenrein“ formulieren. Lehre A-Z. Zentrum für Lehrentwicklung, TH Köln.</p>
+                </li>
+            </ul>
+        </div>
 
-@*<MudPaper Class="py-3 text-xs" Square="true">
+        @*<MudPaper Class="py-3 text-xs" Square="true">
     <MudNavMenu Class="w-40 2xl:w-48">
         <MudNavLink Class="px-2" Href="#HowAreLearningOutcomesFormulated">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.RightSidebar.One")</MudNavLink>
         <MudNavLink Class="px-2" Href="#WhatWherebyWhatFor">@GetLocalizerString("CreateStructuredLearningOutcome.HowAreLearningOutcomesFormulated.RightSidebar.Two")</MudNavLink>
@@ -494,222 +704,14 @@
     </MudNavMenu>
 </MudPaper>*@
 
-<MudScrollToTop TopOffset="100"
-                Selector="#unique_id_scroll_section"
-                VisibleCssClass="visible absolute"
-                HiddenCssClass="invisible">
-    <MudIconButton Variant="Variant.Filled" Icon="@Icons.Material.Filled.ArrowUpward" Color="Color.Info"></MudIconButton>
-</MudScrollToTop>
+        <MudScrollToTop TopOffset="100"
+                        Selector="#unique_id_scroll_section"
+                        VisibleCssClass="visible absolute"
+                        HiddenCssClass="invisible">
+            <MudIconButton Variant="Variant.Filled" Icon="@Icons.Material.Filled.ArrowUpward" Color="Color.Info"></MudIconButton>
+        </MudScrollToTop>
 
-</MudTabPanel>
-<MudTabPanel Class="py-12 bg-adlergrey-700 hover:bg-blacktrans-100"
-             Style="border-bottom-color: #a1c8e5;"
-             Text="@GetLocalizerString("CreateStructuredLearningOutcome.TabPanelOne")">
-
-    <div class="h-full w-[98%] xl:w-4/6 2xl:w-4/6 mx-auto overflow-auto">
-        <div class="flex flex-col rounded border-adlergrey-300 border-2 bg-gradient-to-br from-adlerbggradientto to-adlergrey-100 my-1 overflow-auto">
-
-            <MudForm @ref="_form" Class="flex flex-col overflow-hidden px-4 py-2">
-
-                <a class="text-xs text-adlerblue pt-1" target="_blank" href="@GetLocalizerString("CreateStructuredLearningOutcome.ExampleImagePath")">@GetLocalizerString("CreateStructuredLearningOutcome.Example")</a>
-                
-                <MudText Class="cursor-default flex justify-center items-center text-lg 2xl:text-xl font-bold text-adlerdarkblue pb-1.5">@GetLocalizerString("CreateStructuredLearningOutcome.Title")</MudText>
-
-                <div class="border-adlergrey-300 bg-white border-2 rounded py-2 h-full overflow-y-scroll">
-                 <MudText Class="cursor-default text-sm 2xl:text-base text-adlertextgrey pt-2 pl-2">@GetLocalizerString("CreateStructuredLearningOutcome.Text")</MudText>
-                 <div class="flex flex-row gap-4 m-2 pb-4">
-
-                     <div class="min-w-32 sm:w-44 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlerblue-100 rounded">
-                         <MudText Class="pt-1 cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel")</MudText>
-                         <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Info")">
-                             <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
-                         </MudTooltip>
-                     </div>
-
-                     <MudSelect T="TaxonomyLevel" Class="w-40 break-all" @bind-Value="_selectedTaxonomyLevel">
-
-                         <MudSelectItem Value="@TaxonomyLevelNames.ElementAt(0).Key">
-                             <div class="flex flex-row items-center gap-2">
-                                 <div class="min-w-[15%] text-md break-keep text-adlergrey">@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.NotSpecified")</div>
-                             </div>
-                         </MudSelectItem>
-
-                         <MudSelectItem Value="@TaxonomyLevelNames.ElementAt(1).Key">
-                             <div class="flex flex-row items-center gap-2">
-                                 <div class="min-w-[15%] text-md break-keep font-bold text-adlerblue-500">@TaxonomyLevelNames.ElementAt(1).Value</div>
-                                 <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.ArrowRightAlt" Color="Color.Default"></MudIcon>
-                                 <span title="@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Remember")" class="max-w-[65%] text-adlergrey text-xs italic break-word">@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Remember")</span>
-                             </div>
-                         </MudSelectItem>
-
-                         <MudSelectItem T="TaxonomyLevel" Value="@TaxonomyLevelNames.ElementAt(2).Key">
-                             <div class="flex flex-row items-center gap-2">
-                                 <div class="min-w-[15%] text-md break-keep font-bold text-adlerblue-500">@TaxonomyLevelNames.ElementAt(2).Value</div>
-                                 <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.ArrowRightAlt" Color="Color.Default"></MudIcon>
-                                 <span title="@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Understand")" class="max-w-[65%] text-adlergrey text-xs italic break-word">@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Understand")</span>
-                             </div>
-                         </MudSelectItem>
-                         <MudSelectItem T="TaxonomyLevel" Value="@TaxonomyLevelNames.ElementAt(3).Key">
-                             <div class="flex flex-row items-center gap-2">
-                                 <div class="min-w-[15%] text-md break-keep font-bold text-adlerblue-500">@TaxonomyLevelNames.ElementAt(3).Value</div>
-                                 <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.ArrowRightAlt" Color="Color.Default"></MudIcon>
-                                 <span title="@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Apply")" class="max-w-[65%] text-adlergrey text-xs italic break-word">@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Apply")</span>
-                             </div>
-                         </MudSelectItem>
-
-                         <MudSelectItem T="TaxonomyLevel" Value="@TaxonomyLevelNames.ElementAt(4).Key">
-                             <div class="flex flex-row items-center gap-2">
-                                 <div class="min-w-[15%] text-md break-keep font-bold text-adlerblue-500">@TaxonomyLevelNames.ElementAt(4).Value</div>
-                                 <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.ArrowRightAlt" Color="Color.Default"></MudIcon>
-                                 <span title="@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Analyse")" class="max-w-[65%] text-adlergrey text-xs italic break-word">@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Analyse")</span>
-                             </div>
-                         </MudSelectItem>
-
-                         <MudSelectItem T="TaxonomyLevel" Value="@TaxonomyLevelNames.ElementAt(5).Key">
-                             <div class="flex flex-row items-center gap-2">
-                                 <div class="min-w-[15%] text-md break-keep font-bold text-adlerblue-500">@TaxonomyLevelNames.ElementAt(5).Value</div>
-                                 <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.ArrowRightAlt" Color="Color.Default"></MudIcon>
-                                 <span title="@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Evaluate")" class="max-w-[65%] text-adlergrey text-xs italic break-word">@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Evaluate")</span>
-                             </div>
-                         </MudSelectItem>
-
-                         <MudSelectItem T="TaxonomyLevel" Value="@TaxonomyLevelNames.ElementAt(6).Key">
-                             <div class="flex flex-row items-center gap-2">
-                                 <div class="min-w-[15%] text-md break-keep font-bold text-adlerblue-500">@TaxonomyLevelNames.ElementAt(6).Value</div>
-                                 <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.ArrowRightAlt" Color="Color.Default"></MudIcon>
-                                 <span title="@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Create")" class="max-w-[65%] text-adlergrey text-xs italic break-word">@GetLocalizerString("CreateStructuredLearningOutcome.TaxonomyLevel.Create")</span>
-                             </div>
-                         </MudSelectItem>
-                     </MudSelect>
-                 </div>
-                 
-                 <div class="border-t-2 border-adlergrey-200 border-dotted py-2">
-                     <MudText Class="cursor-default text-sm 2xl:text-base text-adlertextgrey py-2 pl-2">@GetLocalizerString("CreateStructuredLearningOutcome.Text.Two")</MudText>
-                     <MudText Class="ml-48 2xl:ml-52 cursor-default text-sm 2xl:text-base text-adlertextgrey">@IntroText</MudText>
-
-                     <GrammarOrder Culture="Culture">
-                         <WhatContent>
-                             <div class="flex flex-row gap-4 m-2">
-                                 <div class="min-w-32 sm:w-44 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
-                                     <MudText Class="pt-1 cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">@GetLocalizerString("CreateStructuredLearningOutcome.What")</MudText>
-                                     <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="@GetLocalizerString("CreateStructuredLearningOutcome.What.Info")">
-                                         <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
-                                     </MudTooltip>
-                                 </div>
-
-                                 <MudTextField @bind-Value="_currentWhat"
-                                               DebounceInterval="1"
-                                               Placeholder="@GetLocalizerString("CreateStructuredLearningOutcome.What.Placeholder")"
-                                               Required="true"
-                                               RequiredError="@GetLocalizerString("CreateStructuredLearningOutcome.What.RequiredError")"
-                                               Lines="2">
-                                 </MudTextField>
-                             </div>
-                         </WhatContent>
-
-                         <VerbContent>
-                             <div class="flex flex-row gap-4 m-2">
-                                 <div class="min-w-32 sm:w-44 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
-                                     <MudText Class="pt-1 cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">@GetLocalizerString("CreateStructuredLearningOutcome.VerbOfVisibility")</MudText>
-                                     <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="@GetLocalizerString("CreateStructuredLearningOutcome.VerbOfVisibility.Info")">
-                                         <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
-                                     </MudTooltip>
-                                 </div>
-
-                                 <MudAutocomplete T="string" Placeholder="@GetLocalizerString("CreateStructuredLearningOutcome.VerbOfVisibility.Placeholder")" MaxItems="1000"
-                                                  @bind-Value="@_currentVerbOfVisibility"
-                                                  @bind-Text="@_currentVerbOfVisibilityText"
-                                                  CoerceText="true"
-                                                  CoerceValue="true"
-                                                  SearchFunc="@SearchVerbOfVisibility"
-                                                  OnBlur="OnBlurVerbOfVisibility"
-                                                  DebounceInterval="300"
-                                                  Required="true"
-                                                  RequiredError="@GetLocalizerString("CreateStructuredLearningOutcome.VerbOfVisibility.RequiredError")"/>
-                             </div>
-                         </VerbContent>
-                     </GrammarOrder>
-
-                     <div class="flex flex-row gap-4 m-2">
-                         <div class="min-w-32 sm:w-44 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
-                             <MudText Class="pt-1 cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">@GetLocalizerString("CreateStructuredLearningOutcome.Whereby")</MudText>
-                             <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="@GetLocalizerString("CreateStructuredLearningOutcome.Whereby.Info")">
-                                 <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
-                             </MudTooltip>
-                         </div>
-                         <MudText Class="cursor-default w-24 flex items-center text-sm 2xl:text-base text-adlergrey-800">@WherebyText</MudText>
-                         <MudTextField @bind-Value="_currentWhereby"
-                                       DebounceInterval="1"
-                                       Placeholder="@GetLocalizerString("CreateStructuredLearningOutcome.Whereby.Placeholder")"
-                                       Lines="2">
-                         </MudTextField>
-                     </div>
-
-                     <div class="flex flex-row gap-4 m-2">
-                         <div class="min-w-32 sm:w-44 2xl:w-48 flex flex-row items-center justify-center gap-2 p-2 bg-adlergrey-100 rounded">
-                             <MudText Class="pt-1 cursor-default text-xs 2xl:text-sm text-adlerdarkblue font-bold break-all">@GetLocalizerString("CreateStructuredLearningOutcome.WhatFor")</MudText>
-                             <MudTooltip Placement="Placement.Right" Class="w-96 p-4 bg-adlerdarkblue-200 shadow-xl text-start leading-relaxed" Text="@GetLocalizerString("CreateStructuredLearningOutcome.WhatFor.Info")">
-                                 <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Info" Class="text-adlergrey hover:text-adlerdarkblue"></MudIcon>
-                             </MudTooltip>
-                         </div>
-                         <MudText Class="cursor-default w-24 flex items-center text-sm 2xl:text-base text-adlergrey-800">@WhatForText</MudText>
-                         <MudTextField @bind-Value="_currentWhatFor"
-                                       DebounceInterval="1"
-                                       Placeholder="@GetLocalizerString("CreateStructuredLearningOutcome.WhatFor.Placeholder")"
-                                       Lines="2">
-                         </MudTextField>
-                     </div>
-                 </div>
-                 
-                    <MudText Class="px-2 cursor-default flex justify-start text-xs text-adlergrey-300">@GetLocalizerString("CreateStructuredLearningOutcome.Required")</MudText>
-                </div>
-            </MudForm>
-
-            <div class="flex flex-row justify-end items-center mx-4">
-                <MudButton OnClick="ResetInputFields">
-                    <MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.Refresh"></MudIcon>
-                    <MudText Class="uppercase pl-1 text-sm text-adlergrey-700 font-bold">@GetLocalizerString("CreateStructuredLearningOutcome.Reset")</MudText>
-                </MudButton>
-            </div>
-
-            <div class="flex flex-col gap-2 mx-4">
-                <MudText Class="cursor-default text-adlerdarkblue text-sm font-bold">@GetLocalizerString("CreateStructuredLearningOutcome.Preview")</MudText>
-                <div class="bg-white border border-adlergrey-300 border-2 rounded px-4 p-5">
-                    @GetMarkDownFormattedOutcome()
-                </div>
-            </div>
-
-            <div class="flex flex-col gap-4 mx-4 pt-2">
-                <MudExpansionPanels Elevation="2">
-                    <MudExpansionPanel Class="bg-gradient-to-br from-adlerbggradientto to-adlergrey-100" Text="@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Title")">
-                        <div class="flex flex-col gap-2 mx-2">
-                            <div class="flex flex-row gap-2 items-center">
-                                <MudIcon Color="Color.Success" Icon="@Icons.Material.Filled.WorkspacePremium"></MudIcon>
-                                <MudText Typo="Typo.body2" Class="font-bold cursor-default">@GetLocalizerString("CreateStructuredLearningOutcome.QualityCheck.Subtitle")</MudText>
-                            </div>
-
-                            <div class="flex flex-col">
-                                <ul class="px-8">
-                                    @foreach (var question in _qualityCheck.Keys.ToList())
-                                    {
-                                        <li class="flex flex-row items-center justify-between cursor-default text-adlergrey-800">
-                                            <p>@GetLocalizerString(question)</p>
-                                            <MudCheckBox Dense="true" @bind-Value="_qualityCheck[question]" Color="Color.Default" UnCheckedColor="Color.Default"></MudCheckBox>
-                                        </li>
-                                    }
-                                </ul>
-                            </div>
-                        </div>
-                    </MudExpansionPanel>
-                </MudExpansionPanels>
-            </div>
-
-            <div class="flex justify-start p-2">
-                <MudButton Class="text-adlerblue font-bold" Disabled="!LearningOutcomeIsCopyable()" StartIcon="@Icons.Material.Filled.ContentCopy" OnClick="@CopyToClickBoard">@GetLocalizerString("CreateStructuredLearningOutcome.Copy")</MudButton>
-            </div>
-        </div>
-    </div>
-</MudTabPanel>
+    </MudTabPanel>
 </MudTabs>
 </MudDrawer>
 
