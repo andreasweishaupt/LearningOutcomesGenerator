@@ -457,13 +457,13 @@ zusammensetzen</value>
         <value>Die "Was-Womit-Wozu-Struktur"</value>
     </data>
     <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Part1" xml:space="preserve">
-        <value>Grundsätzlich kann man sich bei der Formulierung eines Lernziels an einem systematischen Satzbau orientieren: Subjekt, Lernziel (und Kontext) sowie Verb der Sichtbarkeit.</value>
+        <value>Grundsätzlich kann man sich bei der Formulierung eines Lernziels an einem systematischen Satzbau orientieren: Subjekt, Lerninhalt (und Kontext) sowie Verb der Sichtbarkeit.</value>
     </data>
     <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Text.Image" xml:space="preserve">
         <value>Folgendes Beispiel verdeutlicht dies:</value>
     </data>
     <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.DescriptionText.Image" xml:space="preserve">
-        <value>Abbildung: (1) Subjekt, (2) Lernziel (und Kontext), (3) Verb der Sichtbarkeit</value>
+        <value>Abbildung: (1) Subjekt, (2) Lerninhalt (und Kontext), (3) Verb der Sichtbarkeit</value>
     </data>
     <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Part3" xml:space="preserve">
         <value>Wendet man diese Struktur auf das  o.g. Beispiel für ein Lernziel an, dann ergibt sich folgende Erweiterung:</value>

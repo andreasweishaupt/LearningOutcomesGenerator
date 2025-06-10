@@ -463,7 +463,7 @@ assemble</value>
         <value>The following example illustrates this:</value>
     </data>
     <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.DescriptionText.Image" xml:space="preserve">
-        <value>Figure: (1) subject, (2) action verb, (3) learning outcome (and context)</value>
+        <value>Figure: (1) subject, (2) action verb, (3) learning content (and context)</value>
     </data>
     <data name="CreateStructuredLearningOutcome.WhatWherebyWhatFor.Part3" xml:space="preserve">
         <value>When applying this structure to the aforementioned example of a learning outcome, the following expanded version emerges:</value>
