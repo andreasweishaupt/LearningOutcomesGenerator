@@ -1,6 +1,6 @@
 name: Build Cross-Platform Executables
 on:
-  workflow_dispatch:
+  push:
 
 jobs:
   publish-windows:
