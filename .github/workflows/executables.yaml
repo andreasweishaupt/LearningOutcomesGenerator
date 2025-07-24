@@ -1,81 +1,44 @@
-name: Build Cross-Platform Executables
+name: Release Cross-Platform Executables
 on:
   push:
 
 jobs:
-  publish-windows:
-    name: Publish for Windows
-    runs-on: windows-latest
+  publish:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+        rid: [win-x64, linux-x64, osx-x64]
     steps:
       - uses: actions/checkout@v4
         with:
           submodules: 'true'
-      # install dependencies, build, and test
-      - name: Setup Dotnet for use with actions
+      - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
-
-      - name: Cache Nuget Packages
-        uses: actions/cache@v4
-        with:
-          path: ~/.nuget/packages
-          # Look to see if there is a cache hit for the corresponding requirements file
-          key: Windows-nuget-${{ hashFiles('**/packages.lock.json') }}
-          restore-keys: |
-            Windows-nuget
-
-      - name: Set up npm
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '16'
-
-      - name: Install electron-sharp
-        run: dotnet tool restore
-
-      - name: Run Tailwind build
-        working-directory: ./LearningOutcomesGenerator
+          node-version: '21'
+      - name: npm install
+        working-directory: Library
+        run: npm install
+      - name: Tailwind build
+        working-directory: Library
         run: npm run tailwind-build
-
-      - name: Build AuthoringTool binary
-        working-directory: ./AuthoringTool
-        run: dotnet electron-sharp build /target win
-
-      - name: Save Build folder
+      - name: dotnet restore
+        run: dotnet restore Server/Server.csproj
+      - name: dotnet publish
+        run: dotnet publish Server/Server.csproj -c Release -r ${{ matrix.rid }} --self-contained true -o ./publish/${{ matrix.rid }}
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: learningoutcomesgenerator-win
-          path: ./LearningOutcomesGenerator/bin/Desktop_Publish/
-          
-      - name: Pack windows-unpacked into zip
-        uses: vimtor/action-zip@v1
-        with:
-          files: ./LearningOutcomesGenerator/bin/Desktop_Publish/win-unpacked
-          dest: ./LearningOutcomesGenerator/bin/Desktop_Publish/${{ github.ref_name }}-win-unpacked.zip
-
-      - name: Pack windows-unpacked into 7z
-        run: 7z a -t7z -mx=8 ./AuthoringTool/bin/Desktop_Publish/${{ github.ref_name }}-win-unpacked.7z ./AuthoringTool/bin/Desktop_Publish/win-unpacked
-
-      - name: Upload Windows installer to release
+          name: app-${{ matrix.rid }}
+          path: ./publish/${{ matrix.rid }}
+      - name: Upload to release
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: 'LearningOutcomesGenerator\\bin\\Desktop_Publish\\LearningOutcomesGenerator Setup ${{ github.ref_name }}.exe'
-          asset_name: LearningOutcomesGenerator-${{ github.ref_name }}-windows-Setup.exe
-          tag: ${{ github.ref }}
-          
-      - name: Upload win-unpacked zip to release
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: LearningOutcomesGenerator/bin/Desktop_Publish/${{ github.ref_name }}-win-unpacked.zip
-          asset_name: LearningOutcomesGenerator-${{ github.ref_name }}-windows-unpacked.zip
-          tag: ${{ github.ref }}
-      
-      - name: Upload win-unpacked 7z to release
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: LearningOutcomesGenerator/bin/Desktop_Publish/${{ github.ref_name }}-win-unpacked.7z
-          asset_name: LearningOutcomesGenerator-${{ github.ref_name }}-windows-unpacked.7z
+          file: ./publish/${{ matrix.rid }}/*
           tag: ${{ github.ref }}
