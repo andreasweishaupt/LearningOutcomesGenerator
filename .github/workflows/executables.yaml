@@ -1,0 +1,85 @@
+name: Build Cross-Platform Executables
+on:
+  workflow_dispatch:
+
+jobs:
+  publish-windows:
+    name: Publish for Windows
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'true'
+      # install dependencies, build, and test
+      - name: Setup Dotnet for use with actions
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Cache Nuget Packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          # Look to see if there is a cache hit for the corresponding requirements file
+          key: Windows-nuget-${{ hashFiles('**/packages.lock.json') }}
+          restore-keys: |
+            Windows-nuget
+
+      - name: Set up npm
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16'
+
+      - name: Install electron-sharp
+        run: dotnet tool restore
+
+      - name: Install npm dependencies
+        working-directory: ./LearningOutcomesGenerator
+        run: npm install
+
+      - name: Run Tailwind build
+        working-directory: ./LearningOutcomesGenerator
+        run: npm run tailwind-build
+
+      - name: Build AuthoringTool binary
+        working-directory: ./AuthoringTool
+        run: dotnet electron-sharp build /target win
+
+      - name: Save Build folder
+        uses: actions/upload-artifact@v4
+        with:
+          name: learningoutcomesgenerator-win
+          path: ./LearningOutcomesGenerator/bin/Desktop_Publish/
+          
+      - name: Pack windows-unpacked into zip
+        uses: vimtor/action-zip@v1
+        with:
+          files: ./LearningOutcomesGenerator/bin/Desktop_Publish/win-unpacked
+          dest: ./LearningOutcomesGenerator/bin/Desktop_Publish/${{ github.ref_name }}-win-unpacked.zip
+
+      - name: Pack windows-unpacked into 7z
+        run: 7z a -t7z -mx=8 ./AuthoringTool/bin/Desktop_Publish/${{ github.ref_name }}-win-unpacked.7z ./AuthoringTool/bin/Desktop_Publish/win-unpacked
+
+      - name: Upload Windows installer to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: 'LearningOutcomesGenerator\\bin\\Desktop_Publish\\LearningOutcomesGenerator Setup ${{ github.ref_name }}.exe'
+          asset_name: LearningOutcomesGenerator-${{ github.ref_name }}-windows-Setup.exe
+          tag: ${{ github.ref }}
+          
+      - name: Upload win-unpacked zip to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: LearningOutcomesGenerator/bin/Desktop_Publish/${{ github.ref_name }}-win-unpacked.zip
+          asset_name: LearningOutcomesGenerator-${{ github.ref_name }}-windows-unpacked.zip
+          tag: ${{ github.ref }}
+      
+      - name: Upload win-unpacked 7z to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: LearningOutcomesGenerator/bin/Desktop_Publish/${{ github.ref_name }}-win-unpacked.7z
+          asset_name: LearningOutcomesGenerator-${{ github.ref_name }}-windows-unpacked.7z
+          tag: ${{ github.ref }}
