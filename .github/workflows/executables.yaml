@@ -33,10 +33,6 @@ jobs:
       - name: Install electron-sharp
         run: dotnet tool restore
 
-      - name: Install npm dependencies
-        working-directory: ./LearningOutcomesGenerator
-        run: npm install
-
       - name: Run Tailwind build
         working-directory: ./LearningOutcomesGenerator
         run: npm run tailwind-build
